@@ -1,0 +1,436 @@
+/* =========================================================
+   Himanshu Soni — Production Portfolio Design System
+   Inspired by priyasinghi.com visual architecture & aesthetics
+   ========================================================= */
+
+:root {
+  /* Core Palette */
+  --color-primary-dark: #190c39;        /* Deep midnight violet */
+  --color-primary-purple: #4e1870;      /* Rich violet heading purple */
+  --color-form-purple: #461366;         /* Deep purple for form fields */
+  --color-accent-lilac: #ba9afd;        /* Signature lilac accent */
+  --color-accent-lilac-light: #f4efff;  /* Soft lilac tint */
+  --color-accent-pink: #ff00ba;         /* Highlight hot pink from reference */
+  --color-accent-blue: #0a8fff;         /* Reference bright blue */
+  --color-text-dark: #111111;           /* Crisp primary text */
+  --color-text-body: #374151;           /* Readable body text */
+  --color-text-muted: #6b7280;          /* Secondary gray */
+  --color-text-light: #9ca3af;          /* Subtle caption gray */
+  --color-bg-body: #fafafa;             /* Warm off-white page background */
+  --color-bg-white: #ffffff;            /* Pure white surfaces */
+  --color-bg-dark: #190c39;             /* Full dark sections */
+  --color-border-subtle: #e5e7eb;       /* Gentle card dividers */
+  --color-border-purple: rgba(186, 154, 253, 0.4);
+
+  /* Typography */
+  --font-headings: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(25, 12, 57, 0.07);
+  --shadow-lg: 0 16px 40px rgba(25, 12, 57, 0.12);
+  --shadow-glow: 0 0 25px rgba(186, 154, 253, 0.35);
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-body);
+  color: var(--color-text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+  font-weight: 500;
+  color: var(--color-text-dark);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+h1 strong, h2 strong, h3 strong {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+p {
+  color: var(--color-text-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+/* Utilities matching reference classes */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.kicker {
+  display: inline-block;
+  font-family: var(--font-headings);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-accent-blue);
+  margin-bottom: 0.75rem;
+}
+
+.kicker.purple {
+  color: var(--color-primary-purple);
+}
+
+.kicker.lilac {
+  color: var(--color-accent-lilac);
+}
+
+.kicker.pink {
+  color: var(--color-accent-pink);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-headings);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+  border-color: var(--color-primary-dark);
+}
+
+.btn-primary:hover {
+  background-color: #2b155f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(25, 12, 57, 0.25);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-lilac {
+  background-color: var(--color-accent-lilac);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.btn-lilac:hover {
+  background-color: #d1b8ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(186, 154, 253, 0.4);
+}
+
+.btn-pink {
+  background-color: var(--color-accent-pink);
+  color: #ffffff;
+}
+
+.btn-pink:hover {
+  background-color: #e000a3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 0, 186, 0.3);
+}
+
+.btn-icon {
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+/* Sticky Smart Header */
+.scroll-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.scroll-header.stuck {
+  position: fixed;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.scroll-header.scroll-head-down {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-header.scroll-head-up {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Nav Link Underline Hover Effect from reference */
+.nav-link {
+  position: relative;
+  font-family: var(--font-headings);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #262626;
+  padding: 0.5rem 0.2rem;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary-purple);
+  transition: width var(--transition-normal);
+  pointer-events: none;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary-purple);
+}
+
+/* Continuous Infinite Ticker Marquee */
+.ticker-band {
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  padding: 1.1rem 0;
+  white-space: nowrap;
+}
+
+.ticker-band.lilac {
+  background: var(--color-accent-lilac);
+  color: var(--color-primary-dark);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: infiniteTickerScroll 24s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0 1.5rem;
+  font-family: var(--font-headings);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ticker-star {
+  display: inline-block;
+  opacity: 0.85;
+}
+
+@keyframes infiniteTickerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Service Box Cards from Reference */
+.service-box {
+  background: #ffffff;
+  border: 1px solid var(--color-border-purple);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem 2rem;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-box:hover {
+  border-color: var(--color-accent-lilac);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(186, 154, 253, 0.18);
+}
+
+.service-box-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-lilac-light);
+  color: var(--color-primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.service-box:hover .service-box-icon {
+  background: var(--color-primary-dark);
+  color: var(--color-accent-lilac);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.badge-purple {
+  background: rgba(186, 154, 253, 0.18);
+  color: var(--color-primary-purple);
+}
+
+.badge-dark {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5b8df;
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-purple);
+}
+
+/* Selection Highlight */
+::selection {
+  background: var(--color-accent-lilac);
+  color: var(--color-primary-dark);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .service-box {
+    padding: 2rem 1.5rem;
+  }
+}
