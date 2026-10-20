@@ -1,30 +1,30 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Check, 
-  Sparkles, 
-  Layers, 
-  Code2, 
-  Gauge, 
-  Cpu, 
-  Link2, 
-  Zap, 
-  ShieldCheck, 
-  Clock, 
-  TrendingUp, 
+import {
+  ArrowRight,
+  Check,
+  Sparkles,
+  Layers,
+  Code2,
+  Gauge,
+  Cpu,
+  Link2,
+  Zap,
+  ShieldCheck,
+  Clock,
+  TrendingUp,
   CheckCircle2,
   ExternalLink
 } from 'lucide-react';
 import Ticker from '../components/Ticker';
 import CoverflowSlider from '../components/CoverflowSlider';
 import ProjectModal from '../components/ProjectModal';
-import { 
-  personalInfo, 
-  verifiedMetrics, 
-  servicesData, 
-  projectsData, 
-  tickerItems 
+import {
+  personalInfo,
+  verifiedMetrics,
+  servicesData,
+  projectsData,
+  tickerItems
 } from '../data/portfolioData';
 
 export default function HomePage() {
@@ -49,7 +49,7 @@ export default function HomePage() {
       {/* ============================================================== */}
       {/* SECTION 1: HERO SECTION matching priyasinghi.com               */}
       {/* ============================================================== */}
-      <section 
+      <section
         className="home-hero-section"
         style={{
           backgroundColor: 'var(--color-hero-bg)',
@@ -105,64 +105,32 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Hero Visual Graphic with Sparkles */}
+            {/* Right Column: Hero Profile Image */}
             <div style={{ position: 'relative', textAlign: 'center' }}>
               <div style={{
                 position: 'relative',
                 display: 'inline-block',
-                maxWidth: '520px',
+                maxWidth: '460px',
                 width: '100%'
               }}>
-                {/* Floating Decorative Sparkles */}
-                <div style={{
-                  position: 'absolute',
-                  top: '-20px',
-                  left: '10px',
-                  color: 'var(--color-deep-purple)',
-                  fontSize: '2rem',
-                  lineHeight: 1,
-                  animation: 'pulse 2s infinite ease-in-out'
-                }}>
-                  ✦
-                </div>
-                <div style={{
-                  position: 'absolute',
-                  top: '40px',
-                  right: '0px',
-                  color: 'var(--color-lilac)',
-                  fontSize: '1.6rem',
-                  lineHeight: 1
-                }}>
-                  ✦
-                </div>
-                <div style={{
-                  position: 'absolute',
-                  bottom: '20px',
-                  left: '-10px',
-                  color: 'var(--color-plum)',
-                  fontSize: '1.8rem',
-                  lineHeight: 1
-                }}>
-                  ✦
-                </div>
-
-                {/* Hero Illustration Graphic */}
+                {/* Hero Profile Graphic Container */}
                 <div style={{
                   borderRadius: '28px',
                   overflow: 'hidden',
                   boxShadow: '0 25px 60px rgba(25, 12, 57, 0.12)',
                   border: '1px solid rgba(186, 154, 253, 0.3)',
                   background: '#ffffff',
-                  padding: '1rem'
+                  padding: '0.85rem'
                 }}>
-                  <img 
-                    src="/assets/hero-shopify.jpg" 
-                    alt="Himanshu Soni — Shopify Developer" 
+                  <img
+                    src="/assets/MY-Profile.jpeg"
+                    alt="Himanshu Soni — Freelance Shopify Expert"
                     style={{
                       width: '100%',
                       height: 'auto',
                       borderRadius: '20px',
-                      display: 'block'
+                      display: 'block',
+                      objectFit: 'cover'
                     }}
                   />
                 </div>
@@ -227,9 +195,9 @@ export default function HomePage() {
                 boxShadow: '0 20px 45px rgba(25, 12, 57, 0.08)',
                 border: '1px solid rgba(0, 0, 0, 0.06)'
               }}>
-                <img 
-                  src="/assets/projects/admin-extension.jpg" 
-                  alt="Shopify Development by Himanshu Soni" 
+                <img
+                  src="/assets/projects/admin-extension.jpg"
+                  alt="Shopify Development by Himanshu Soni"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
@@ -476,9 +444,9 @@ export default function HomePage() {
       {/* ============================================================== */}
       {/* SECTION 6: CASE STUDIES SLIDER (TANGO COVERFLOW MATCH)         */}
       {/* ============================================================== */}
-      <CoverflowSlider 
-        projects={projectsData} 
-        onSelectProject={(proj) => setSelectedProject(proj)} 
+      <CoverflowSlider
+        projects={projectsData}
+        onSelectProject={(proj) => setSelectedProject(proj)}
       />
 
       {/* ============================================================== */}
@@ -566,7 +534,7 @@ export default function HomePage() {
                 desc: "Cutting order preparation time by 60%, eliminating variant overselling, and elevating Lighthouse speed scores to 85+ on real mobile devices."
               }
             ].map((item, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="service-box"
                 style={{ padding: '2rem' }}
@@ -685,9 +653,9 @@ export default function HomePage() {
       </section>
 
       {/* Case Study Deep-Dive Modal */}
-      <ProjectModal 
-        project={selectedProject} 
-        onClose={() => setSelectedProject(null)} 
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
     </div>
   );
