@@ -1,20 +1,10 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Sparkles, 
-  Search, 
-  ArrowRight, 
-  Layers, 
-  Filter, 
-  ExternalLink,
-  CheckCircle2,
-  TrendingUp,
-  Cpu
-} from 'lucide-react';
+import { Search, ArrowRight } from 'lucide-react';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
 import Ticker from '../components/Ticker';
-import { projectsData, tickerItems, verifiedMetrics } from '../data/portfolioData';
+import { projectsData, tickerItems } from '../data/portfolioData';
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -23,10 +13,9 @@ export default function PortfolioPage() {
 
   const categories = [
     { label: 'All Projects', value: 'All' },
-    { label: 'Shopify Apps & Remix', value: 'apps' },
-    { label: 'Shopify Plus & Checkout', value: 'plus' },
     { label: 'Custom Themes & Liquid', value: 'themes' },
-    { label: 'Storefront Performance', value: 'speed' }
+    { label: 'Shopify Apps & Sync', value: 'apps' },
+    { label: 'Store Migrations', value: 'migration' }
   ];
 
   const filteredProjects = useMemo(() => {
@@ -50,93 +39,30 @@ export default function PortfolioPage() {
   return (
     <div className="portfolio-page-wrapper">
       {/* ============================================================== */}
-      {/* PORTFOLIO HERO BANNER                                         */}
+      {/* SIGNATURE SUBPAGE DARK HERO BANNER (PRIYA MATCH)               */}
       {/* ============================================================== */}
-      <section style={{
-        padding: '5rem 1.5rem 3.5rem',
-        background: 'radial-gradient(ellipse at 50% 0%, rgba(186, 154, 253, 0.2) 0%, rgba(25, 12, 57, 0) 70%), var(--color-bg)',
-        borderBottom: '1px solid var(--color-border)',
-        position: 'relative'
-      }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', textAlign: 'center' }}>
-          <span style={{
-            fontSize: '0.82rem',
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            letterSpacing: '0.12em',
-            color: 'var(--color-primary-lilac)',
-            display: 'inline-block',
-            marginBottom: '0.75rem',
-            background: 'rgba(186, 154, 253, 0.1)',
-            padding: '0.35rem 1rem',
-            borderRadius: '999px',
-            border: '1px solid rgba(186, 154, 253, 0.25)'
-          }}>
-            Verified Engineering Portfolio
-          </span>
-
-          <h1 style={{
-            fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
-            fontWeight: 800,
-            color: 'var(--color-white)',
-            lineHeight: 1.15,
-            marginBottom: '1.25rem',
-            letterSpacing: '-0.02em'
-          }}>
-            Selected <span className="gradient-text">Shopify Projects</span> & Case Studies
+      <section className="subpage-hero-banner">
+        <div className="container">
+          <span className="hero-category">WEBSITE PORTFOLIO</span>
+          <span className="hero-tagline">Latest and greatest work</span>
+          <h1 className="hero-headline">
+            Producing notable, high-converting e-commerce work requires more than just styling — it demands robust Liquid architecture, responsive speed, and checkout reliability.
           </h1>
-
-          <p style={{
-            fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
-            color: 'var(--color-text-muted)',
-            lineHeight: 1.6,
-            maxWidth: '680px',
-            margin: '0 auto 2.5rem'
-          }}>
-            Explore real-world implementations across custom Remix apps, Shopify Plus checkout delivery functions, bespoke Shopify 2.0 themes, and Core Web Vitals speed optimization.
-          </p>
-
-          {/* Quick Metrics Strip */}
-          <div style={{
-            display: 'inline-flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: '1.5rem',
-            padding: '1rem 2rem',
-            borderRadius: '16px',
-            background: 'rgba(25, 12, 57, 0.7)',
-            border: '1px solid rgba(186, 154, 253, 0.2)',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
-          }}>
-            {verifiedMetrics.map((m, idx) => (
-              <div key={idx} style={{ textAlign: 'center', padding: '0 0.75rem' }}>
-                <span style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-primary-lilac)', marginRight: '0.4rem' }}>
-                  {m.value}
-                </span>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
-                  {m.label}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* ============================================================== */}
-      {/* FILTER & SEARCH BAR                                           */}
+      {/* FILTER & SEARCH BAR ON CLEAN LIGHT BACKGROUND                  */}
       {/* ============================================================== */}
       <section style={{
-        padding: '2rem 1.5rem',
-        background: 'rgba(25, 12, 57, 0.4)',
-        borderBottom: '1px solid var(--color-border)',
+        padding: '1.75rem 1.5rem',
+        background: '#ffffff',
+        borderBottom: '1px solid #e5e7eb',
         position: 'sticky',
         top: '80px',
-        zIndex: 20,
-        backdropFilter: 'blur(12px)'
+        zIndex: 20
       }}>
         <div className="container" style={{
-          maxWidth: '1240px',
-          margin: '0 auto',
           display: 'flex',
           flexWrap: 'wrap',
           gap: '1.25rem',
@@ -155,22 +81,23 @@ export default function PortfolioPage() {
               return (
                 <button
                   key={cat.value}
+                  type="button"
                   onClick={() => setActiveCategory(cat.value)}
                   style={{
-                    padding: '0.5rem 1.1rem',
+                    padding: '0.5rem 1.15rem',
                     borderRadius: '999px',
                     fontSize: '0.85rem',
                     fontWeight: 600,
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
                     border: active 
-                      ? '1px solid var(--color-primary-lilac)' 
-                      : '1px solid rgba(255, 255, 255, 0.1)',
+                      ? '1px solid var(--color-deep-purple)' 
+                      : '1px solid #e2e8f0',
                     background: active 
-                      ? 'var(--color-primary-lilac)' 
-                      : 'rgba(25, 12, 57, 0.6)',
-                    color: active ? '#190c39' : 'var(--color-text-muted)',
-                    boxShadow: active ? '0 4px 15px rgba(186, 154, 253, 0.4)' : 'none'
+                      ? 'var(--color-lilac)' 
+                      : '#ffffff',
+                    color: 'var(--color-deep-purple)',
+                    boxShadow: active ? '0 4px 12px rgba(186, 154, 253, 0.35)' : 'none'
                   }}
                 >
                   {cat.label}
@@ -182,8 +109,8 @@ export default function PortfolioPage() {
           {/* Search Box */}
           <div style={{
             position: 'relative',
-            minWidth: '260px',
-            flex: '0 1 300px'
+            minWidth: '240px',
+            flex: '0 1 280px'
           }}>
             <Search 
               size={18} 
@@ -204,12 +131,11 @@ export default function PortfolioPage() {
                 width: '100%',
                 padding: '0.55rem 1rem 0.55rem 2.4rem',
                 borderRadius: '999px',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(186, 154, 253, 0.25)',
-                color: 'var(--color-white)',
+                background: '#f8f9fa',
+                border: '1px solid #cbd5e1',
+                color: 'var(--color-deep-purple)',
                 fontSize: '0.88rem',
-                outline: 'none',
-                transition: 'border-color 0.2s ease'
+                outline: 'none'
               }}
             />
           </div>
@@ -219,25 +145,26 @@ export default function PortfolioPage() {
       {/* ============================================================== */}
       {/* PROJECTS GRID                                                 */}
       {/* ============================================================== */}
-      <section className="section" style={{ background: 'var(--color-bg)', minHeight: '50vh' }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
+      <section className="section" style={{ background: '#fafafa', minHeight: '55vh' }}>
+        <div className="container">
           {filteredProjects.length === 0 ? (
             <div style={{
               textAlign: 'center',
               padding: '4rem 1rem',
-              background: 'rgba(25, 12, 57, 0.5)',
+              background: '#ffffff',
               borderRadius: '20px',
-              border: '1px dashed rgba(186, 154, 253, 0.3)'
+              border: '1px dashed #cbd5e1'
             }}>
-              <p style={{ fontSize: '1.2rem', color: 'var(--color-white)', marginBottom: '0.5rem' }}>
+              <p style={{ fontSize: '1.2rem', color: 'var(--color-deep-purple)', fontWeight: 700, marginBottom: '0.5rem' }}>
                 No projects matched your criteria
               </p>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
                 Try selecting a different category or clearing your search query.
               </p>
               <button 
+                type="button"
                 onClick={() => { setActiveCategory('All'); setSearchQuery(''); }}
-                className="btn btn-secondary"
+                className="btn btn-dark"
               >
                 Reset Filters
               </button>
@@ -260,29 +187,23 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Lilac Ticker */}
-      <Ticker items={tickerItems} variant="lilac" />
+      {/* Dark Ticker */}
+      <Ticker items={tickerItems} variant="dark" />
 
-      {/* ============================================================== */}
-      {/* BOTTOM INVITATION CTA                                         */}
-      {/* ============================================================== */}
-      <section className="section" style={{
-        background: 'linear-gradient(180deg, var(--color-bg) 0%, rgba(78, 24, 112, 0.2) 100%)',
-        textAlign: 'center',
-        padding: '5rem 1.5rem'
-      }}>
-        <div className="container" style={{ maxWidth: '780px', margin: '0 auto' }}>
+      {/* Conversion Banner */}
+      <section className="section section-light" style={{ textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '780px' }}>
           <h2 style={{
             fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
-            fontWeight: 800,
-            color: 'var(--color-white)',
+            fontWeight: 700,
+            color: 'var(--color-deep-purple)',
             marginBottom: '1rem'
           }}>
             Have a Specific Shopify Customization in Mind?
           </h2>
           <p style={{
             fontSize: '1.05rem',
-            color: 'var(--color-text-muted)',
+            color: 'var(--color-text-body)',
             lineHeight: 1.6,
             marginBottom: '2rem'
           }}>
@@ -290,11 +211,10 @@ export default function PortfolioPage() {
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
-            <Link to="/contactus" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              Let's Discuss Your Project <ArrowRight size={18} />
+            <Link to="/contactus" className="btn btn-dark">
+              Lets Talk <ArrowRight size={16} />
             </Link>
-            <Link to="/planner" className="btn btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Sparkles size={16} color="var(--color-primary-lilac)" />
+            <Link to="/planner" className="btn btn-lilac">
               Use Project Planner
             </Link>
           </div>

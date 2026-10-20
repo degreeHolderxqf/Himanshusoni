@@ -12,6 +12,8 @@ import PlannerPage from './pages/PlannerPage';
 import ContactPage from './pages/ContactPage';
 import ServicesPage from './pages/ServicesPage';
 
+import WhatsAppButton from './components/WhatsAppButton';
+
 export default function App() {
   return (
     <Router>
@@ -56,6 +58,7 @@ export default function App() {
         </main>
 
         <Footer />
+        <WhatsAppButton />
       </div>
     </Router>
   );

@@ -1,25 +1,14 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { 
-  Sparkles, 
+  CheckCircle2, 
   ArrowRight, 
   ArrowLeft, 
-  CheckCircle2, 
-  Layers, 
-  Zap, 
-  Cpu, 
-  DollarSign, 
-  Calendar, 
-  Mail, 
-  Phone, 
-  Building, 
-  Globe, 
-  Send,
-  Copy,
-  Check
+  Send, 
+  Copy, 
+  Check 
 } from 'lucide-react';
 import Ticker from '../components/Ticker';
-import { tickerItems, personalInfo } from '../data/portfolioData';
+import { personalInfo, tickerItems } from '../data/portfolioData';
 
 export default function PlannerPage() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -27,7 +16,6 @@ export default function PlannerPage() {
   const [copied, setCopied] = useState(false);
   const [errors, setErrors] = useState({});
 
-  // Form State
   const [formData, setFormData] = useState({
     projectType: 'Shopify Plus & Checkout Customization',
     currentUrl: '',
@@ -127,14 +115,14 @@ export default function PlannerPage() {
 
   const nextStep = () => {
     if (validateStep(currentStep)) {
-      setCurrentStep((prev) => Math.min(prev + 1, 6));
-      window.scrollTo({ top: 300, behavior: 'smooth' });
+      setCurrentStep((prev) => Math.min(prev + 1, 5));
+      window.scrollTo({ top: 350, behavior: 'smooth' });
     }
   };
 
   const prevStep = () => {
     setCurrentStep((prev) => Math.max(prev - 1, 1));
-    window.scrollTo({ top: 300, behavior: 'smooth' });
+    window.scrollTo({ top: 350, behavior: 'smooth' });
   };
 
   const handleSubmit = (e) => {
@@ -168,8 +156,6 @@ I completed your Shopify Project Planner with the following details:
 
 --- ADDITIONAL NOTES ---
 ${formData.notes || 'None'}
-
-Looking forward to your technical response.
     `);
     return `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
   };
@@ -177,15 +163,13 @@ Looking forward to your technical response.
   const copySummary = () => {
     const summaryText = `
 Shopify Project Inquiry for Himanshu Soni
------------------------------------------
 Type: ${formData.projectType}
 Website: ${formData.currentUrl || 'N/A'}
-Store Age: ${formData.storeAge}
 Goals: ${formData.primaryGoals.join(', ')}
 Features: ${formData.requiredFeatures.join(', ')}
 Budget: ${formData.budgetRange}
 Timeline: ${formData.timeline}
-Client: ${formData.clientName} (${formData.clientEmail}, ${formData.clientPhone || 'No phone'})
+Client: ${formData.clientName} (${formData.clientEmail}, ${formData.clientPhone || 'N/A'})
 Company: ${formData.companyName || 'N/A'}
 Notes: ${formData.notes || 'N/A'}
     `.trim();
@@ -198,68 +182,31 @@ Notes: ${formData.notes || 'N/A'}
   return (
     <div className="planner-page-wrapper">
       {/* ============================================================== */}
-      {/* PLANNER HERO BANNER                                           */}
+      {/* SIGNATURE SUBPAGE DARK HERO BANNER (PRIYA MATCH)               */}
       {/* ============================================================== */}
-      <section style={{
-        padding: '5rem 1.5rem 3.5rem',
-        background: 'radial-gradient(ellipse at 50% 0%, rgba(186, 154, 253, 0.2) 0%, rgba(25, 12, 57, 0) 70%), var(--color-bg)',
-        borderBottom: '1px solid var(--color-border)',
-        position: 'relative'
-      }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', textAlign: 'center' }}>
-          <span style={{
-            fontSize: '0.82rem',
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            letterSpacing: '0.12em',
-            color: 'var(--color-primary-lilac)',
-            display: 'inline-block',
-            marginBottom: '0.75rem',
-            background: 'rgba(186, 154, 253, 0.1)',
-            padding: '0.35rem 1rem',
-            borderRadius: '999px',
-            border: '1px solid rgba(186, 154, 253, 0.25)'
-          }}>
-            Interactive Project Builder
-          </span>
-
-          <h1 style={{
-            fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
-            fontWeight: 800,
-            color: 'var(--color-white)',
-            lineHeight: 1.15,
-            marginBottom: '1.25rem',
-            letterSpacing: '-0.02em'
-          }}>
-            Shopify <span className="gradient-text">Project Planner</span>
+      <section className="subpage-hero-banner">
+        <div className="container">
+          <span className="hero-category">PROJECT PLANNER</span>
+          <span className="hero-tagline">Let's make something great together.</span>
+          <h1 className="hero-headline">
+            Thank you for your interest in working with us. Getting started is easy, just fill in the details below and we’ll get back to you within one working day. How exciting!
           </h1>
-
-          <p style={{
-            fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
-            color: 'var(--color-text-muted)',
-            lineHeight: 1.6,
-            maxWidth: '680px',
-            margin: '0 auto'
-          }}>
-            Plan your store scope, technical specifications, and milestones in 5 structured steps. Receive a comprehensive technical proposal and implementation roadmap.
-          </p>
         </div>
       </section>
 
       {/* ============================================================== */}
-      {/* INTERACTIVE WIZARD SECTION                                     */}
+      {/* WIZARD CONTAINER ON CLEAN LIGHT BACKGROUND                     */}
       {/* ============================================================== */}
-      <section className="section" style={{ background: 'var(--color-bg)', minHeight: '60vh' }}>
-        <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
+      <section className="section" style={{ background: '#fafafa', minHeight: '60vh' }}>
+        <div className="container" style={{ maxWidth: '880px' }}>
           
           {!submitted ? (
             <div style={{
-              background: 'rgba(25, 12, 57, 0.75)',
-              backdropFilter: 'blur(16px)',
+              background: '#ffffff',
               borderRadius: '24px',
-              border: '1px solid rgba(186, 154, 253, 0.3)',
+              border: '1px solid rgba(0, 0, 0, 0.08)',
               padding: '2.5rem',
-              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.5)'
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.04)'
             }}>
               {/* Stepper Progress Bar */}
               <div style={{ marginBottom: '2.5rem' }}>
@@ -267,9 +214,9 @@ Notes: ${formData.notes || 'N/A'}
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  marginBottom: '1rem'
+                  marginBottom: '0.85rem'
                 }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-primary-lilac)', textTransform: 'uppercase' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--color-deep-purple)', textTransform: 'uppercase' }}>
                     Step 0{currentStep} of 05
                   </span>
                   <span style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>
@@ -281,38 +228,32 @@ Notes: ${formData.notes || 'N/A'}
                   </span>
                 </div>
 
-                {/* Progress Line */}
                 <div style={{
                   height: '6px',
-                  background: 'rgba(255, 255, 255, 0.08)',
+                  background: '#e2e8f0',
                   borderRadius: '999px',
                   overflow: 'hidden'
                 }}>
                   <div style={{
                     height: '100%',
                     width: `${(currentStep / 5) * 100}%`,
-                    background: 'linear-gradient(90deg, var(--color-primary-lilac) 0%, #ba9afd 100%)',
+                    background: 'var(--color-deep-purple)',
                     transition: 'width 0.3s ease'
                   }} />
                 </div>
               </div>
 
-              {/* ================= STEP 1: PROJECT TYPE ================= */}
+              {/* Step 1: Project Type */}
               {currentStep === 1 && (
                 <div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '0.5rem' }}>
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
                     What kind of Shopify project are you planning?
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
-                    Select the primary engineering category that best describes your needs.
+                  <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', marginBottom: '1.75rem' }}>
+                    Select the primary engineering category that best describes your store requirements.
                   </p>
 
-                  <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                    gap: '1rem',
-                    marginBottom: '2rem'
-                  }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                     {projectTypes.map((pt, idx) => {
                       const isSelected = formData.projectType === pt.title;
                       return (
@@ -322,8 +263,8 @@ Notes: ${formData.notes || 'N/A'}
                           style={{
                             padding: '1.25rem',
                             borderRadius: '16px',
-                            background: isSelected ? 'rgba(186, 154, 253, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-                            border: `1px solid ${isSelected ? 'var(--color-primary-lilac)' : 'rgba(255, 255, 255, 0.1)'}`,
+                            background: isSelected ? 'rgba(186, 154, 253, 0.12)' : '#ffffff',
+                            border: `1.5px solid ${isSelected ? 'var(--color-deep-purple)' : '#e2e8f0'}`,
                             cursor: 'pointer',
                             transition: 'all 0.2s ease',
                             display: 'flex',
@@ -332,12 +273,12 @@ Notes: ${formData.notes || 'N/A'}
                           }}
                         >
                           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                            <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', margin: 0 }}>
+                            <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-deep-purple)', margin: 0 }}>
                               {pt.title}
                             </h4>
-                            {isSelected && <CheckCircle2 size={18} color="var(--color-primary-lilac)" />}
+                            {isSelected && <CheckCircle2 size={18} color="var(--color-deep-purple)" />}
                           </div>
-                          <p style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.4 }}>
+                          <p style={{ fontSize: '0.82rem', color: 'var(--color-text-body)', margin: 0, lineHeight: 1.45 }}>
                             {pt.desc}
                           </p>
                         </div>
@@ -347,19 +288,18 @@ Notes: ${formData.notes || 'N/A'}
                 </div>
               )}
 
-              {/* ================= STEP 2: GOALS & STORE CONTEXT ================= */}
+              {/* Step 2: Goals & Store Context */}
               {currentStep === 2 && (
                 <div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '0.5rem' }}>
-                    Store Context & Business Objectives
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
+                    Store Context &amp; Business Objectives
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', marginBottom: '1.75rem' }}>
                     Tell me about your existing store and what metrics you aim to move.
                   </p>
 
-                  {/* URL Input */}
                   <div style={{ marginBottom: '1.5rem' }}>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>
+                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
                       Current Website URL (Optional if starting new)
                     </label>
                     <input 
@@ -371,17 +311,16 @@ Notes: ${formData.notes || 'N/A'}
                         width: '100%',
                         padding: '0.75rem 1rem',
                         borderRadius: '10px',
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        border: '1px solid rgba(186, 154, 253, 0.25)',
-                        color: '#fff',
+                        background: '#f8f9fa',
+                        border: '1px solid #cbd5e1',
+                        color: 'var(--color-deep-purple)',
                         outline: 'none'
                       }}
                     />
                   </div>
 
-                  {/* Store Age */}
                   <div style={{ marginBottom: '1.5rem' }}>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>
+                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
                       Store Maturity
                     </label>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
@@ -393,9 +332,9 @@ Notes: ${formData.notes || 'N/A'}
                           style={{
                             padding: '0.5rem 1rem',
                             borderRadius: '999px',
-                            background: formData.storeAge === age ? 'var(--color-primary-lilac)' : 'rgba(255, 255, 255, 0.05)',
-                            color: formData.storeAge === age ? '#190c39' : '#fff',
-                            border: '1px solid rgba(186, 154, 253, 0.3)',
+                            background: formData.storeAge === age ? 'var(--color-lilac)' : '#ffffff',
+                            color: 'var(--color-deep-purple)',
+                            border: `1px solid ${formData.storeAge === age ? 'var(--color-deep-purple)' : '#e2e8f0'}`,
                             fontSize: '0.85rem',
                             fontWeight: 600,
                             cursor: 'pointer'
@@ -407,16 +346,11 @@ Notes: ${formData.notes || 'N/A'}
                     </div>
                   </div>
 
-                  {/* Primary Goals Checkboxes */}
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>
+                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
                       Main Business Goals (Select all that apply)
                     </label>
-                    {errors.primaryGoals && (
-                      <span style={{ color: '#f87171', fontSize: '0.8rem', display: 'block', marginBottom: '0.5rem' }}>
-                        {errors.primaryGoals}
-                      </span>
-                    )}
+                    {errors.primaryGoals && <span style={{ color: '#dc2626', fontSize: '0.8rem', display: 'block', marginBottom: '0.5rem' }}>{errors.primaryGoals}</span>}
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem' }}>
                       {goalOptions.map((goal) => {
                         const active = formData.primaryGoals.includes(goal);
@@ -427,18 +361,18 @@ Notes: ${formData.notes || 'N/A'}
                             style={{
                               padding: '0.85rem 1rem',
                               borderRadius: '10px',
-                              background: active ? 'rgba(186, 154, 253, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-                              border: `1px solid ${active ? 'var(--color-primary-lilac)' : 'rgba(255, 255, 255, 0.1)'}`,
+                              background: active ? 'rgba(186, 154, 253, 0.12)' : '#ffffff',
+                              border: `1.5px solid ${active ? 'var(--color-deep-purple)' : '#e2e8f0'}`,
                               cursor: 'pointer',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'space-between',
                               fontSize: '0.88rem',
-                              color: '#fff'
+                              color: 'var(--color-deep-purple)'
                             }}
                           >
                             <span>{goal}</span>
-                            {active && <CheckCircle2 size={16} color="var(--color-primary-lilac)" />}
+                            {active && <CheckCircle2 size={16} color="var(--color-deep-purple)" />}
                           </div>
                         );
                       })}
@@ -447,13 +381,13 @@ Notes: ${formData.notes || 'N/A'}
                 </div>
               )}
 
-              {/* ================= STEP 3: REQUIRED FEATURES ================= */}
+              {/* Step 3: Required Features */}
               {currentStep === 3 && (
                 <div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '0.5rem' }}>
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
                     Required Technical Capabilities
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', marginBottom: '1.75rem' }}>
                     Choose the specific Shopify technologies and custom modules your project will require.
                   </p>
 
@@ -467,18 +401,18 @@ Notes: ${formData.notes || 'N/A'}
                           style={{
                             padding: '0.85rem 1rem',
                             borderRadius: '10px',
-                            background: active ? 'rgba(186, 154, 253, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-                            border: `1px solid ${active ? 'var(--color-primary-lilac)' : 'rgba(255, 255, 255, 0.1)'}`,
+                            background: active ? 'rgba(186, 154, 253, 0.12)' : '#ffffff',
+                            border: `1.5px solid ${active ? 'var(--color-deep-purple)' : '#e2e8f0'}`,
                             cursor: 'pointer',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
                             fontSize: '0.88rem',
-                            color: '#fff'
+                            color: 'var(--color-deep-purple)'
                           }}
                         >
                           <span>{feat}</span>
-                          {active && <CheckCircle2 size={16} color="var(--color-primary-lilac)" />}
+                          {active && <CheckCircle2 size={16} color="var(--color-deep-purple)" />}
                         </div>
                       );
                     })}
@@ -486,18 +420,18 @@ Notes: ${formData.notes || 'N/A'}
                 </div>
               )}
 
-              {/* ================= STEP 4: BUDGET & TIMELINE ================= */}
+              {/* Step 4: Budget & Timeline */}
               {currentStep === 4 && (
                 <div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '0.5rem' }}>
-                    Budget & Expected Timeline
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
+                    Budget &amp; Expected Timeline
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', marginBottom: '1.75rem' }}>
                     Help me understand your investment allocation and launch urgency to tailor the architecture.
                   </p>
 
                   <div style={{ marginBottom: '2rem' }}>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.75rem' }}>
+                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.75rem' }}>
                       Estimated Budget Range
                     </label>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem' }}>
@@ -510,19 +444,19 @@ Notes: ${formData.notes || 'N/A'}
                             style={{
                               padding: '1rem',
                               borderRadius: '12px',
-                              background: active ? 'rgba(186, 154, 253, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-                              border: `1px solid ${active ? 'var(--color-primary-lilac)' : 'rgba(255, 255, 255, 0.1)'}`,
+                              background: active ? 'rgba(186, 154, 253, 0.12)' : '#ffffff',
+                              border: `1.5px solid ${active ? 'var(--color-deep-purple)' : '#e2e8f0'}`,
                               cursor: 'pointer',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'space-between',
                               fontSize: '0.9rem',
                               fontWeight: 600,
-                              color: '#fff'
+                              color: 'var(--color-deep-purple)'
                             }}
                           >
                             <span>{b}</span>
-                            {active && <CheckCircle2 size={16} color="var(--color-primary-lilac)" />}
+                            {active && <CheckCircle2 size={16} color="var(--color-deep-purple)" />}
                           </div>
                         );
                       })}
@@ -530,7 +464,7 @@ Notes: ${formData.notes || 'N/A'}
                   </div>
 
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.75rem' }}>
+                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.75rem' }}>
                       Target Delivery Schedule
                     </label>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
@@ -543,18 +477,18 @@ Notes: ${formData.notes || 'N/A'}
                             style={{
                               padding: '0.85rem',
                               borderRadius: '10px',
-                              background: active ? 'rgba(186, 154, 253, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-                              border: `1px solid ${active ? 'var(--color-primary-lilac)' : 'rgba(255, 255, 255, 0.1)'}`,
+                              background: active ? 'rgba(186, 154, 253, 0.12)' : '#ffffff',
+                              border: `1.5px solid ${active ? 'var(--color-deep-purple)' : '#e2e8f0'}`,
                               cursor: 'pointer',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'space-between',
                               fontSize: '0.88rem',
-                              color: '#fff'
+                              color: 'var(--color-deep-purple)'
                             }}
                           >
                             <span>{t}</span>
-                            {active && <CheckCircle2 size={16} color="var(--color-primary-lilac)" />}
+                            {active && <CheckCircle2 size={16} color="var(--color-deep-purple)" />}
                           </div>
                         );
                       })}
@@ -563,24 +497,19 @@ Notes: ${formData.notes || 'N/A'}
                 </div>
               )}
 
-              {/* ================= STEP 5: CONTACT & REVIEW ================= */}
+              {/* Step 5: Contact & Review */}
               {currentStep === 5 && (
                 <div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '0.5rem' }}>
-                    Contact Details & Inquiry Review
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
+                    Contact Details &amp; Inquiry Review
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', marginBottom: '1.75rem' }}>
                     Where should I send the technical breakdown and proposal?
                   </p>
 
-                  <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                    gap: '1rem',
-                    marginBottom: '1.5rem'
-                  }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
                     <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
+                      <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                         Your Full Name *
                       </label>
                       <input 
@@ -592,17 +521,17 @@ Notes: ${formData.notes || 'N/A'}
                           width: '100%',
                           padding: '0.75rem 1rem',
                           borderRadius: '10px',
-                          background: 'rgba(255, 255, 255, 0.05)',
-                          border: `1px solid ${errors.clientName ? '#f87171' : 'rgba(186, 154, 253, 0.25)'}`,
-                          color: '#fff',
+                          background: '#f8f9fa',
+                          border: `1px solid ${errors.clientName ? '#dc2626' : '#cbd5e1'}`,
+                          color: 'var(--color-deep-purple)',
                           outline: 'none'
                         }}
                       />
-                      {errors.clientName && <span style={{ color: '#f87171', fontSize: '0.78rem' }}>{errors.clientName}</span>}
+                      {errors.clientName && <span style={{ color: '#dc2626', fontSize: '0.78rem' }}>{errors.clientName}</span>}
                     </div>
 
                     <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
+                      <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                         Your Email Address *
                       </label>
                       <input 
@@ -614,17 +543,17 @@ Notes: ${formData.notes || 'N/A'}
                           width: '100%',
                           padding: '0.75rem 1rem',
                           borderRadius: '10px',
-                          background: 'rgba(255, 255, 255, 0.05)',
-                          border: `1px solid ${errors.clientEmail ? '#f87171' : 'rgba(186, 154, 253, 0.25)'}`,
-                          color: '#fff',
+                          background: '#f8f9fa',
+                          border: `1px solid ${errors.clientEmail ? '#dc2626' : '#cbd5e1'}`,
+                          color: 'var(--color-deep-purple)',
                           outline: 'none'
                         }}
                       />
-                      {errors.clientEmail && <span style={{ color: '#f87171', fontSize: '0.78rem' }}>{errors.clientEmail}</span>}
+                      {errors.clientEmail && <span style={{ color: '#dc2626', fontSize: '0.78rem' }}>{errors.clientEmail}</span>}
                     </div>
 
                     <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
+                      <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                         Phone / WhatsApp (Optional)
                       </label>
                       <input 
@@ -636,30 +565,30 @@ Notes: ${formData.notes || 'N/A'}
                           width: '100%',
                           padding: '0.75rem 1rem',
                           borderRadius: '10px',
-                          background: 'rgba(255, 255, 255, 0.05)',
-                          border: '1px solid rgba(186, 154, 253, 0.25)',
-                          color: '#fff',
+                          background: '#f8f9fa',
+                          border: '1px solid #cbd5e1',
+                          color: 'var(--color-deep-purple)',
                           outline: 'none'
                         }}
                       />
                     </div>
 
                     <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
-                        Company / Brand Name
+                      <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
+                        Company / Store Name
                       </label>
                       <input 
                         type="text"
-                        placeholder="Acme Apparel Co."
+                        placeholder="Acme Apparel"
                         value={formData.companyName}
                         onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                         style={{
                           width: '100%',
                           padding: '0.75rem 1rem',
                           borderRadius: '10px',
-                          background: 'rgba(255, 255, 255, 0.05)',
-                          border: '1px solid rgba(186, 154, 253, 0.25)',
-                          color: '#fff',
+                          background: '#f8f9fa',
+                          border: '1px solid #cbd5e1',
+                          color: 'var(--color-deep-purple)',
                           outline: 'none'
                         }}
                       />
@@ -667,8 +596,8 @@ Notes: ${formData.notes || 'N/A'}
                   </div>
 
                   <div style={{ marginBottom: '1.5rem' }}>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
-                      Additional Scope Notes or Specific Edge Cases
+                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
+                      Additional Scope Notes or Requirements
                     </label>
                     <textarea 
                       rows={3}
@@ -679,9 +608,9 @@ Notes: ${formData.notes || 'N/A'}
                         width: '100%',
                         padding: '0.75rem 1rem',
                         borderRadius: '10px',
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        border: '1px solid rgba(186, 154, 253, 0.25)',
-                        color: '#fff',
+                        background: '#f8f9fa',
+                        border: '1px solid #cbd5e1',
+                        color: 'var(--color-deep-purple)',
                         outline: 'none',
                         resize: 'vertical'
                       }}
@@ -692,14 +621,14 @@ Notes: ${formData.notes || 'N/A'}
                   <div style={{
                     padding: '1.25rem',
                     borderRadius: '14px',
-                    background: 'rgba(15, 6, 32, 0.6)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    background: '#f8f9fa',
+                    border: '1px solid #e2e8f0',
                     marginBottom: '1.5rem'
                   }}>
-                    <h4 style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-primary-lilac)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                    <h4 style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
                       Summary of Your Plan
                     </h4>
-                    <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.5rem' }}>
+                    <div style={{ fontSize: '0.88rem', color: 'var(--color-text-body)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.5rem' }}>
                       <div><strong>Type:</strong> {formData.projectType}</div>
                       <div><strong>Budget:</strong> {formData.budgetRange}</div>
                       <div><strong>Timeline:</strong> {formData.timeline}</div>
@@ -709,21 +638,21 @@ Notes: ${formData.notes || 'N/A'}
                 </div>
               )}
 
-              {/* Navigation Controls (Back / Next / Submit) */}
+              {/* Navigation Controls */}
               <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 marginTop: '2rem',
                 paddingTop: '1.5rem',
-                borderTop: '1px solid rgba(255, 255, 255, 0.08)'
+                borderTop: '1px solid #eef0f3'
               }}>
                 {currentStep > 1 ? (
                   <button
                     type="button"
                     onClick={prevStep}
-                    className="btn btn-secondary"
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.65rem 1.25rem' }}
+                    className="btn btn-outline"
+                    style={{ padding: '0.65rem 1.25rem' }}
                   >
                     <ArrowLeft size={16} /> Back
                   </button>
@@ -735,8 +664,8 @@ Notes: ${formData.notes || 'N/A'}
                   <button
                     type="button"
                     onClick={nextStep}
-                    className="btn btn-primary"
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.65rem 1.5rem' }}
+                    className="btn btn-dark"
+                    style={{ padding: '0.65rem 1.6rem' }}
                   >
                     Continue <ArrowRight size={16} />
                   </button>
@@ -744,30 +673,29 @@ Notes: ${formData.notes || 'N/A'}
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    className="btn btn-primary"
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.75rem', fontSize: '1rem' }}
+                    className="btn btn-dark"
+                    style={{ padding: '0.75rem 1.85rem', fontSize: '1rem' }}
                   >
-                    Review & Complete Plan <CheckCircle2 size={18} />
+                    Review &amp; Complete Plan <CheckCircle2 size={18} />
                   </button>
                 )}
               </div>
             </div>
           ) : (
-            /* SUBMISSION CONFIRMATION SCREEN */
+            /* Submission Confirmation Screen */
             <div style={{
-              background: 'rgba(25, 12, 57, 0.8)',
-              backdropFilter: 'blur(16px)',
+              background: '#ffffff',
               borderRadius: '24px',
-              border: '1px solid rgba(16, 185, 129, 0.4)',
+              border: '1.5px solid #10b981',
               padding: '3.5rem 2.5rem',
               textAlign: 'center',
-              boxShadow: '0 25px 60px rgba(0,0,0,0.5)'
+              boxShadow: '0 15px 40px rgba(0,0,0,0.05)'
             }}>
               <div style={{
                 width: '64px',
                 height: '64px',
                 borderRadius: '50%',
-                background: 'rgba(16, 185, 129, 0.2)',
+                background: 'rgba(16, 185, 129, 0.15)',
                 border: '1px solid #10b981',
                 display: 'flex',
                 alignItems: 'center',
@@ -778,20 +706,19 @@ Notes: ${formData.notes || 'N/A'}
                 <CheckCircle2 size={36} />
               </div>
 
-              <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '0.75rem' }}>
                 Your Project Plan is Ready!
               </h2>
 
-              <p style={{ fontSize: '1rem', color: 'var(--color-text-muted)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto 2rem' }}>
-                Thank you, <strong style={{ color: '#fff' }}>{formData.clientName}</strong>. Your requirement specifications for <strong style={{ color: 'var(--color-primary-lilac)' }}>{formData.projectType}</strong> have been compiled.
+              <p style={{ fontSize: '1rem', color: 'var(--color-text-body)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto 2rem' }}>
+                Thank you, <strong style={{ color: 'var(--color-deep-purple)' }}>{formData.clientName}</strong>. Your project specifications for <strong style={{ color: 'var(--color-plum)' }}>{formData.projectType}</strong> have been formatted.
               </p>
 
-              {/* Action Buttons: Direct Email Launch & Copy Summary */}
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
                 <a 
                   href={generateMailto()}
-                  className="btn btn-primary"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 1.75rem' }}
+                  className="btn btn-dark"
+                  style={{ padding: '0.85rem 1.85rem' }}
                 >
                   <Send size={18} /> Send Plan to Himanshu Soni
                 </a>
@@ -799,33 +726,32 @@ Notes: ${formData.notes || 'N/A'}
                 <button
                   type="button"
                   onClick={copySummary}
-                  className="btn btn-secondary"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 1.5rem' }}
+                  className="btn btn-lilac"
+                  style={{ padding: '0.85rem 1.5rem' }}
                 >
                   {copied ? <Check size={18} color="#10b981" /> : <Copy size={18} />}
                   {copied ? 'Summary Copied!' : 'Copy Plan to Clipboard'}
                 </button>
               </div>
 
-              {/* Technical Direct Contact Details */}
               <div style={{
                 display: 'inline-flex',
                 flexDirection: 'column',
                 gap: '0.5rem',
                 padding: '1.25rem 2rem',
-                background: 'rgba(255, 255, 255, 0.03)',
+                background: '#fafafa',
                 borderRadius: '16px',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                border: '1px solid #e5e7eb',
                 textAlign: 'left'
               }}>
                 <div style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)' }}>
                   Direct Contact Information:
                 </div>
-                <div style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>
-                  Email: <span style={{ color: 'var(--color-primary-lilac)' }}>{personalInfo.email}</span>
+                <div style={{ fontSize: '0.9rem', color: 'var(--color-deep-purple)', fontWeight: 600 }}>
+                  Email: <span>{personalInfo.email}</span>
                 </div>
-                <div style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>
-                  Phone / WhatsApp: <span style={{ color: 'var(--color-primary-lilac)' }}>{personalInfo.phone}</span>
+                <div style={{ fontSize: '0.9rem', color: 'var(--color-deep-purple)', fontWeight: 600 }}>
+                  Phone / WhatsApp: <span>{personalInfo.phone}</span>
                 </div>
               </div>
 
@@ -850,8 +776,8 @@ Notes: ${formData.notes || 'N/A'}
         </div>
       </section>
 
-      {/* Lilac Ticker */}
-      <Ticker items={tickerItems} variant="lilac" />
+      {/* Dark Ticker */}
+      <Ticker items={tickerItems} variant="dark" />
     </div>
   );
 }

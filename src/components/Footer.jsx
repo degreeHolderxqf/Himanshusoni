@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ExternalLink, ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import Ticker from './Ticker';
 import { personalInfo } from '../data/portfolioData';
@@ -22,212 +21,188 @@ export default function Footer() {
   return (
     <footer style={{ background: '#190c39', color: '#ffffff', position: 'relative' }}>
       {/* Top Lilac Marquee Ticker */}
-      <Ticker theme="lilac" customItems={footerTickerItems} speed="28s" />
+      <Ticker variant="lilac" items={footerTickerItems} speed="24s" />
 
       {/* Main Footer Content */}
       <div className="container" style={{ paddingTop: '4.5rem', paddingBottom: '3.5rem' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '3rem',
-            marginBottom: '4rem'
-          }}
-        >
-          {/* Column 1: Direct Identity & Contact */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '3rem',
+          marginBottom: '3.5rem'
+        }}>
+          {/* Column 1: Identity & Bio */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-              <div
+            <div className="brand-text-logo" style={{ color: '#ffffff', marginBottom: '1.25rem' }}>
+              <span>HIMANSHU</span>
+              <span style={{ color: '#ba9afd' }}>SONI</span>
+            </div>
+            <p style={{ color: '#b3b3b3', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+              Independent Freelance Shopify Expert with 8+ years of experience building high-converting Shopify Plus storefronts, custom Remix applications, and Core Web Vitals speed optimization.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              <a 
+                href={`mailto:${personalInfo.email}`}
                 style={{
-                  width: '42px',
-                  height: '42px',
-                  borderRadius: '12px',
-                  background: 'rgba(186, 154, 253, 0.15)',
-                  border: '1px solid #ba9afd',
-                  color: '#ba9afd',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 800,
-                  fontSize: '1.1rem'
+                  gap: '0.65rem',
+                  color: '#ffffff',
+                  fontSize: '0.88rem',
+                  textDecoration: 'none'
                 }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#ffffff'; }}
               >
-                HS
-              </div>
-              <div>
-                <h3 style={{ color: '#ffffff', fontSize: '1.25rem', fontWeight: 700, margin: 0 }}>
-                  {personalInfo.name}
-                </h3>
-                <p style={{ color: '#ba9afd', fontSize: '0.85rem', fontWeight: 500, margin: 0 }}>
-                  Shopify Developer &amp; Plus Specialist
-                </p>
-              </div>
-            </div>
-
-            <p style={{ color: '#c5b8df', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              Specialized in high-conversion Shopify Plus storefronts, custom Remix apps, and edge checkout logic with 3+ years of verifiable results.
-            </p>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-              <a
-                href={`mailto:${personalInfo.email}`}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#ffffff', fontSize: '0.92rem', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => e.currentTarget.style.color = '#ba9afd'}
-                onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}
-              >
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ba9afd' }}>
-                  <Mail size={16} />
-                </div>
-                {personalInfo.email}
+                <Mail size={16} color="#ba9afd" />
+                <span>{personalInfo.email}</span>
               </a>
-
-              <a
-                href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#ffffff', fontSize: '0.92rem', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => e.currentTarget.style.color = '#ba9afd'}
-                onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}
+              <a 
+                href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, '')}`}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.65rem',
+                  color: '#ffffff',
+                  fontSize: '0.88rem',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#ffffff'; }}
               >
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ba9afd' }}>
-                  <Phone size={16} />
-                </div>
-                {personalInfo.phone}
+                <Phone size={16} color="#10b981" />
+                <span>{personalInfo.phone}</span>
               </a>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#c5b8df', fontSize: '0.92rem' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ba9afd' }}>
-                  <MapPin size={16} />
-                </div>
-                {personalInfo.location}
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.65rem',
+                color: '#b3b3b3',
+                fontSize: '0.88rem'
+              }}>
+                <MapPin size={16} color="#ba9afd" />
+                <span>Indore / Dewas, MP, India</span>
               </div>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Navigation Links */}
           <div>
-            <h4 style={{ color: '#ffffff', fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.5rem', letterSpacing: '0.5px' }}>
-              Navigation
+            <h4 style={{
+              color: '#ffffff',
+              fontSize: '1.1rem',
+              fontWeight: 700,
+              marginBottom: '1.5rem',
+              borderBottom: '2px solid #ba9afd',
+              paddingBottom: '0.5rem',
+              display: 'inline-block'
+            }}>
+              Quick Navigation
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li>
-                <Link to="/" style={{ color: '#c5b8df', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#ba9afd'} onMouseLeave={(e) => e.target.style.color = '#c5b8df'}>
+                <Link to="/" style={{ color: '#dddddd', fontSize: '0.92rem' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }} onMouseLeave={(e) => { e.currentTarget.style.color = '#dddddd'; }}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/website-portfolio" style={{ color: '#c5b8df', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#ba9afd'} onMouseLeave={(e) => e.target.style.color = '#c5b8df'}>
+                <Link to="/website-portfolio" style={{ color: '#dddddd', fontSize: '0.92rem' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }} onMouseLeave={(e) => { e.currentTarget.style.color = '#dddddd'; }}>
                   Website Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/services" style={{ color: '#c5b8df', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#ba9afd'} onMouseLeave={(e) => e.target.style.color = '#c5b8df'}>
+                <Link to="/services" style={{ color: '#dddddd', fontSize: '0.92rem' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }} onMouseLeave={(e) => { e.currentTarget.style.color = '#dddddd'; }}>
                   Shopify Services
                 </Link>
               </li>
               <li>
-                <Link to="/approach" style={{ color: '#c5b8df', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#ba9afd'} onMouseLeave={(e) => e.target.style.color = '#c5b8df'}>
-                  Development Approach
+                <Link to="/approach" style={{ color: '#dddddd', fontSize: '0.92rem' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }} onMouseLeave={(e) => { e.currentTarget.style.color = '#dddddd'; }}>
+                  6-Phase Approach
                 </Link>
               </li>
               <li>
-                <Link to="/aboutus" style={{ color: '#c5b8df', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#ba9afd'} onMouseLeave={(e) => e.target.style.color = '#c5b8df'}>
-                  About Me &amp; Background
+                <Link to="/aboutus" style={{ color: '#dddddd', fontSize: '0.92rem' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }} onMouseLeave={(e) => { e.currentTarget.style.color = '#dddddd'; }}>
+                  About Himanshu
                 </Link>
               </li>
               <li>
-                <Link to="/planner" style={{ color: '#c5b8df', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#ba9afd'} onMouseLeave={(e) => e.target.style.color = '#c5b8df'}>
+                <Link to="/planner" style={{ color: '#dddddd', fontSize: '0.92rem' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }} onMouseLeave={(e) => { e.currentTarget.style.color = '#dddddd'; }}>
                   Project Planner
                 </Link>
               </li>
               <li>
-                <Link to="/contactus" style={{ color: '#c5b8df', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#ba9afd'} onMouseLeave={(e) => e.target.style.color = '#c5b8df'}>
-                  Contact Us
+                <Link to="/contactus" style={{ color: '#dddddd', fontSize: '0.92rem' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }} onMouseLeave={(e) => { e.currentTarget.style.color = '#dddddd'; }}>
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Specialized Capabilities */}
+          {/* Column 3: Shopify Specializations */}
           <div>
-            <h4 style={{ color: '#ffffff', fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.5rem', letterSpacing: '0.5px' }}>
-              Specializations
+            <h4 style={{
+              color: '#ffffff',
+              fontSize: '1.1rem',
+              fontWeight: 700,
+              marginBottom: '1.5rem',
+              borderBottom: '2px solid #ba9afd',
+              paddingBottom: '0.5rem',
+              display: 'inline-block'
+            }}>
+              Capabilities
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <li style={{ color: '#c5b8df', fontSize: '0.92rem' }}>
-                Shopify Plus Checkout Extensibility
-              </li>
-              <li style={{ color: '#c5b8df', fontSize: '0.92rem' }}>
-                Shopify Functions (Delivery &amp; Payment)
-              </li>
-              <li style={{ color: '#c5b8df', fontSize: '0.92rem' }}>
-                Remix &amp; GraphQL Custom Apps
-              </li>
-              <li style={{ color: '#c5b8df', fontSize: '0.92rem' }}>
-                Admin UI Extensions (Polaris)
-              </li>
-              <li style={{ color: '#c5b8df', fontSize: '0.92rem' }}>
-                Bespoke Shopify 2.0 Liquid Themes
-              </li>
-              <li style={{ color: '#c5b8df', fontSize: '0.92rem' }}>
-                Core Web Vitals Speed (85+ Score)
-              </li>
-              <li style={{ color: '#c5b8df', fontSize: '0.92rem' }}>
-                Real-Time Webhook Stock Sync
-              </li>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <li style={{ color: '#dddddd', fontSize: '0.92rem' }}>Shopify Plus &amp; Functions API</li>
+              <li style={{ color: '#dddddd', fontSize: '0.92rem' }}>Custom Checkout Extensibility</li>
+              <li style={{ color: '#dddddd', fontSize: '0.92rem' }}>Remix Full-Stack Apps</li>
+              <li style={{ color: '#dddddd', fontSize: '0.92rem' }}>Custom Liquid 2.0 Themes</li>
+              <li style={{ color: '#dddddd', fontSize: '0.92rem' }}>Core Web Vitals (40 to 85+)</li>
+              <li style={{ color: '#dddddd', fontSize: '0.92rem' }}>Warehouse Print Automation</li>
+              <li style={{ color: '#dddddd', fontSize: '0.92rem' }}>Real-Time Inventory Webhooks</li>
             </ul>
           </div>
 
-          {/* Column 4: Verified Qualifications & Next Steps */}
+          {/* Column 4: Start a Project Box */}
           <div>
-            <h4 style={{ color: '#ffffff', fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.5rem', letterSpacing: '0.5px' }}>
-              Verified Credentials
+            <h4 style={{
+              color: '#ffffff',
+              fontSize: '1.1rem',
+              fontWeight: 700,
+              marginBottom: '1.5rem',
+              borderBottom: '2px solid #ba9afd',
+              paddingBottom: '0.5rem',
+              display: 'inline-block'
+            }}>
+              Start a Project
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#c5b8df', fontSize: '0.88rem' }}>
-                <ShieldCheck size={16} color="#ba9afd" />
-                <span>Walmart Global Tech — SWE Certified</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#c5b8df', fontSize: '0.88rem' }}>
-                <ShieldCheck size={16} color="#ba9afd" />
-                <span>Scholarhat — Frontend Workshop</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#c5b8df', fontSize: '0.88rem' }}>
-                <ShieldCheck size={16} color="#ba9afd" />
-                <span>Scaler Academy — E-Commerce Platforms</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#c5b8df', fontSize: '0.88rem' }}>
-                <ShieldCheck size={16} color="#ba9afd" />
-                <span>BCA Graduate — Govt TRS College</span>
-              </div>
-            </div>
-
-            <Link
-              to="/planner"
-              className="btn btn-lilac"
-              style={{ width: '100%', fontSize: '0.9rem', padding: '0.75rem 1rem' }}
+            <p style={{ color: '#b3b3b3', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+              Planning a new Shopify build or need an expert audit for an existing store? Complete the 5-step project planner.
+            </p>
+            <Link 
+              to="/planner" 
+              className="btn btn-lilac" 
+              style={{ width: '100%', padding: '0.75rem 1rem', fontSize: '0.9rem' }}
             >
-              Start Project Planner
-              <ArrowUpRight size={16} />
+              Start Project Planner <ArrowRight size={16} />
             </Link>
           </div>
         </div>
 
-        {/* Bottom Bar with Copyright & Socials */}
-        <div
-          style={{
-            borderTop: '1px solid rgba(255, 255, 255, 0.12)',
-            paddingTop: '2rem',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '1.5rem'
-          }}
-        >
+        {/* Bottom Bar: Copyright & Socials */}
+        <div style={{
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+          paddingTop: '2rem',
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '1.5rem'
+        }}>
           <p style={{ color: '#9ca3af', fontSize: '0.88rem', margin: 0 }}>
             © {new Date().getFullYear()} Himanshu Soni. All rights reserved. Built with precision, performance &amp; clean code.
           </p>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <a
               href="https://github.com"
               target="_blank"
@@ -242,7 +217,7 @@ export default function Footer() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                transition: 'background 0.2s, color 0.2s'
+                transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => { e.currentTarget.style.background = '#ba9afd'; e.currentTarget.style.color = '#190c39'; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'; e.currentTarget.style.color = '#ffffff'; }}
@@ -264,7 +239,7 @@ export default function Footer() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                transition: 'background 0.2s, color 0.2s'
+                transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => { e.currentTarget.style.background = '#ba9afd'; e.currentTarget.style.color = '#190c39'; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'; e.currentTarget.style.color = '#ffffff'; }}

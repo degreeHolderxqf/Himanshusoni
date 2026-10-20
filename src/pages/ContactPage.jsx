@@ -1,17 +1,13 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { 
   Mail, 
   Phone, 
   MapPin, 
   Send, 
   CheckCircle2, 
-  Sparkles, 
   ArrowRight, 
-  Clock,
-  Check,
-  Copy,
-  HelpCircle
+  Copy, 
+  Check 
 } from 'lucide-react';
 import Ticker from '../components/Ticker';
 import { personalInfo, tickerItems } from '../data/portfolioData';
@@ -69,8 +65,6 @@ I am reaching out regarding a Shopify development engagement:
 
 Project Details:
 ${formData.message}
-
-Looking forward to hearing from you.
     `);
     return `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
   };
@@ -94,108 +88,75 @@ Message: ${formData.message}
   return (
     <div className="contact-page-wrapper">
       {/* ============================================================== */}
-      {/* CONTACT HERO BANNER                                           */}
+      {/* SIGNATURE SUBPAGE DARK HERO BANNER (PRIYA MATCH)               */}
       {/* ============================================================== */}
-      <section style={{
-        padding: '5rem 1.5rem 3.5rem',
-        background: 'radial-gradient(ellipse at 50% 0%, rgba(186, 154, 253, 0.2) 0%, rgba(25, 12, 57, 0) 70%), var(--color-bg)',
-        borderBottom: '1px solid var(--color-border)',
-        position: 'relative'
-      }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', textAlign: 'center' }}>
-          <span style={{
-            fontSize: '0.82rem',
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            letterSpacing: '0.12em',
-            color: 'var(--color-primary-lilac)',
-            display: 'inline-block',
-            marginBottom: '0.75rem',
-            background: 'rgba(186, 154, 253, 0.1)',
-            padding: '0.35rem 1rem',
-            borderRadius: '999px',
-            border: '1px solid rgba(186, 154, 253, 0.25)'
-          }}>
-            Get In Touch
-          </span>
-
-          <h1 style={{
-            fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
-            fontWeight: 800,
-            color: 'var(--color-white)',
-            lineHeight: 1.15,
-            marginBottom: '1.25rem',
-            letterSpacing: '-0.02em'
-          }}>
-            Let's Discuss Your <span className="gradient-text">Shopify Project</span>
+      <section className="subpage-hero-banner">
+        <div className="container">
+          <span className="hero-category">CONTACT</span>
+          <span className="hero-tagline">Looking forward to work with you!</span>
+          <h1 className="hero-headline">
+            Want to work together on a project, have questions about custom Shopify Plus solutions, or just want to discuss your store speed? Go ahead and send an email or use the contact form below.
           </h1>
-
-          <p style={{
-            fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
-            color: 'var(--color-text-muted)',
-            lineHeight: 1.6,
-            maxWidth: '680px',
-            margin: '0 auto'
-          }}>
-            Whether you are planning a high-converting store redesign, need custom checkout functions, or want to build an automated Remix app, let's talk.
-          </p>
         </div>
       </section>
 
       {/* ============================================================== */}
-      {/* CONTACT MAIN SECTION (GRID: INFO CARDS & FORM)                */}
+      {/* MAIN CONTACT CONTENT ON CLEAN LIGHT BACKGROUND                 */}
       {/* ============================================================== */}
-      <section className="section" style={{ background: 'var(--color-bg)' }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
+      <section className="section" style={{ background: '#fafafa' }}>
+        <div className="container">
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '3.5rem',
             alignItems: 'start'
           }}>
-            {/* Left Contact Column */}
+            {/* Left Column: Direct Inquiries */}
             <div>
-              <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--color-white)', marginBottom: '1rem' }}>
-                Direct Contact Channels
+              <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '1rem' }}>
+                General inquiries
               </h2>
-              <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '2rem' }}>
+              <p style={{ fontSize: '1rem', color: 'var(--color-text-body)', lineHeight: 1.7, marginBottom: '2.5rem' }}>
                 I respond directly to technical inquiries from brand founders, e-commerce managers, and agency technical leads within 24 business hours.
               </p>
 
-              {/* Verified Contact Cards */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
+              {/* Direct Info Cards */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2rem' }}>
                 <a 
                   href={`mailto:${personalInfo.email}`}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '1rem',
-                    padding: '1.25rem',
+                    padding: '1.25rem 1.5rem',
                     borderRadius: '16px',
-                    background: 'rgba(25, 12, 57, 0.7)',
-                    border: '1px solid rgba(186, 154, 253, 0.25)',
+                    background: '#ffffff',
+                    border: '1px solid #e2e8f0',
+                    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.03)',
                     textDecoration: 'none',
-                    transition: 'border-color 0.2s ease'
+                    transition: 'all 0.2s ease'
                   }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--color-lilac)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
                   <div style={{
-                    width: '46px',
-                    height: '46px',
+                    width: '44px',
+                    height: '44px',
                     borderRadius: '12px',
                     background: 'rgba(186, 154, 253, 0.15)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'var(--color-primary-lilac)',
+                    color: 'var(--color-deep-purple)',
                     flexShrink: 0
                   }}>
-                    <Mail size={22} />
+                    <Mail size={20} />
                   </div>
                   <div>
                     <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
                       Email Address
                     </div>
-                    <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-white)' }}>
+                    <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}>
                       {personalInfo.email}
                     </div>
                   </div>
@@ -207,17 +168,20 @@ Message: ${formData.message}
                     display: 'flex',
                     alignItems: 'center',
                     gap: '1rem',
-                    padding: '1.25rem',
+                    padding: '1.25rem 1.5rem',
                     borderRadius: '16px',
-                    background: 'rgba(25, 12, 57, 0.7)',
-                    border: '1px solid rgba(186, 154, 253, 0.25)',
+                    background: '#ffffff',
+                    border: '1px solid #e2e8f0',
+                    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.03)',
                     textDecoration: 'none',
-                    transition: 'border-color 0.2s ease'
+                    transition: 'all 0.2s ease'
                   }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--color-lilac)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
                   <div style={{
-                    width: '46px',
-                    height: '46px',
+                    width: '44px',
+                    height: '44px',
                     borderRadius: '12px',
                     background: 'rgba(16, 185, 129, 0.15)',
                     display: 'flex',
@@ -226,97 +190,74 @@ Message: ${formData.message}
                     color: '#10b981',
                     flexShrink: 0
                   }}>
-                    <Phone size={22} />
+                    <Phone size={20} />
                   </div>
                   <div>
                     <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
-                      Direct Phone & WhatsApp
+                      Direct Phone &amp; WhatsApp
                     </div>
-                    <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-white)' }}>
+                    <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}>
                       {personalInfo.phone}
                     </div>
                   </div>
                 </a>
 
-                <div 
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '1rem',
-                    padding: '1.25rem',
-                    borderRadius: '16px',
-                    background: 'rgba(25, 12, 57, 0.7)',
-                    border: '1px solid rgba(186, 154, 253, 0.25)'
-                  }}
-                >
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  padding: '1.25rem 1.5rem',
+                  borderRadius: '16px',
+                  background: '#ffffff',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.03)'
+                }}>
                   <div style={{
-                    width: '46px',
-                    height: '46px',
+                    width: '44px',
+                    height: '44px',
                     borderRadius: '12px',
                     background: 'rgba(186, 154, 253, 0.15)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'var(--color-primary-lilac)',
+                    color: 'var(--color-deep-purple)',
                     flexShrink: 0
                   }}>
-                    <MapPin size={22} />
+                    <MapPin size={20} />
                   </div>
                   <div>
                     <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
-                      Location & Timezone
+                      Location &amp; Timezone
                     </div>
-                    <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-white)' }}>
+                    <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}>
                       {personalInfo.location} (IST / UTC+5:30)
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Availability Notice */}
-              <div style={{
-                padding: '1.25rem',
-                borderRadius: '16px',
-                background: 'rgba(186, 154, 253, 0.08)',
-                border: '1px solid rgba(186, 154, 253, 0.25)',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '0.8rem'
-              }}>
-                <Clock size={20} color="var(--color-primary-lilac)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <div>
-                  <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--color-white)', margin: '0 0 0.25rem' }}>
-                    Current Availability Status
-                  </h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.5 }}>
-                    Open to select Shopify Plus contracts, bespoke theme development sprints, and full-stack Remix app builds.
-                  </p>
-                </div>
-              </div>
             </div>
 
-            {/* Right Contact Form Column */}
+            {/* Right Column: Clean White Form Card */}
             <div>
               <div style={{
-                background: 'rgba(25, 12, 57, 0.75)',
-                backdropFilter: 'blur(16px)',
+                background: '#ffffff',
                 borderRadius: '24px',
-                border: '1px solid rgba(186, 154, 253, 0.3)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
                 padding: '2.5rem',
-                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.5)'
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.04)'
               }}>
                 {!submitted ? (
                   <form onSubmit={handleSubmit}>
-                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '0.5rem' }}>
-                      Send a Project Inquiry
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
+                      Send a Message
                     </h3>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
-                      Fill in the details below. I’ll review your store requirements and respond promptly.
+                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
+                      Fill in your project details. I’ll review your requirements and respond promptly.
                     </p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Your Name *
                         </label>
                         <input 
@@ -328,17 +269,17 @@ Message: ${formData.message}
                             width: '100%',
                             padding: '0.75rem 1rem',
                             borderRadius: '10px',
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: `1px solid ${errors.name ? '#f87171' : 'rgba(186, 154, 253, 0.25)'}`,
-                            color: '#fff',
+                            background: '#f8f9fa',
+                            border: `1px solid ${errors.name ? '#dc2626' : '#cbd5e1'}`,
+                            color: 'var(--color-deep-purple)',
                             outline: 'none'
                           }}
                         />
-                        {errors.name && <span style={{ color: '#f87171', fontSize: '0.75rem' }}>{errors.name}</span>}
+                        {errors.name && <span style={{ color: '#dc2626', fontSize: '0.75rem' }}>{errors.name}</span>}
                       </div>
 
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Email Address *
                         </label>
                         <input 
@@ -350,19 +291,19 @@ Message: ${formData.message}
                             width: '100%',
                             padding: '0.75rem 1rem',
                             borderRadius: '10px',
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: `1px solid ${errors.email ? '#f87171' : 'rgba(186, 154, 253, 0.25)'}`,
-                            color: '#fff',
+                            background: '#f8f9fa',
+                            border: `1px solid ${errors.email ? '#dc2626' : '#cbd5e1'}`,
+                            color: 'var(--color-deep-purple)',
                             outline: 'none'
                           }}
                         />
-                        {errors.email && <span style={{ color: '#f87171', fontSize: '0.75rem' }}>{errors.email}</span>}
+                        {errors.email && <span style={{ color: '#dc2626', fontSize: '0.75rem' }}>{errors.email}</span>}
                       </div>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Phone / WhatsApp (Optional)
                         </label>
                         <input 
@@ -374,16 +315,16 @@ Message: ${formData.message}
                             width: '100%',
                             padding: '0.75rem 1rem',
                             borderRadius: '10px',
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(186, 154, 253, 0.25)',
-                            color: '#fff',
+                            background: '#f8f9fa',
+                            border: '1px solid #cbd5e1',
+                            color: 'var(--color-deep-purple)',
                             outline: 'none'
                           }}
                         />
                       </div>
 
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Store / Website URL
                         </label>
                         <input 
@@ -395,9 +336,9 @@ Message: ${formData.message}
                             width: '100%',
                             padding: '0.75rem 1rem',
                             borderRadius: '10px',
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(186, 154, 253, 0.25)',
-                            color: '#fff',
+                            background: '#f8f9fa',
+                            border: '1px solid #cbd5e1',
+                            color: 'var(--color-deep-purple)',
                             outline: 'none'
                           }}
                         />
@@ -406,7 +347,7 @@ Message: ${formData.message}
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Project Category
                         </label>
                         <select
@@ -416,23 +357,22 @@ Message: ${formData.message}
                             width: '100%',
                             padding: '0.75rem 1rem',
                             borderRadius: '10px',
-                            background: '#190c39',
-                            border: '1px solid rgba(186, 154, 253, 0.25)',
-                            color: '#fff',
+                            background: '#f8f9fa',
+                            border: '1px solid #cbd5e1',
+                            color: 'var(--color-deep-purple)',
                             outline: 'none'
                           }}
                         >
-                          <option value="Shopify Plus & Custom Checkout">Shopify Plus & Custom Checkout</option>
+                          <option value="Shopify Plus & Custom Checkout">Shopify Plus &amp; Custom Checkout</option>
                           <option value="Custom Theme (Shopify 2.0)">Custom Theme (Shopify 2.0)</option>
-                          <option value="Custom Remix App & Webhooks">Custom Remix App & Webhooks</option>
+                          <option value="Custom Remix App & Webhooks">Custom Remix App &amp; Webhooks</option>
                           <option value="Storefront Performance (40 to 85+)">Storefront Performance (40 to 85+)</option>
-                          <option value="Payment & Marketing Integrations">Payment & Marketing Integrations</option>
-                          <option value="Other Technical Inquiry">Other Technical Inquiry</option>
+                          <option value="Payment & Marketing Integrations">Payment &amp; Marketing Integrations</option>
                         </select>
                       </div>
 
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Estimated Budget
                         </label>
                         <select
@@ -442,9 +382,9 @@ Message: ${formData.message}
                             width: '100%',
                             padding: '0.75rem 1rem',
                             borderRadius: '10px',
-                            background: '#190c39',
-                            border: '1px solid rgba(186, 154, 253, 0.25)',
-                            color: '#fff',
+                            background: '#f8f9fa',
+                            border: '1px solid #cbd5e1',
+                            color: 'var(--color-deep-purple)',
                             outline: 'none'
                           }}
                         >
@@ -457,8 +397,8 @@ Message: ${formData.message}
                     </div>
 
                     <div style={{ marginBottom: '1.5rem' }}>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '0.4rem' }}>
-                        Project Description & Scope *
+                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
+                        Project Scope &amp; Goals *
                       </label>
                       <textarea 
                         rows={4}
@@ -469,41 +409,37 @@ Message: ${formData.message}
                           width: '100%',
                           padding: '0.75rem 1rem',
                           borderRadius: '10px',
-                          background: 'rgba(255, 255, 255, 0.05)',
-                          border: `1px solid ${errors.message ? '#f87171' : 'rgba(186, 154, 253, 0.25)'}`,
-                          color: '#fff',
+                          background: '#f8f9fa',
+                          border: `1px solid ${errors.message ? '#dc2626' : '#cbd5e1'}`,
+                          color: 'var(--color-deep-purple)',
                           outline: 'none',
                           resize: 'vertical'
                         }}
                       />
-                      {errors.message && <span style={{ color: '#f87171', fontSize: '0.75rem' }}>{errors.message}</span>}
+                      {errors.message && <span style={{ color: '#dc2626', fontSize: '0.75rem' }}>{errors.message}</span>}
                     </div>
 
                     <button
                       type="submit"
-                      className="btn btn-primary"
+                      className="btn btn-dark"
                       style={{
                         width: '100%',
                         padding: '0.9rem',
-                        fontSize: '1rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '0.5rem'
+                        fontSize: '1rem'
                       }}
                     >
                       <Send size={18} /> Submit Project Inquiry
                     </button>
                   </form>
                 ) : (
-                  /* SUBMISSION SUCCESS CONFIRMATION */
+                  /* Confirmation State */
                   <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
                     <div style={{
                       width: '60px',
                       height: '60px',
                       borderRadius: '50%',
-                      background: 'rgba(16, 185, 129, 0.2)',
-                      border: '1px solid #10b981',
+                      background: 'rgba(16, 185, 129, 0.15)',
+                      border: '1.5px solid #10b981',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -513,26 +449,26 @@ Message: ${formData.message}
                       <CheckCircle2 size={32} />
                     </div>
 
-                    <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '0.5rem' }}>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
                       Inquiry Compiled Successfully!
                     </h3>
-                    <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '2rem' }}>
-                      Thank you, <strong style={{ color: '#fff' }}>{formData.name}</strong>. Your project inquiry has been formatted. Click below to launch your email client or copy the formatted inquiry.
+                    <p style={{ fontSize: '0.92rem', color: 'var(--color-text-body)', lineHeight: 1.6, marginBottom: '2rem' }}>
+                      Thank you, <strong style={{ color: 'var(--color-deep-purple)' }}>{formData.name}</strong>. Your project inquiry has been formatted. Click below to launch your email client or copy the formatted message.
                     </p>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
                       <a 
                         href={generateMailto()}
-                        className="btn btn-primary"
-                        style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.85rem' }}
+                        className="btn btn-dark"
+                        style={{ width: '100%', padding: '0.85rem' }}
                       >
                         <Send size={18} /> Send via Email to Himanshu
                       </a>
                       <button
                         type="button"
                         onClick={copyInquiry}
-                        className="btn btn-secondary"
-                        style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.85rem' }}
+                        className="btn btn-lilac"
+                        style={{ width: '100%', padding: '0.85rem' }}
                       >
                         {copied ? <Check size={18} color="#10b981" /> : <Copy size={18} />}
                         {copied ? 'Copied to Clipboard!' : 'Copy Formatted Inquiry'}
@@ -561,8 +497,8 @@ Message: ${formData.message}
         </div>
       </section>
 
-      {/* Lilac Ticker */}
-      <Ticker items={tickerItems} variant="lilac" />
+      {/* Dark Ticker */}
+      <Ticker items={tickerItems} variant="dark" />
     </div>
   );
 }

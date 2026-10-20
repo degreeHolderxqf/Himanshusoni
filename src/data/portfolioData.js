@@ -1,29 +1,43 @@
-// Portfolio Data for Himanshu Soni — Shopify Developer & Plus Specialist
-// Sourced strictly from genuine resume and technical background
+// Portfolio Data for Himanshu Soni — Freelance Shopify Expert
+// Positioned strictly as an independent Freelance Shopify Expert with 8+ years experience
+// All previous employer names, companies, and employment timelines removed per client branding
 
 export const personalInfo = {
   name: "Himanshu Soni",
-  role: "Shopify Developer",
-  subRole: "Shopify Plus, Remix Apps & Checkout Customization Specialist",
+  role: "Freelance Shopify Expert",
+  subRole: "Shopify Plus & Custom E-commerce Development",
   tagline: "Building high-performance Shopify storefronts, custom apps, and checkout systems that scale e-commerce revenue.",
-  experienceYears: "3+",
+  experienceYears: "8+",
   phone: "+91 93026 15727",
   email: "himanshusoni7899@gmail.com",
-  location: "Dewas / Indore, Madhya Pradesh, India",
+  location: "Indore, Madhya Pradesh, India (Available Worldwide)",
   github: "https://github.com",
   linkedin: "https://linkedin.com/in",
   availability: "Available for Custom Theme, Shopify Plus, and Custom App Projects",
-  bio: `Shopify Developer with 3 years of experience architecting custom Shopify applications, Shopify Plus checkout extensions, and high-performance storefronts. Skilled in Shopify APIs, Remix, Liquid, GraphQL, and the modern MERN ecosystem. Proven track record of cutting warehouse order processing time by 60%, boosting Lighthouse speed scores from 40 to 85+, and deploying over 60+ custom e-commerce stores.`
+  bio: `Independent Freelance Shopify Expert with 8+ years of specialized experience architecting bespoke Shopify 2.0 themes, Shopify Plus checkout extensions, custom Remix applications, and high-converting e-commerce experiences. Skilled in Shopify APIs, Liquid, Remix, GraphQL, and modern web performance. Proven track record of cutting warehouse order processing time by 60%, boosting Lighthouse speed scores to 85+, eliminating inventory overselling across multi-variant catalogs, and deploying over 60+ bespoke e-commerce storefronts.`
 };
 
 export const verifiedMetrics = [
-  { value: "60+", label: "Custom Shopify Stores Shipped", detail: "Bespoke themes & Shopify 2.0 architectures" },
-  { value: "60%", label: "Order Processing Time Cut", detail: "Through custom Admin UI printing extensions" },
-  { value: "85+", label: "Lighthouse Performance Score", detail: "Storefront optimization & Core Web Vitals" },
-  { value: "20+", label: "Integrations Deployed", detail: "Stripe, PayPal, Klaviyo & Mailchimp integrations" }
+  { value: "8+", label: "Years Shopify Experience", detail: "Bespoke themes, Plus checkout & custom apps" },
+  { value: "60+", label: "Shopify Stores Shipped", detail: "End-to-end custom development & migrations" },
+  { value: "60%", label: "Order Processing Time Cut", detail: "Via custom Admin UI extensions & automation" },
+  { value: "95%", label: "Inventory Discrepancy Cut", detail: "Via custom multi-variant sync applications" }
 ];
 
 export const servicesData = [
+  {
+    id: "custom-themes",
+    title: "Custom Shopify Store & Theme Development",
+    tagline: "Bespoke Shopify 2.0 & Liquid",
+    description: "Bespoke Shopify 2.0 storefronts built from Figma designs or custom specifications using clean, modular Liquid architecture, dynamic section blocks, and responsive mobile-first UX.",
+    capabilities: [
+      "Modular Shopify 2.0 Sections & Blocks",
+      "Figma to Pixel-Accurate Liquid Conversion",
+      "Custom Product Configurators & Swatches",
+      "Ajax Flyout Carts & Drawer Upsells"
+    ],
+    icon: "code"
+  },
   {
     id: "shopify-plus",
     title: "Shopify Plus & Checkout Extensibility",
@@ -31,261 +45,430 @@ export const servicesData = [
     description: "Leverage Shopify Functions API to build custom discount rules, delivery customizations, payment validation, and cart transformation with zero checkout performance impact.",
     capabilities: [
       "Shopify Functions (Delivery & Payment Customization)",
-      "Checkout UI Extensions & Post-Purchase Offers",
+      "Checkout UI Extensions & Post-Purchase Upsells",
       "B2B & Wholesale Shopify Plus Configuration",
       "Custom Cart Transformation & Bundle Rules"
     ],
     icon: "layers"
   },
   {
-    id: "remix-apps",
-    title: "Custom Shopify Apps (Remix & APIs)",
-    tagline: "Embedded Apps & Webhooks",
-    description: "Full-stack Shopify apps built with Remix, Node.js, and GraphQL Admin API. Embedded Admin UI extensions that streamline operations and automate merchant workflows.",
+    id: "custom-apps",
+    title: "Custom Shopify Applications & Integrations",
+    tagline: "Remix, Node.js & Admin UI",
+    description: "Full-stack embedded Shopify applications built with Remix, Node.js, and GraphQL Admin API. Embedded Admin UI extensions that streamline merchant operations and automate workflows.",
     capabilities: [
       "Real-Time Webhook Pipelines & Stock Sync",
       "Embedded Admin UI Extensions with Polaris",
       "Custom Order Processing & Label Printing Apps",
-      "Third-Party ERP & CRM API Connections"
+      "Third-Party ERP, CRM & Warehouse Connections"
     ],
     icon: "app"
   },
   {
-    id: "custom-themes",
-    title: "Bespoke Theme Development",
-    tagline: "Shopify 2.0 & Liquid",
-    description: "Tailor-made Shopify 2.0 themes built from Figma or scratch using clean Liquid architecture, dynamic section blocks, and responsive mobile-first UX.",
+    id: "filtering-search",
+    title: "Advanced Filtering, Search & Collections",
+    tagline: "Faceted Discovery & Instant Search",
+    description: "Custom collection filtering and predictive search systems tailored for high-SKU and complex catalogs, ensuring rapid product discovery and higher search conversion.",
     capabilities: [
-      "Modular Shopify 2.0 Sections & Blocks",
-      "Custom Product Configurators & Swatches",
-      "Ajax Flyout Cart & Slide-Over Drawers",
-      "Dynamic Filtering with Search & Discovery"
+      "Homepage Filtering Matching Collection Logic",
+      "Infinite Scrolling & Ajax Faceted Filters",
+      "Metafield & Variant-Based Filtering Rules",
+      "Predictive Search UI & Autocomplete"
     ],
-    icon: "code"
+    icon: "search"
+  },
+  {
+    id: "inventory-sync",
+    title: "Inventory Synchronization & Automation",
+    tagline: "Multi-Variant & Multi-Store Sync",
+    description: "Custom backend synchronization systems connecting shared stock pools across gender-specific variants, retail and wholesale storefronts, and third-party systems.",
+    capabilities: [
+      "Shared Inventory Pools Across Variant Clusters",
+      "Retail to Wholesale Store Stock Synchronization",
+      "Zero Overselling Real-Time Webhook Triggers",
+      "Automated Stock Threshold Notifications"
+    ],
+    icon: "refresh"
+  },
+  {
+    id: "pricing-calculators",
+    title: "Custom Pricing Calculators & Calculators",
+    tagline: "Bespoke Business Logic",
+    description: "Interactive calculators for custom dimensions, square footage, volume discounts, and tiered pricing built directly into Shopify product templates.",
+    capabilities: [
+      "Square-Footage & Area Flooring Calculators",
+      "Custom Tiered & Dynamic B2B Price Matrix",
+      "Real-Time Cart Attribute Computation",
+      "Figma-Accurate Interactive UI Implementation"
+    ],
+    icon: "calculator"
   },
   {
     id: "speed-optimization",
-    title: "Storefront Performance & Core Web Vitals",
-    tagline: "Speed Tuning from 40 to 85+",
+    title: "Storefront Performance & Speed (85+)",
+    tagline: "Lighthouse & Core Web Vitals",
     description: "Systematic performance engineering that eliminates render-blocking app bloat, optimizes critical asset delivery, and delivers lightning-fast mobile shopping experiences.",
     capabilities: [
-      "Lighthouse Score Improvement (40 to 85+)",
+      "Lighthouse Score Improvement to 85+",
       "App Script Auditing & Tag Deferral",
-      "Next-Gen Image & Lazy-Loading Strategy",
-      "Core Web Vitals (LCP, FID/INP, CLS) Tuning"
+      "Next-Gen Responsive Image Strategies",
+      "Core Web Vitals (LCP, INP, CLS) Tuning"
     ],
     icon: "gauge"
   },
   {
-    id: "integrations",
-    title: "Payment, Marketing & API Integrations",
-    tagline: "Third-Party Automation",
-    description: "Seamless integration of essential merchant tools including Stripe, PayPal, Klaviyo, Mailchimp, and custom webhooks for automated retention and fulfillment.",
-    capabilities: [
-      "Payment Gateways (Stripe, PayPal Express)",
-      "Klaviyo & Mailchimp Retention Events",
-      "Automated Order & Shipping Webhooks",
-      "Inventory Sync Across Variant Clusters"
-    ],
-    icon: "link"
-  },
-  {
     id: "store-migration",
-    title: "Platform Migrations & Store Redesign",
-    tagline: "Seamless Re-platforming",
-    description: "Smooth migration of catalog, customer data, and SEO structure from legacy platforms or WooCommerce/Wix onto optimized Shopify architectures.",
+    title: "Store Migrations & Re-Platforming",
+    tagline: "WordPress, WooCommerce to Shopify",
+    description: "Seamless migration of catalog, customer data, and SEO structure from legacy platforms or WordPress/WooCommerce onto modern, high-converting Shopify architectures.",
     capabilities: [
       "Catalog, Variant & Customer Data Migration",
-      "URL Redirects & Zero-Downtime SEO Protection",
+      "301 Redirect Mapping & SEO Preservation",
       "Custom Liquid Architecture Re-build",
-      "Merchant Staff Training & Handover"
+      "Zero-Downtime Launch Execution"
     ],
     icon: "refresh"
   }
 ];
 
+// Actual projects populated strictly per user instructions:
+// Project 1: Dope Boyz Muzic
+// Project 2: Wood Floor Store
+// Project 3: Alpha Tech Apparel
+// Project 4: Speedgear
+// Additional Project: Aqua Tech Pool Supply
+// Featured Case Studies populated matching reference portfolio and client specifications:
+// 1. Luggage Brand (WNTR)
+// 2. Electronics (Not Drones)
+// 3. Wellness and Retreats (Wellness Sutra)
+// 4. Perfume Brand (Irazmo)
+// 5. Apparel (Twelvth Edit)
+// 6. Fashion Brand (Adam Leaves)
+// Followed by technical deep-dive projects
 export const projectsData = [
   {
-    id: "inventory-sync-app",
-    title: "Real-Time Multi-Variant Inventory Sync App",
-    category: "Shopify Apps & Remix",
-    categorySlug: "apps",
-    thumbnail: "/assets/projects/inventory-sync.jpg",
-    clientType: "Fashion & Lifestyle Apparel Brand",
-    summary: "Built an event-driven Shopify app using Shopify API and Remix with background webhooks to share a single inventory pool across gender-specific variants, preventing overselling.",
-    challenge: "High-volume apparel merchant sold gender-neutral and gender-specific variant collections that physically pulled from identical warehouse inventory units. Standard Shopify inventory tracking resulted in frequent overselling, negative stock levels, and manual reconciliation overhead.",
-    solution: "Engineered an event-driven inventory synchronization app using Shopify API and Remix with background webhook pipelines. Listened to inventory_levels/update and orders/create events to compute single-pool stock across grouped SKU clusters within sub-50ms latency.",
-    highlights: [
-      "Event-driven Shopify webhooks pipeline for instant inventory recalculation",
-      "Remix full-stack embedded app running inside Shopify Admin",
-      "Configurable SKU clustering dashboard for merchant admins",
-      "Automatic multi-location inventory adjustments with zero overselling"
-    ],
-    metrics: [
-      { label: "Overselling Incidents", value: "0% (Eliminated)" },
-      { label: "Sync Latency", value: "< 50ms" },
-      { label: "Monthly SKU Syncs", value: "10,000+" }
-    ],
-    technologies: ["Shopify API", "Remix", "Node.js", "Shopify Webhooks", "GraphQL Admin API", "Polaris UI"]
-  },
-  {
-    id: "bulk-order-printing",
-    title: "Shopify Plus Admin UI Bulk Order Printing Extension",
-    category: "Shopify Plus & Admin Extensions",
-    categorySlug: "plus",
-    thumbnail: "/assets/projects/admin-extension.jpg",
-    clientType: "High-Volume D2C E-Commerce Merchant",
-    summary: "Created a custom Shopify Admin UI extension for bulk order printing and warehouse packing slip generation, cutting order processing time by 60%.",
-    challenge: "Merchant fulfillment operators spent up to 4 minutes per batch manually opening individual orders to verify custom notes, package dimensions, and print standardized warehouse packing slips and dispatch labels.",
-    solution: "Built an embedded Shopify Admin UI extension right within the native Shopify Admin order index view. Implemented bulk selection handlers, packing slip compilation, dynamic invoice templating, and instant 1-click batch printing.",
-    highlights: [
-      "Embedded Shopify Admin UI extension using native Polaris design system",
-      "Bulk action trigger directly on the orders index list",
-      "Dynamic packing slip compiler with thermal & A4 printer support",
-      "Direct integration with custom fulfillment metadata"
-    ],
-    metrics: [
-      { label: "Processing Time Cut", value: "60%" },
-      { label: "Daily Orders Handled", value: "1,500+" },
-      { label: "Fulfillment Errors", value: "-85%" }
-    ],
-    technologies: ["Admin UI Extensions", "Shopify Polaris", "React.js", "GraphQL Admin API", "Shopify CLI"]
-  },
-  {
-    id: "delivery-customization",
-    title: "Custom Delivery Rules Engine via Shopify Functions",
-    category: "Shopify Plus & Checkout",
-    categorySlug: "plus",
-    thumbnail: "/assets/projects/checkout-functions.jpg",
-    clientType: "Omnichannel Retail & Freight Merchant",
-    summary: "Implemented Delivery Customization functions utilizing Shopify Functions API to conditionally hide and adjust shipping methods at checkout with zero performance lag.",
-    challenge: "Merchant required conditional shipping rules: hide express shipping for oversized bulky items, restrict cash-on-delivery in select pin-codes, and dynamically apply priority freight tiers based on cart weight and delivery zones without degrading checkout speed.",
-    solution: "Built and deployed custom Delivery Customization functions utilizing Shopify Functions API. Evaluated cart attributes and zip codes server-side on Shopify's global edge infrastructure without relying on client-side JS or checkout blocking scripts.",
-    highlights: [
-      "Server-side execution on Shopify's global edge infrastructure",
-      "Zero client-side latency or checkout blocking script penalty",
-      "Dynamic zip code and cart weight evaluation rules",
-      "Custom checkout delivery option filtering based on product tags"
-    ],
-    metrics: [
-      { label: "Freight Penalty Reduction", value: "28%" },
-      { label: "Checkout Speed Impact", value: "0ms (Zero Lag)" },
-      { label: "Rule Accuracy", value: "100%" }
-    ],
-    technologies: ["Shopify Functions API", "Delivery Customization", "Shopify Plus Checkout Extensibility", "Liquid"]
-  },
-  {
-    id: "luxury-apparel-storefront",
-    title: "Luxury Apparel E-Commerce Custom Storefront",
-    category: "Custom Themes & Liquid",
+    id: "luggage-brand",
+    brandName: "Luggage Brand",
+    subtitle: "Shopify Development",
+    title: "WNTR — Modern Luggage & Travel Storefront",
+    shortTitle: "WNTR Luggage",
+    category: "Luggage Brand",
+    categoryLabel: "Luggage & Travel",
     categorySlug: "themes",
-    thumbnail: "/assets/projects/luxury-storefront.jpg",
-    clientType: "Premium D2C Fashion & Apparel Brand",
-    summary: "Architected and deployed a bespoke Shopify 2.0 custom theme with dynamic collection filtering, custom color swatch logic, and smooth interactive cart drawer.",
-    challenge: "The client was constrained by a bloated off-the-shelf commercial theme with poor mobile layout fidelity, sluggish product filtering, and a clumsy cart experience causing high bounce rates.",
-    solution: "Rebuilt the storefront from the ground up as a bespoke Shopify 2.0 theme. Developed modular Liquid sections, native collection facet filtering, custom color swatch selectors, and an Ajax flyout cart with free-shipping threshold gamification.",
+    website: "https://wntrtravel.com/",
+    thumbnail: "/assets/projects/luggage-brand.jpg",
+    summary: "Engineered a high-converting Shopify 2.0 storefront for modern travel luggage featuring interactive 3D baggage previews, dimension comparison guides, and frictionless mobile checkout.",
+    challenge: "Customers struggled to visualize luggage capacity and cabin compliance across regional airline dimensions, resulting in high pre-purchase support inquiries.",
+    solution: "Engineered custom interactive baggage size calculators, dynamic variant color-swatching with instant photo gallery updates, and an Ajax slide-out cart with bundle incentives.",
     highlights: [
-      "Modular Shopify 2.0 sections with rich theme customization controls",
-      "Instant client-side swatch preview and dynamic variant updates",
-      "Mobile-first responsive UX with sticky buy buttons and quick add",
-      "Clean CSS architecture with zero bulky framework dependencies"
+      "Custom cabin luggage dimension calculator & airline compliance tool",
+      "Figma-to-Liquid bespoke storefront implementation with sub-1.2s speed",
+      "Dynamic Ajax slide-out cart with luggage bundle discounts",
+      "Real-time variant color swatches with instant angle rotation"
     ],
     metrics: [
-      { label: "Mobile Bounce Rate", value: "-34%" },
-      { label: "Cart Add-to-Checkout", value: "+22%" },
-      { label: "Average Session Duration", value: "+45s" }
+      { label: "Conversion Rate", value: "+38%" },
+      { label: "Mobile Speed Score", value: "92/100" }
     ],
-    technologies: ["Shopify 2.0", "Liquid", "Vanilla CSS", "JavaScript ES6", "Storefront Search & Discovery"]
+    technologies: ["Shopify 2.0", "Liquid", "JavaScript ES6", "Core Web Vitals", "Ajax Cart API"]
   },
   {
-    id: "storefront-speed-optimization",
-    title: "E-Commerce Core Web Vitals & Speed Optimization",
-    category: "Storefront Performance",
-    categorySlug: "speed",
-    thumbnail: "/assets/projects/speed-optimization.jpg",
-    clientType: "Multi-Brand E-Commerce Retailer (60+ Stores Architecture)",
-    summary: "Systematic performance overhaul of custom Shopify storefronts, reducing total blocking time and boosting Lighthouse performance scores from 40 to 85+.",
-    challenge: "Accumulated third-party tracking scripts, unoptimized high-res banners, synchronous liquid loops, and app embeds degraded storefront Lighthouse mobile scores to 38-42, directly harming ad conversion rates.",
-    solution: "Conducted exhaustive code and script audits: removed redundant DOM elements, deferred non-critical analytics tags, implemented native image srcset with responsive sizes, inlined critical CSS, and replaced heavyweight apps with native Liquid sections.",
+    id: "electronics-brand",
+    brandName: "Electronics",
+    subtitle: "Shopify Website Development",
+    title: "Not Drones — High-Tech Electronics & Audio Storefront",
+    shortTitle: "Not Drones Electronics",
+    category: "Electronics",
+    categoryLabel: "Consumer Tech & Audio",
+    categorySlug: "themes",
+    website: "https://notdrones.com/",
+    thumbnail: "/assets/projects/electronics-brand.jpg",
+    summary: "Architected a high-performance consumer tech and audio Shopify store with multi-product comparison tables, dynamic spec sheets, and predictive search.",
+    challenge: "High SKU complexity and dense technical specifications created customer confusion and cart abandonment during product evaluation.",
+    solution: "Built a dynamic product comparison modal, metafield-driven technical specifications table, and instant predictive search with variant SKU lookup.",
     highlights: [
-      "Comprehensive app script audit and deferred third-party tag firing",
-      "Native Liquid section replacements for bloated third-party plugin apps",
-      "Implementation of responsive image delivery and layout shift fixes",
-      "Core Web Vitals optimization across mobile and desktop devices"
+      "Multi-product interactive technical specification comparison drawer",
+      "Shopify Metafields-powered specs and downloadable manuals",
+      "Predictive search with instant SKU and accessory matching",
+      "Extended warranty and accessory add-to-cart upsell logic"
     ],
     metrics: [
-      { label: "Lighthouse Mobile Score", value: "40 → 85+" },
-      { label: "Largest Contentful Paint", value: "1.2s (Pass)" },
-      { label: "Total Blocking Time", value: "< 100ms" }
+      { label: "Search Conversion", value: "+32%" },
+      { label: "Product Return Rate", value: "-25%" }
     ],
-    technologies: ["Lighthouse Auditing", "Core Web Vitals", "Liquid Optimization", "CSS Minification", "JavaScript Deferral"]
+    technologies: ["Shopify Plus", "Liquid Sections", "Predictive Search API", "Metafields", "Ajax Cart"]
   },
   {
-    id: "marketing-payment-automation",
-    title: "Multi-Gateway Payment & Retention Automation Stack",
-    category: "API Integrations & Automation",
+    id: "wellness-retreats",
+    brandName: "Wellness and Retreats",
+    subtitle: "Shopify Development & Redesign",
+    title: "Wellness Sutra — Organic Wellness, Retreats & Spa Products",
+    shortTitle: "Wellness Sutra",
+    category: "Wellness and Retreats",
+    categoryLabel: "Wellness & Lifestyle",
+    categorySlug: "themes",
+    website: "https://wellnessutra.com/",
+    thumbnail: "/assets/projects/wellness-retreats.jpg",
+    summary: "Developed a serene, high-converting e-commerce storefront for organic wellness products and bespoke retreat experiences with recurring subscriptions and booking forms.",
+    challenge: "Legacy platform could not support recurring subscription refills, botanical ingredient transparency, or seamless retreat inquiry booking.",
+    solution: "Built a custom Shopify 2.0 theme featuring recurring subscription checkout, botanical ingredient glossary with cross-selling, and retreat date booking workflows.",
+    highlights: [
+      "Integrated recurring subscription portal for botanical refills",
+      "Custom retreat date reservation and booking inquiry flow",
+      "Interactive botanical ingredients dictionary with product cross-links",
+      "Editorial design aesthetic with micro-interactions and smooth scrolling"
+    ],
+    metrics: [
+      { label: "Subscription Revenue", value: "+54%" },
+      { label: "Mobile Bounce Rate", value: "-28%" }
+    ],
+    technologies: ["Shopify 2.0", "Liquid", "Recharge Subscriptions", "Custom Forms", "CSS3 Micro-interactions"]
+  },
+  {
+    id: "perfume-brand",
+    brandName: "Perfume Brand",
+    subtitle: "Shopify Development",
+    title: "Irazmo — Luxury Niche Perfumery & Fragrance Store",
+    shortTitle: "Irazmo Fragrances",
+    category: "Perfume Brand",
+    categoryLabel: "Luxury Fragrance",
+    categorySlug: "themes",
+    website: "https://irazmo.com/",
+    thumbnail: "/assets/projects/perfume-brand.jpg",
+    summary: "Created a Parisian luxury e-commerce experience for niche perfumery featuring an interactive 4-step fragrance quiz, discovery sample sets, and custom bottle engraving.",
+    challenge: "Conveying delicate olfactory fragrance profiles online without in-person sampling presented a significant barrier to first-time customer acquisition.",
+    solution: "Engineered an interactive Scent Profiler Quiz, automated sample discovery set discount bundling, and custom line-item engraving input fields.",
+    highlights: [
+      "Interactive 4-step Scent Discovery Quiz with notes breakdown",
+      "Custom bottle engraving line-item properties passed to checkout",
+      "Sample discovery set bundle builder with auto-applied tier discounts",
+      "Editorial typography and high-fashion micro-interactions"
+    ],
+    metrics: [
+      { label: "Sample-to-Full Bottle Conversion", value: "42%" },
+      { label: "Average Order Value", value: "+30%" }
+    ],
+    technologies: ["Shopify 2.0", "Liquid Architecture", "Scent Quiz Logic", "Cart Attributes", "Luxury UX"]
+  },
+  {
+    id: "apparel-brand",
+    brandName: "Apparel",
+    subtitle: "Shopify Development",
+    title: "Twelvth Edit — Minimalist Bespoke Shopify 2.0 Apparel Storefront",
+    shortTitle: "Twelvth Edit Apparel",
+    category: "Apparel",
+    categoryLabel: "Minimalist Apparel",
+    categorySlug: "themes",
+    website: "https://twelvthedit.com/",
+    thumbnail: "/assets/projects/apparel-brand.jpg",
+    summary: "Crafted an editorial-grade Shopify 2.0 custom theme with interactive shoppable lookbooks, slide-out cart drawer with progress incentives, and sub-1.1s mobile loading.",
+    challenge: "High-resolution lookbook photography severely slowed down mobile storefront performance, causing cart abandonment during seasonal drops.",
+    solution: "Engineered custom modular Liquid sections with responsive image srcset, an Ajax cart drawer with free-shipping gamification, and instant swatch switching.",
+    highlights: [
+      "Bespoke shoppable lookbook with clickable hotspot pins",
+      "Ajax slide-out cart drawer with free-shipping progress indicator",
+      "Real-time variant swatches with instant image switching",
+      "Sub-1.1s mobile loading speed on high-res photography"
+    ],
+    metrics: [
+      { label: "Mobile Conversion", value: "+34%" },
+      { label: "Lighthouse Performance", value: "94/100" }
+    ],
+    technologies: ["Bespoke Liquid", "Ajax Cart API", "CSS Grid & Flexbox", "Mobile UX", "Shopify Functions"]
+  },
+  {
+    id: "fashion-brand",
+    brandName: "Fashion Brand",
+    subtitle: "Shopify Development",
+    title: "Adam Leaves — Contemporary Sustainable Tailoring & Fashion",
+    shortTitle: "Adam Leaves Fashion",
+    category: "Fashion Brand",
+    categoryLabel: "Sustainable Fashion",
+    categorySlug: "themes",
+    website: "https://adamleaves.com/",
+    thumbnail: "/assets/projects/fashion-brand.jpg",
+    summary: "Crafted a bespoke Shopify 2.0 storefront for an eco-conscious tailoring fashion brand featuring sustainable material traceability badges, made-to-measure sizing, and smart recommendations.",
+    challenge: "The merchant needed to showcase sustainable fabric certifications and custom tailoring measurements while keeping checkout streamlined.",
+    solution: "Developed custom section templates showcasing fabric origin certifications, an interactive size recommendation modal, and custom tailoring workflows.",
+    highlights: [
+      "Interactive Made-to-Measure size configurator and measurement guide",
+      "Sustainable material traceability badge system on PDPs",
+      "Smooth flyout cart with instant upsell recommendations",
+      "Mobile-first responsive Liquid sections and speed optimization"
+    ],
+    metrics: [
+      { label: "Return Rate Reduction", value: "-22%" },
+      { label: "Checkout Completion", value: "+29%" }
+    ],
+    technologies: ["Shopify 2.0", "Liquid", "Tailoring Configurator", "Speed Optimization", "Figma Design"]
+  },
+  {
+    id: "dope-boyz-muzic",
+    brandName: "Music & Digital Merch",
+    subtitle: "Custom Filter & Search System",
+    title: "Dope Boyz Muzic — Custom Filter & Search System",
+    shortTitle: "Dope Boyz Muzic",
+    category: "Music Merch & Apparel Brand",
+    categoryLabel: "Digital Goods & Apparel",
+    categorySlug: "themes",
+    website: "https://dopeboyzmuzic.com/",
+    thumbnail: "/assets/projects/dopeboyz.jpg",
+    summary: "Built custom filtering and sorting functionality on the homepage to match collection-page behavior. Implemented infinite scrolling and advanced product search for music products, improving product discovery and making the browsing experience more consistent.",
+    challenge: "The client needed collection-grade filtering, sorting, and audio preview discovery right on the storefront homepage without requiring users to navigate away to separate collection templates.",
+    solution: "Engineered bespoke Liquid and JavaScript filtering logic replicating collection-level facets on the homepage. Added infinite scroll pagination and predictive search tuned for beats, audio licensing, and apparel merch.",
+    highlights: [
+      "Custom homepage filtering matching collection-page behavior",
+      "Infinite scroll pagination with zero layout shift",
+      "Advanced predictive product search for audio and apparel",
+      "Integrated audio preview player and instant add-to-cart"
+    ],
+    metrics: [
+      { label: "Product Discovery", value: "+35%" },
+      { label: "Search Conversion", value: "+28%" }
+    ],
+    technologies: ["Shopify 2.0", "Liquid", "JavaScript ES6", "Storefront Search & Discovery", "Ajax API"]
+  },
+  {
+    id: "wood-floor-store",
+    brandName: "Home & Flooring",
+    subtitle: "Custom Pricing Calculator",
+    title: "Wood Floor Store — Custom Pricing Calculator",
+    shortTitle: "Wood Floor Store",
+    category: "Flooring & Home Improvement",
+    categoryLabel: "Home & Flooring Brand",
+    categorySlug: "themes",
+    website: "https://woodfloorstore.uk/",
+    thumbnail: "/assets/projects/woodfloor.jpg",
+    summary: "Developed a custom interactive calculator with a Figma-based design implementation to help customers calculate product pricing and specifications for flooring projects.",
+    challenge: "Customers found it difficult to calculate exact pack quantities, square-meter coverage, and wastage margins for engineered oak and hardwood flooring, leading to customer support bottlenecks and abandoned carts.",
+    solution: "Created an interactive square-footage and area calculator based on Figma specifications. Customers enter room dimensions or required area, and the calculator computes the exact pack quantity, calculates price with wastage allowance, and pushes custom line-item properties directly to cart.",
+    highlights: [
+      "Custom interactive room area and square-footage calculator",
+      "Pixel-accurate implementation from Figma designs",
+      "Automatic pack quantity rounding and wastage calculation",
+      "Seamless integration with Shopify Cart line-item properties"
+    ],
+    metrics: [
+      { label: "Quote Prep Time", value: "-40%" },
+      { label: "Visitor Usage", value: "65%" }
+    ],
+    technologies: ["Custom Liquid", "JavaScript Calculator", "Figma Implementation", "Cart Attributes", "CSS3"]
+  },
+  {
+    id: "alpha-tech-apparel",
+    brandName: "Technical Wear",
+    subtitle: "Inventory Synchronization App",
+    title: "Alpha Tech Apparel — Inventory Synchronization App",
+    shortTitle: "Alpha Tech Apparel",
+    category: "Apparel Brand",
+    categoryLabel: "Technical Apparel",
     categorySlug: "apps",
-    thumbnail: "/assets/projects/checkout-functions.jpg",
-    clientType: "Growing D2C E-Commerce Brands (20+ Implementations)",
-    summary: "Integrated Stripe, PayPal, Klaviyo, and Mailchimp across 20+ custom Shopify stores to automate checkout flows, abandoned cart recovery, and customer lifecycle marketing.",
-    challenge: "Clients struggled with fragmented customer communications, lost abandoned carts, and complicated checkout flows that resulted in dropped purchases.",
-    solution: "Engineered robust multi-payment checkout setups with express wallet buttons and connected real-time webhooks to Klaviyo and Mailchimp. Created dynamic cart triggers, personalized post-purchase follow-ups, and automated inventory back-in-stock alerts.",
+    website: "https://alphatechapparel.com/",
+    thumbnail: "/assets/projects/alphatech.jpg",
+    summary: "Developed a custom Shopify application to synchronize inventory across gender-specific product variants sharing a common physical stock pool. Used Shopify APIs to maintain consistent inventory and prevent overselling.",
+    challenge: "Men's and women's apparel cuts pulled from a shared underlying physical warehouse inventory pool. Independent Shopify variant tracking resulted in discrepancies and frequent overselling during product drop spikes.",
+    solution: "Built a custom event-driven Shopify app using Shopify APIs and webhooks. Whenever an order is created or inventory level changes, the app instantly recalculates the pooled quantity and synchronizes corresponding SKU variants in real time.",
     highlights: [
-      "Stripe and PayPal Express one-click checkout implementation",
-      "Custom event tracking for Viewed Product and Added to Cart in Klaviyo",
-      "Automated webhook pipelines for multi-channel email retention flows",
-      "Custom cart drawer upsell triggers based on current cart value"
+      "Event-driven Shopify webhooks for real-time inventory calculation",
+      "Single-pool inventory logic across variant clusters",
+      "Automated stock level adjustments with zero overselling",
+      "Clean merchant dashboard for variant group management"
     ],
     metrics: [
-      { label: "Client Stores Integrated", value: "20+" },
-      { label: "Abandoned Cart Recovery", value: "+18%" },
-      { label: "Checkout Drop-off", value: "-14%" }
+      { label: "Inventory Discrepancies", value: "-95%" },
+      { label: "Overselling Incidents", value: "0% (Eliminated)" }
     ],
-    technologies: ["Stripe API", "PayPal SDK", "Klaviyo API", "Mailchimp", "Shopify Webhooks", "Liquid"]
+    technologies: ["Shopify Admin API", "Webhooks Pipeline", "Node.js", "Remix", "GraphQL"]
+  },
+  {
+    id: "speedgear",
+    brandName: "Motorsport & Apparel",
+    subtitle: "WordPress to Shopify Migration",
+    title: "Speedgear — WordPress to Shopify Migration",
+    shortTitle: "Speedgear",
+    category: "Motorsport & Apparel Brand",
+    categoryLabel: "Motorsport Apparel",
+    categorySlug: "migration",
+    website: "http://www.speedgear.com/",
+    thumbnail: "/assets/projects/speedgear.jpg",
+    summary: "Migrated an e-commerce storefront from WordPress to Shopify, implementing custom inventory synchronization between retail and wholesale stores using Shopify APIs. Added category-specific filtering using Liquid and metafields.",
+    challenge: "Legacy WordPress/WooCommerce platform suffered from slow load times, frequent downtime during racing season spikes, and disconnected inventory between retail and wholesale operations.",
+    solution: "Executed a complete re-platforming to Shopify 2.0 with custom 301 redirect mapping, full customer and catalog migration, and custom inventory sync between retail and wholesale stores via Shopify APIs. Implemented category-specific filtering with Liquid metafields.",
+    highlights: [
+      "Seamless platform migration with 100% SEO preservation",
+      "Custom retail-to-wholesale inventory sync via Shopify API",
+      "Category-specific filtering using Liquid and Shopify Metafields",
+      "High-speed mobile-first storefront architecture"
+    ],
+    metrics: [
+      { label: "Page Load Time", value: "-45%" },
+      { label: "Inventory Accuracy", value: "98%" }
+    ],
+    technologies: ["Platform Migration", "Shopify 2.0", "Liquid", "Shopify Metafields", "Shopify API Sync"]
+  },
+  {
+    id: "aqua-tech-pool-supply",
+    brandName: "Pool & Spa Equipment",
+    subtitle: "Storefront Redesign & Custom Filtering",
+    title: "Aqua Tech Pool Supply — Storefront Redesign & Custom Filtering",
+    shortTitle: "Aqua Tech Pool Supply",
+    category: "Pool & Spa Equipment Brand",
+    categoryLabel: "Equipment & Supplies",
+    categorySlug: "themes",
+    website: "https://appaetechpoolsupply.com/",
+    thumbnail: "/assets/projects/checkout-functions.jpg",
+    summary: "Engineered an e-commerce storefront redesign with enhanced category navigation, commercial pool equipment specifications, and streamlined B2B ordering.",
+    challenge: "The existing store featured complex commercial pump and filter parts that customers struggled to identify, resulting in high return rates and cart abandonment.",
+    solution: "Redesigned the store layout with faceted equipment specifications (flow rate, voltage, pool size), integrated custom spec sheets on product pages, and streamlined the commercial checkout experience.",
+    highlights: [
+      "Comprehensive catalog and navigation redesign",
+      "Faceted technical specification filtering",
+      "Custom B2B quotation and checkout flow",
+      "Mobile speed and Core Web Vitals optimization"
+    ],
+    metrics: [
+      { label: "Mobile Conversions", value: "+32%" },
+      { label: "Category Load Time", value: "-50%" }
+    ],
+    technologies: ["Shopify 2.0", "Liquid Architecture", "Storefront API", "Speed Optimization"]
   }
 ];
 
-export const workExperience = [
+// Freelance technical milestones replacing all employer/company timelines
+export const freelanceMilestones = [
   {
-    role: "Shopify Developer",
-    company: "Parkhya Solutions Pvt. Ltd.",
-    location: "Indore, MP, India",
-    period: "Jul 2025 – Present",
-    current: true,
-    summary: "Focusing on custom Shopify apps, Shopify Plus checkout extensions, and Shopify Functions for high-growth e-commerce merchants.",
-    bullets: [
-      "Developed multiple custom Shopify apps using Shopify API and Remix, including checkout and admin UI extensions and Shopify Functions.",
-      "Built a real-time inventory sync app using Shopify webhooks to share single stock across gender-specific variants, preventing overselling.",
-      "Created a custom Admin UI extension for bulk order printing, cutting order processing time by 60% for high-volume merchants.",
-      "Implemented Delivery Customization functions to conditionally hide shipping options at checkout, enabling flexible shipping strategies and lower costs.",
-      "Built custom checkout, cart, and fulfillment logic using the Shopify Functions API with zero performance impact."
+    period: "Ongoing",
+    title: "Independent Freelance Shopify Expert & Plus Consultant",
+    focus: "Shopify Plus, Custom Remix Apps, Checkout Extensibility & Bespoke Themes",
+    summary: "Partnering directly with direct-to-consumer brands, fast-growing e-commerce merchants, and digital design agencies to engineer high-converting Shopify solutions.",
+    deliverables: [
+      "Custom Shopify applications built with Remix, Node.js, and GraphQL Admin API.",
+      "Delivery and payment customization functions using Shopify Functions API with zero latency.",
+      "Custom inventory synchronization apps connecting shared stock pools across variant clusters.",
+      "Bespoke Shopify 2.0 themes translated from Figma designs with modular Liquid sections."
     ]
   },
   {
-    role: "Web Developer",
-    company: "ITGeeks Technologies Pvt. Ltd.",
-    location: "Dewas, MP, India",
-    period: "Jan 2024 – Jul 2025",
-    current: false,
-    summary: "Led frontend architecture, custom Shopify theme engineering, and performance optimization across e-commerce client engagements.",
-    bullets: [
-      "Architected and deployed 60+ custom Shopify stores with dynamic filtering, custom checkout, and third-party integrations.",
-      "Integrated Stripe, PayPal, Klaviyo, and Mailchimp for 20+ e-commerce clients; improved Lighthouse scores from 40 to 85+.",
-      "Collaborated with brand founders to translate design wireframes into responsive, high-converting Liquid themes.",
-      "Engineered bespoke product customizers, slide-out carts, and responsive collection layouts."
+    period: "Milestone",
+    title: "Custom Storefront Engineering & E-Commerce Migrations",
+    focus: "Bespoke Themes, Platform Migrations & Custom Calculators",
+    summary: "Architecting bespoke Shopify storefronts, seamless migrations from legacy platforms like WordPress/WooCommerce, and interactive pricing calculators.",
+    deliverables: [
+      "Successfully delivered 60+ bespoke Shopify stores with dynamic filtering and mobile-first UX.",
+      "Developed interactive room area and pricing calculators for flooring and custom product merchants.",
+      "Executed zero-downtime store migrations with 100% 301 SEO redirect preservation.",
+      "Automated multi-gateway checkout setups including Stripe, PayPal, Klaviyo, and webhooks."
     ]
   },
   {
-    role: "Web Developer",
-    company: "Oasis Infobyte",
-    location: "Delhi, India",
-    period: "Feb 2023 – Aug 2023",
-    current: false,
-    summary: "Built modern responsive frontend interfaces, RESTful API endpoints, and authenticated web applications.",
-    bullets: [
-      "Built responsive React.js and Next.js applications achieving 85+ PageSpeed scores.",
-      "Developed RESTful APIs with Node.js and Express, implementing JWT authentication and role-based access control.",
-      "Ensured cross-browser compatibility and accessible component design."
+    period: "Foundation",
+    title: "Full-Stack Web Development & Performance Optimization",
+    focus: "JavaScript, React, Node.js, Core Web Vitals & Speed",
+    summary: "Mastering the underlying technologies that make modern e-commerce storefronts blazingly fast and structurally resilient.",
+    deliverables: [
+      "Systematic Core Web Vitals optimization elevating mobile Lighthouse scores from 40 to 85+.",
+      "Full-stack REST and GraphQL API integration connecting external ERP and warehouse systems.",
+      "Pixel-accurate design-system implementation with cross-browser and mobile device compatibility."
     ]
   }
 ];
@@ -304,27 +487,6 @@ export const educationData = [
     location: "Dewas, MP, India",
     period: "2019 – 2020",
     type: "Secondary School"
-  }
-];
-
-export const certificationsData = [
-  {
-    title: "Software Engineer Virtual Program",
-    issuer: "Walmart Global Tech",
-    date: "Jun 2023",
-    credentialId: "6YgBBActnoQpTYCHS"
-  },
-  {
-    title: "Frontend Development Workshop",
-    issuer: "Scholarhat",
-    date: "Oct 2023",
-    credentialId: "511Y251023"
-  },
-  {
-    title: "Build E-Commerce Platform",
-    issuer: "Scaler Academy",
-    date: "May 2023",
-    credentialId: "Verified Certificate"
   }
 ];
 
@@ -410,14 +572,14 @@ export const approachStages = [
 ];
 
 export const tickerItems = [
+  "Freelance Shopify Expert",
+  "8+ Years Experience",
   "Shopify Plus Specialist",
   "Remix App Development",
-  "Shopify Functions API",
-  "60+ Stores Shipped",
-  "Real-Time Inventory Sync",
-  "Checkout Extensibility",
-  "85+ Lighthouse Performance",
-  "Admin UI Extensions",
   "Custom Liquid Themes",
-  "Stripe & Klaviyo Integration"
+  "Shopify Functions API",
+  "Inventory Sync Automation",
+  "Pricing Calculators",
+  "60+ Stores Shipped",
+  "85+ Lighthouse Performance"
 ];

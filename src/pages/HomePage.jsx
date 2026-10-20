@@ -2,18 +2,18 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
+  Check, 
   Sparkles, 
   Layers, 
   Code2, 
   Gauge, 
   Cpu, 
   Link2, 
-  CheckCircle2, 
-  TrendingUp, 
   Zap, 
   ShieldCheck, 
   Clock, 
-  ChevronRight,
+  TrendingUp, 
+  CheckCircle2,
   ExternalLink
 } from 'lucide-react';
 import Ticker from '../components/Ticker';
@@ -24,237 +24,147 @@ import {
   verifiedMetrics, 
   servicesData, 
   projectsData, 
-  approachStages, 
-  tickerItems,
-  workExperience 
+  tickerItems 
 } from '../data/portfolioData';
 
 export default function HomePage() {
   const [selectedProject, setSelectedProject] = useState(null);
 
+  // Tech partner logos for marquee
+  const techPartners = [
+    "Shopify Plus",
+    "Shopify Functions",
+    "Remix Full-Stack",
+    "Liquid Architecture",
+    "GraphQL Admin API",
+    "Polaris UI",
+    "Stripe Payments",
+    "Klaviyo Retention",
+    "Google Lighthouse",
+    "Webhooks Pipeline"
+  ];
+
   return (
     <div className="homepage-wrapper">
       {/* ============================================================== */}
-      {/* HERO SECTION                                                  */}
+      {/* SECTION 1: HERO SECTION matching priyasinghi.com               */}
       {/* ============================================================== */}
-      <section className="hero-section" style={{
-        position: 'relative',
-        padding: '5rem 1.5rem 4rem',
-        background: 'radial-gradient(ellipse at 50% 0%, rgba(186, 154, 253, 0.18) 0%, rgba(25, 12, 57, 0) 70%), var(--color-bg)',
-        overflow: 'hidden'
-      }}>
-        {/* Decorative background glows */}
-        <div style={{
-          position: 'absolute',
-          top: '-150px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '700px',
-          height: '400px',
-          background: 'radial-gradient(circle, rgba(186,154,253,0.15) 0%, rgba(78,24,112,0) 70%)',
-          filter: 'blur(60px)',
-          pointerEvents: 'none'
-        }} />
-
-        <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1240px', margin: '0 auto' }}>
+      <section 
+        className="home-hero-section"
+        style={{
+          backgroundColor: 'var(--color-hero-bg)',
+          padding: '5rem 1.5rem 5rem',
+          position: 'relative',
+          overflow: 'hidden'
+        }}
+      >
+        <div className="container">
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '3.5rem',
             alignItems: 'center'
           }}>
-            {/* Left Content Column */}
+            {/* Left Column: Heading, Subhead, Pill Buttons */}
             <div>
-              {/* Availability Badge */}
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.6rem',
-                padding: '0.4rem 1rem',
-                borderRadius: '999px',
-                background: 'rgba(186, 154, 253, 0.1)',
-                border: '1px solid rgba(186, 154, 253, 0.3)',
-                color: 'var(--color-primary-lilac)',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                letterSpacing: '0.04em',
+              <h1 style={{
+                fontSize: 'clamp(2.5rem, 4.8vw, 4.2rem)',
+                fontWeight: 800,
+                color: 'var(--color-deep-purple)',
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em',
                 marginBottom: '1.5rem'
               }}>
-                <span style={{
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  background: '#10b981',
-                  boxShadow: '0 0 10px #10b981'
-                }} />
-                Available for Shopify & Plus Projects
-              </div>
-
-              {/* Main Headline */}
-              <h1 style={{
-                fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
-                fontWeight: 800,
-                lineHeight: 1.15,
-                color: 'var(--color-white)',
-                marginBottom: '1.25rem',
-                letterSpacing: '-0.02em'
-              }}>
-                Engineering <span className="gradient-text">High-Converting</span> Shopify Storefronts & Apps
+                Your Shopify <strong style={{ color: 'var(--color-plum)' }}>Superpower</strong> to Spark Growth
               </h1>
 
-              {/* Supporting Subtitle */}
               <p style={{
-                fontSize: 'clamp(1rem, 1.8vw, 1.2rem)',
-                lineHeight: 1.6,
-                color: 'var(--color-text-muted)',
-                marginBottom: '2rem',
+                fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
+                lineHeight: 1.75,
+                color: 'var(--color-text-body)',
+                marginBottom: '2.5rem',
                 maxWidth: '560px'
               }}>
-                Hi, I'm <strong style={{ color: 'var(--color-white)' }}>Himanshu Soni</strong>. A dedicated Shopify Developer with 3+ years of experience building custom Remix apps, Shopify Plus checkout extensions, and ultra-fast Liquid storefronts that boost conversions.
+                I'm <strong style={{ color: 'var(--color-deep-purple)' }}>Himanshu</strong> — an independent <strong>Freelance Shopify Expert</strong> with <strong>8+ years of experience</strong> blending Liquid architecture, custom apps &amp; speed optimization to <strong>supercharge</strong> e-commerce brands. From chaos to clarity, I help you grow with purpose.
               </p>
 
-              {/* CTAs */}
+              {/* Exact Pill Action Buttons */}
               <div style={{
                 display: 'flex',
                 flexWrap: 'wrap',
                 gap: '1rem',
-                marginBottom: '2.5rem'
+                alignItems: 'center'
               }}>
-                <Link to="/contactus" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                  Let's Discuss Your Project <ArrowRight size={18} />
+                <Link to="/website-portfolio" className="btn btn-dark">
+                  Explore My Work <ArrowRight size={16} />
                 </Link>
-                <Link to="/website-portfolio" className="btn btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                  Explore My Work
-                </Link>
-                <Link to="/planner" className="btn btn-secondary" style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  borderColor: 'rgba(186, 154, 253, 0.4)'
-                }}>
-                  <Sparkles size={16} color="var(--color-primary-lilac)" />
-                  Project Planner
-                </Link>
-              </div>
 
-              {/* Verified Metrics Counter Row */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
-                gap: '1rem',
-                paddingTop: '1.5rem',
-                borderTop: '1px solid var(--color-border)'
-              }}>
-                {verifiedMetrics.map((m, idx) => (
-                  <div key={idx} style={{ textAlign: 'left' }}>
-                    <div style={{
-                      fontSize: '1.75rem',
-                      fontWeight: 800,
-                      color: 'var(--color-primary-lilac)',
-                      lineHeight: 1
-                    }}>
-                      {m.value}
-                    </div>
-                    <div style={{
-                      fontSize: '0.78rem',
-                      fontWeight: 600,
-                      color: 'var(--color-white)',
-                      marginTop: '0.3rem'
-                    }}>
-                      {m.label}
-                    </div>
-                  </div>
-                ))}
+                <Link to="/contactus" className="btn btn-lilac">
+                  Lets Talk <ArrowRight size={16} />
+                </Link>
               </div>
             </div>
 
-            {/* Right Hero Visual Banner */}
-            <div style={{ position: 'relative' }}>
+            {/* Right Column: Hero Visual Graphic with Sparkles */}
+            <div style={{ position: 'relative', textAlign: 'center' }}>
               <div style={{
                 position: 'relative',
-                borderRadius: '24px',
-                overflow: 'hidden',
-                background: 'linear-gradient(145deg, rgba(78, 24, 112, 0.4) 0%, rgba(25, 12, 57, 0.8) 100%)',
-                border: '1px solid rgba(186, 154, 253, 0.3)',
-                boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 40px rgba(186, 154, 253, 0.15)',
-                padding: '0.75rem'
+                display: 'inline-block',
+                maxWidth: '520px',
+                width: '100%'
               }}>
-                <img 
-                  src="/assets/hero-shopify.jpg" 
-                  alt="Shopify Development by Himanshu Soni"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    borderRadius: '18px',
-                    display: 'block',
-                    objectFit: 'cover'
-                  }}
-                />
-
-                {/* Floating Metric Pill 1 */}
+                {/* Floating Decorative Sparkles */}
                 <div style={{
                   position: 'absolute',
-                  top: '20px',
-                  left: '20px',
-                  background: 'rgba(25, 12, 57, 0.85)',
-                  backdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(186, 154, 253, 0.4)',
-                  borderRadius: '12px',
-                  padding: '0.6rem 1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  boxShadow: '0 10px 20px rgba(0,0,0,0.4)'
+                  top: '-20px',
+                  left: '10px',
+                  color: 'var(--color-deep-purple)',
+                  fontSize: '2rem',
+                  lineHeight: 1,
+                  animation: 'pulse 2s infinite ease-in-out'
                 }}>
-                  <div style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '8px',
-                    background: 'rgba(16, 185, 129, 0.2)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#10b981'
-                  }}>
-                    <Gauge size={18} />
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)' }}>Performance Overhaul</div>
-                    <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#fff' }}>40 → 85+ Lighthouse</div>
-                  </div>
+                  ✦
+                </div>
+                <div style={{
+                  position: 'absolute',
+                  top: '40px',
+                  right: '0px',
+                  color: 'var(--color-lilac)',
+                  fontSize: '1.6rem',
+                  lineHeight: 1
+                }}>
+                  ✦
+                </div>
+                <div style={{
+                  position: 'absolute',
+                  bottom: '20px',
+                  left: '-10px',
+                  color: 'var(--color-plum)',
+                  fontSize: '1.8rem',
+                  lineHeight: 1
+                }}>
+                  ✦
                 </div>
 
-                {/* Floating Metric Pill 2 */}
+                {/* Hero Illustration Graphic */}
                 <div style={{
-                  position: 'absolute',
-                  bottom: '25px',
-                  right: '25px',
-                  background: 'rgba(25, 12, 57, 0.85)',
-                  backdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(186, 154, 253, 0.4)',
-                  borderRadius: '12px',
-                  padding: '0.6rem 1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  boxShadow: '0 10px 20px rgba(0,0,0,0.4)'
+                  borderRadius: '28px',
+                  overflow: 'hidden',
+                  boxShadow: '0 25px 60px rgba(25, 12, 57, 0.12)',
+                  border: '1px solid rgba(186, 154, 253, 0.3)',
+                  background: '#ffffff',
+                  padding: '1rem'
                 }}>
-                  <div style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '8px',
-                    background: 'rgba(186, 154, 253, 0.2)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--color-primary-lilac)'
-                  }}>
-                    <Clock size={18} />
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)' }}>Warehouse Automation</div>
-                    <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#fff' }}>-60% Order Prep Time</div>
-                  </div>
+                  <img 
+                    src="/assets/hero-shopify.jpg" 
+                    alt="Himanshu Soni — Shopify Developer" 
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      borderRadius: '20px',
+                      display: 'block'
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -263,164 +173,35 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================== */}
-      {/* DARK MARQUEE TICKER                                           */}
+      {/* SECTION 2: TECH PARTNERS / BRANDS MARQUEE                      */}
       {/* ============================================================== */}
-      <Ticker items={tickerItems} variant="dark" />
-
-      {/* ============================================================== */}
-      {/* MULTI-SKILLED SHOPIFY SPECIALIST (SERVICES)                   */}
-      {/* ============================================================== */}
-      <section className="section" style={{ background: 'var(--color-bg)' }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 3.5rem' }}>
-            <span style={{
-              fontSize: '0.82rem',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.12em',
-              color: 'var(--color-primary-lilac)',
-              display: 'inline-block',
-              marginBottom: '0.75rem'
-            }}>
-              Multi-Skilled Shopify Specialist
-            </span>
-            <h2 style={{
-              fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
-              fontWeight: 800,
-              color: 'var(--color-white)',
-              lineHeight: 1.2,
-              marginBottom: '1rem'
-            }}>
-              End-to-End Shopify Engineering That Drives Measurable Revenue
-            </h2>
-            <p style={{
-              fontSize: '1.05rem',
-              color: 'var(--color-text-muted)',
-              lineHeight: 1.6
-            }}>
-              From bespoke Shopify 2.0 themes to complex Remix apps and custom checkout functions, here is how I help merchants solve intricate technical challenges.
-            </p>
-          </div>
-
-          {/* 6 Services Grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
-            gap: '1.75rem'
+      <section style={{
+        background: '#ffffff',
+        borderTop: '1px solid #eef0f3',
+        borderBottom: '1px solid #eef0f3',
+        padding: '1.5rem 0'
+      }}>
+        <div style={{ textAlign: 'center', marginBottom: '0.75rem' }}>
+          <span style={{
+            fontSize: '0.75rem',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: '0.12em',
+            color: 'var(--color-text-muted)'
           }}>
-            {servicesData.map((svc) => (
-              <div 
-                key={svc.id}
-                className="card"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%'
-                }}
-              >
-                <div>
-                  {/* Card Header Icon & Tagline */}
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '1.25rem'
-                  }}>
-                    <span style={{
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'var(--color-primary-lilac)',
-                      background: 'rgba(186, 154, 253, 0.1)',
-                      padding: '0.3rem 0.75rem',
-                      borderRadius: '999px',
-                      border: '1px solid rgba(186, 154, 253, 0.2)'
-                    }}>
-                      {svc.tagline}
-                    </span>
-                    <div style={{
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '10px',
-                      background: 'rgba(186, 154, 253, 0.12)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: 'var(--color-primary-lilac)'
-                    }}>
-                      {svc.icon === 'layers' && <Layers size={20} />}
-                      {svc.icon === 'app' && <Cpu size={20} />}
-                      {svc.icon === 'code' && <Code2 size={20} />}
-                      {svc.icon === 'gauge' && <Gauge size={20} />}
-                      {svc.icon === 'link' && <Link2 size={20} />}
-                      {svc.icon === 'refresh' && <Zap size={20} />}
-                    </div>
+            Technologies &amp; Integrations Trusted by Merchants
+          </span>
+        </div>
+        <div className="ticker-band" style={{ background: 'transparent', color: 'var(--color-deep-purple)' }}>
+          <div className="ticker-track" style={{ animationDuration: '28s' }}>
+            {[0, 1, 2].map((loopIdx) => (
+              <div key={loopIdx} style={{ display: 'inline-flex', alignItems: 'center' }}>
+                {techPartners.map((item, idx) => (
+                  <div key={idx} className="ticker-item" style={{ color: 'var(--color-deep-purple)', fontSize: '0.9rem' }}>
+                    <span style={{ color: 'var(--color-lilac)' }}>✦</span>
+                    <span>{item}</span>
                   </div>
-
-                  {/* Title */}
-                  <h3 style={{
-                    fontSize: '1.35rem',
-                    fontWeight: 700,
-                    color: 'var(--color-white)',
-                    marginBottom: '0.85rem',
-                    lineHeight: 1.3
-                  }}>
-                    {svc.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p style={{
-                    fontSize: '0.92rem',
-                    color: 'var(--color-text-muted)',
-                    lineHeight: 1.6,
-                    marginBottom: '1.5rem'
-                  }}>
-                    {svc.description}
-                  </p>
-
-                  {/* Capability Checklist */}
-                  <ul style={{
-                    listStyle: 'none',
-                    padding: 0,
-                    margin: 0,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.6rem'
-                  }}>
-                    {svc.capabilities.map((cap, cIdx) => (
-                      <li key={cIdx} style={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '0.6rem',
-                        fontSize: '0.85rem',
-                        color: 'var(--color-text)',
-                        lineHeight: 1.4
-                      }}>
-                        <CheckCircle2 size={16} color="var(--color-primary-lilac)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                        <span>{cap}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                  <Link 
-                    to="/planner"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
-                      fontSize: '0.85rem',
-                      fontWeight: 600,
-                      color: 'var(--color-primary-lilac)',
-                      textDecoration: 'none'
-                    }}
-                  >
-                    Plan this service <ChevronRight size={16} />
-                  </Link>
-                </div>
+                ))}
               </div>
             ))}
           </div>
@@ -428,7 +209,272 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================== */}
-      {/* FEATURED CASE STUDIES SLIDER (PRIYA COVERFLOW INSPIRATION)     */}
+      {/* SECTION 3: WHAT IT'S LIKE TO WORK WITH ME (PRIYA MATCH)       */}
+      {/* ============================================================== */}
+      <section className="section section-light">
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '4rem',
+            alignItems: 'center'
+          }}>
+            {/* Left Graphic */}
+            <div>
+              <div style={{
+                borderRadius: '24px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 45px rgba(25, 12, 57, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.06)'
+              }}>
+                <img 
+                  src="/assets/projects/admin-extension.jpg" 
+                  alt="Shopify Development by Himanshu Soni" 
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+            </div>
+
+            {/* Right Checklist */}
+            <div>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
+                color: 'var(--color-deep-purple)',
+                lineHeight: 1.25,
+                marginBottom: '1rem',
+                fontWeight: 700
+              }}>
+                What It’s Like to Work With Me
+              </h2>
+
+              <p style={{
+                fontSize: '1.05rem',
+                color: 'var(--color-text-body)',
+                lineHeight: 1.7,
+                marginBottom: '2rem'
+              }}>
+                When we collaborate, you’re not just another project — I’m fully invested in bringing your store's vision to life.
+              </p>
+
+              {/* 7-Point Checklist matching priyasinghi.com */}
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: '0 0 2.5rem 0',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem'
+              }}>
+                {[
+                  "Direct communication with me — zero agency middlemen",
+                  "8+ years of specialized Shopify Plus & custom e-commerce expertise",
+                  "Full focus on every store architecture & conversion funnel",
+                  "Transparent, flat-fee project pricing with clear milestones",
+                  "Solutions tailored strictly to your commercial business goals",
+                  "Timely delivery, zero launch delays, zero ghosting",
+                  "Reliable, long-term technical partnership & post-launch support"
+                ].map((point, pIdx) => (
+                  <li key={pIdx} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.85rem',
+                    fontSize: '0.98rem',
+                    color: 'var(--color-deep-purple)',
+                    fontWeight: 500
+                  }}>
+                    <div style={{
+                      width: '24px',
+                      height: '24px',
+                      borderRadius: '50%',
+                      background: 'rgba(16, 185, 129, 0.15)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#10b981',
+                      flexShrink: 0
+                    }}>
+                      <Check size={14} strokeWidth={3} />
+                    </div>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link to="/contactus" className="btn btn-dark">
+                Book a call <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================== */}
+      {/* SECTION 4: CORE FREELANCE SPECIALIZATIONS                      */}
+      {/* ============================================================== */}
+      <section style={{
+        background: '#f8f9fa',
+        borderTop: '1px solid #eef0f3',
+        borderBottom: '1px solid #eef0f3',
+        padding: '3rem 1.5rem'
+      }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h3 style={{
+            fontSize: '1.05rem',
+            color: 'var(--color-text-muted)',
+            fontWeight: 700,
+            marginBottom: '1.75rem',
+            textTransform: 'uppercase',
+            letterSpacing: '0.12em'
+          }}>
+            Key Freelance Specializations &amp; Capabilities
+          </h3>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '1.5rem',
+            alignItems: 'center'
+          }}>
+            <div style={{
+              background: '#ffffff',
+              padding: '1.25rem',
+              borderRadius: '16px',
+              border: '1px solid #e5e7eb',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
+            }}>
+              <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--color-deep-purple)' }}>Bespoke Liquid Themes</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>Shopify 2.0 &amp; Figma Conversion</div>
+            </div>
+
+            <div style={{
+              background: '#ffffff',
+              padding: '1.25rem',
+              borderRadius: '16px',
+              border: '1px solid #e5e7eb',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
+            }}>
+              <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--color-deep-purple)' }}>Shopify Plus &amp; Functions</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>Checkout Rules &amp; Extensibility</div>
+            </div>
+
+            <div style={{
+              background: '#ffffff',
+              padding: '1.25rem',
+              borderRadius: '16px',
+              border: '1px solid #e5e7eb',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
+            }}>
+              <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--color-deep-purple)' }}>Inventory Sync &amp; Apps</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>Remix, Webhooks &amp; APIs</div>
+            </div>
+
+            <div style={{
+              background: '#ffffff',
+              padding: '1.25rem',
+              borderRadius: '16px',
+              border: '1px solid #e5e7eb',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
+            }}>
+              <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--color-deep-purple)' }}>Speed &amp; Conversion</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>85+ Mobile Lighthouse Tuning</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================== */}
+      {/* SECTION 5: MULTI-SKILLED. PURPOSE-DRIVEN (PRIYA MATCH)         */}
+      {/* ============================================================== */}
+      <section id="services" className="section section-light">
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '2rem',
+            alignItems: 'end',
+            marginBottom: '3.5rem'
+          }}>
+            <div>
+              <h2 style={{
+                fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)',
+                color: 'var(--color-deep-purple)',
+                fontWeight: 700,
+                lineHeight: 1.2
+              }}>
+                Multi-Skilled. Purpose-Driven
+              </h2>
+            </div>
+            <div>
+              <p style={{
+                color: 'var(--color-text-body)',
+                fontSize: '1.05rem',
+                lineHeight: 1.7,
+                margin: 0
+              }}>
+                With 8+ years of experience as an independent Freelance Shopify Expert, I specialize in helping direct-to-consumer brands and agencies build high-converting storefronts, custom apps, and frictionless checkouts.
+              </p>
+            </div>
+          </div>
+
+          {/* 3 Large Service Boxes (.service-box) matching priyasinghi.com */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+            gap: '2rem'
+          }}>
+            {/* Box 1: Shopify Plus & Checkout */}
+            <div className="service-box">
+              <div>
+                <div className="service-icon-wrap">
+                  <Layers size={26} color="var(--color-deep-purple)" />
+                </div>
+                <h3>Shopify Plus &amp; Checkout</h3>
+                <p>
+                  Shopify Plus specialist crafting custom checkout functions, delivery rules, and payment customizations that lower freight costs and convert.
+                </p>
+              </div>
+              <Link to="/services" className="explore-link">
+                Explore My Expertise <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Box 2: Custom Themes & Liquid */}
+            <div className="service-box">
+              <div>
+                <div className="service-icon-wrap">
+                  <Code2 size={26} color="var(--color-deep-purple)" />
+                </div>
+                <h3>Custom Themes &amp; Liquid</h3>
+                <p>
+                  Bespoke Shopify 2.0 storefront developer building sales-focused Liquid themes from Figma with dynamic swatches, flyout cart &amp; smart UX.
+                </p>
+              </div>
+              <Link to="/services" className="explore-link">
+                Explore My Expertise <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Box 3: Remix Apps & Integrations */}
+            <div className="service-box">
+              <div>
+                <div className="service-icon-wrap">
+                  <Cpu size={26} color="var(--color-deep-purple)" />
+                </div>
+                <h3>Remix Apps &amp; Webhooks</h3>
+                <p>
+                  Full-stack Shopify app developer driving automation with embedded Admin UI, inventory sync webhooks, and third-party APIs.
+                </p>
+              </div>
+              <Link to="/services" className="explore-link">
+                Explore My Expertise <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================== */}
+      {/* SECTION 6: CASE STUDIES SLIDER (TANGO COVERFLOW MATCH)         */}
       {/* ============================================================== */}
       <CoverflowSlider 
         projects={projectsData} 
@@ -436,436 +482,209 @@ export default function HomePage() {
       />
 
       {/* ============================================================== */}
-      {/* HOW I HELP MERCHANTS WIN (TECHNICAL STRENGTHS)                */}
+      {/* SECTION 7: DARK MARQUEE TICKER                                 */}
       {/* ============================================================== */}
-      <section className="section" style={{
-        background: 'linear-gradient(180deg, var(--color-bg) 0%, rgba(78, 24, 112, 0.15) 50%, var(--color-bg) 100%)',
-        position: 'relative'
+      <Ticker items={tickerItems} variant="dark" speed="22s" />
+
+      {/* ============================================================== */}
+      {/* SECTION 8: FULL-WIDTH MASSIVE QUOTE BANNER (PRIYA MATCH)       */}
+      {/* ============================================================== */}
+      <section style={{
+        background: '#ffffff',
+        padding: '5rem 1.5rem',
+        borderBottom: '1px solid #eef0f3'
       }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
+        <div className="container" style={{ maxWidth: '950px', textAlign: 'center' }}>
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
-            alignItems: 'center'
+            fontSize: 'clamp(1.6rem, 3.2vw, 2.5rem)',
+            fontWeight: 600,
+            lineHeight: 1.35,
+            color: 'var(--color-deep-purple)',
+            letterSpacing: '-0.02em',
+            marginBottom: '2rem'
           }}>
-            {/* Left Narrative */}
-            <div>
-              <span style={{
-                fontSize: '0.82rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.12em',
-                color: 'var(--color-primary-lilac)',
-                display: 'inline-block',
-                marginBottom: '0.75rem'
-              }}>
-                Engineering Discipline
-              </span>
-              <h2 style={{
-                fontSize: 'clamp(2rem, 3.2vw, 2.7rem)',
-                fontWeight: 800,
-                color: 'var(--color-white)',
-                lineHeight: 1.25,
-                marginBottom: '1.25rem'
-              }}>
-                Bridging Business Outcomes With Rock-Solid Shopify Code
-              </h2>
-              <p style={{
-                fontSize: '1.02rem',
-                color: 'var(--color-text-muted)',
-                lineHeight: 1.7,
-                marginBottom: '1.5rem'
-              }}>
-                Most store issues originate from bloated themes, misconfigured app scripts, or poorly structured checkout rules. I approach every store as a software system: minimizing third-party script reliance, using native Shopify 2.0 primitives, and writing edge-evaluated Shopify Functions that never slow down customers.
-              </p>
-
-              {/* 3 Pillars */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: 'rgba(16, 185, 129, 0.15)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#10b981',
-                    flexShrink: 0
-                  }}>
-                    <Zap size={18} />
-                  </div>
-                  <div>
-                    <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-white)', marginBottom: '0.25rem' }}>
-                      Core Web Vitals & Real-World Speed
-                    </h4>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>
-                      Boosting Lighthouse mobile scores from 40 to 85+ by deferring analytics, optimizing asset loading, and replacing bulky apps with native Liquid sections.
-                    </p>
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: 'rgba(186, 154, 253, 0.15)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--color-primary-lilac)',
-                    flexShrink: 0
-                  }}>
-                    <ShieldCheck size={18} />
-                  </div>
-                  <div>
-                    <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-white)', marginBottom: '0.25rem' }}>
-                      Shopify Functions Without Checkout Lag
-                    </h4>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>
-                      Building delivery customizations and discount logic with server-side WebAssembly execution on Shopify’s global edge network.
-                    </p>
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: 'rgba(234, 179, 8, 0.15)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#eab308',
-                    flexShrink: 0
-                  }}>
-                    <TrendingUp size={18} />
-                  </div>
-                  <div>
-                    <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-white)', marginBottom: '0.25rem' }}>
-                      Full Operational Automation (Remix & Webhooks)
-                    </h4>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>
-                      Custom Admin UI extensions that cut warehouse order processing time by 60% and real-time webhook sync preventing stock overselling.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <Link to="/approach" className="btn btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Explore My 6-Phase Approach <ArrowRight size={16} />
-              </Link>
+            “Himanshu's expertise in Shopify Functions and custom themes cut our order processing time by 60% while boosting storefront mobile speed past 85.”
+          </div>
+          <div>
+            <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--color-deep-purple)' }}>
+              Verified E-Commerce Merchant Deployment
             </div>
-
-            {/* Right Comparison / Bento Card */}
-            <div>
-              <div style={{
-                background: 'rgba(25, 12, 57, 0.7)',
-                backdropFilter: 'blur(16px)',
-                borderRadius: '20px',
-                border: '1px solid rgba(186, 154, 253, 0.3)',
-                padding: '2rem',
-                boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
-              }}>
-                <h3 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: 'var(--color-white)',
-                  marginBottom: '1.25rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
-                }}>
-                  <Sparkles size={18} color="var(--color-primary-lilac)" />
-                  How I Work vs Conventional Theme Modders
-                </h3>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                  <div style={{
-                    padding: '1.25rem',
-                    borderRadius: '12px',
-                    background: 'rgba(239, 68, 68, 0.08)',
-                    border: '1px solid rgba(239, 68, 68, 0.25)'
-                  }}>
-                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#f87171', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-                      Conventional Approach
-                    </div>
-                    <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.86rem', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-                      <li>Installs 15+ heavy third-party apps for minor styling</li>
-                      <li>Client-side JS hacks that crash under high checkout traffic</li>
-                      <li>Cluttered Liquid templates with zero modular documentation</li>
-                      <li>Mobile performance ignored until ad bounce rates spike</li>
-                    </ul>
-                  </div>
-
-                  <div style={{
-                    padding: '1.25rem',
-                    borderRadius: '12px',
-                    background: 'rgba(16, 185, 129, 0.08)',
-                    border: '1px solid rgba(16, 185, 129, 0.35)'
-                  }}>
-                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#34d399', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-                      Himanshu's Engineering Standard
-                    </div>
-                    <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.86rem', color: '#fff', lineHeight: 1.6 }}>
-                      <li>Native Shopify 2.0 schema sections customizable by merchants</li>
-                      <li>Server-side Shopify Functions with 0ms client latency</li>
-                      <li>Real-time event webhooks & embedded Remix applications</li>
-                      <li>Guaranteed 85+ Lighthouse score and Core Web Vitals compliance</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginTop: '0.2rem' }}>
+              High-Volume D2C Brand Implementation
             </div>
           </div>
         </div>
       </section>
 
       {/* ============================================================== */}
-      {/* WORKFLOW PREVIEW (6-PHASE APPROACH TEASER)                     */}
+      {/* SECTION 9: WHY WORK WITH ME (6 FEATURE BOXES)                  */}
       {/* ============================================================== */}
-      <section className="section" style={{ background: 'var(--color-bg)' }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 3rem' }}>
-            <span style={{
-              fontSize: '0.82rem',
+      <section className="section" style={{ background: '#fafafa' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 3.5rem' }}>
+            <h2 style={{
+              fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+              color: 'var(--color-deep-purple)',
               fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.12em',
-              color: 'var(--color-primary-lilac)',
-              display: 'inline-block',
               marginBottom: '0.75rem'
             }}>
-              Structured Methodology
-            </span>
-            <h2 style={{
-              fontSize: 'clamp(2rem, 3.2vw, 2.7rem)',
-              fontWeight: 800,
-              color: 'var(--color-white)',
-              lineHeight: 1.25,
-              marginBottom: '1rem'
-            }}>
-              A Battle-Tested 6-Phase Development Workflow
+              Why Work With Me
             </h2>
-            <p style={{
-              fontSize: '1rem',
-              color: 'var(--color-text-muted)',
-              lineHeight: 1.6
-            }}>
-              Clear milestones, constant communication, and verified deliverables from discovery through post-launch handover.
+            <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)' }}>
+              A Trusted Freelance Technical Partner Across Shopify Theme Design, Custom Apps &amp; Speed
             </p>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
-            gap: '1rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '1.75rem'
           }}>
-            {approachStages.map((st) => (
+            {[
+              {
+                title: "Strategic by Architecture",
+                desc: "I don’t just modify themes — I understand your commerce goals. Every section, app webhook, or Shopify Function starts with strategy and ends with measurable impact."
+              },
+              {
+                title: "8+ Years of Specialized Expertise",
+                desc: "Focused specifically on freelance Shopify development, Shopify Plus, custom apps, and speed optimization. I understand merchant operations and customer purchase funnels."
+              },
+              {
+                title: "One Developer, Full-Stack Capabilities",
+                desc: "No back-and-forth between multiple contractors. Get Liquid themes, custom Remix apps, checkout extensibility, and speed tuning handled under one roof."
+              },
+              {
+                title: "Reliable Timelines — Zero Ghosting",
+                desc: "Merchants often worry freelancers disappear. I stick to agreed schedules, communicate proactively, and deliver consistent, tested code."
+              },
+              {
+                title: "Custom-Built, Never Cookie-Cutter",
+                desc: "I don’t sell bloated multi-purpose themes. Whether it’s your Shopify Plus checkout or bespoke product customizer, everything is tailored for your business."
+              },
+              {
+                title: "Results That Speak",
+                desc: "Cutting order preparation time by 60%, eliminating variant overselling, and elevating Lighthouse speed scores to 85+ on real mobile devices."
+              }
+            ].map((item, idx) => (
               <div 
-                key={st.step}
-                style={{
-                  background: 'rgba(25, 12, 57, 0.6)',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(186, 154, 253, 0.2)',
-                  padding: '1.5rem 1.25rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  transition: 'all 0.3s ease'
-                }}
+                key={idx}
+                className="service-box"
+                style={{ padding: '2rem' }}
               >
-                <div style={{
-                  fontSize: '1.5rem',
-                  fontWeight: 800,
-                  color: st.color,
-                  lineHeight: 1,
-                  marginBottom: '0.75rem'
-                }}>
-                  {st.step}
+                <div>
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: 'var(--color-deep-purple)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.92rem', color: 'var(--color-text-body)' }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <h4 style={{
-                  fontSize: '0.98rem',
-                  fontWeight: 700,
-                  color: 'var(--color-white)',
-                  marginBottom: '0.4rem',
-                  lineHeight: 1.3
-                }}>
-                  {st.name}
-                </h4>
-                <p style={{
-                  fontSize: '0.8rem',
-                  color: 'var(--color-text-muted)',
-                  lineHeight: 1.4,
-                  marginTop: 'auto'
-                }}>
-                  {st.subtitle}
-                </p>
               </div>
             ))}
           </div>
-
-          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-            <Link to="/approach" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              View Detailed Development Methodology <ArrowRight size={18} />
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* ============================================================== */}
-      {/* VERIFIED PROFESSIONAL EXPERIENCE PREVIEW                       */}
+      {/* SECTION 10: CONVERSION CTA BANNER (PRIYA MATCH)                */}
       {/* ============================================================== */}
-      <section className="section" style={{
-        background: 'rgba(78, 24, 112, 0.1)',
-        borderTop: '1px solid var(--color-border)',
-        borderBottom: '1px solid var(--color-border)'
+      <section style={{
+        background: '#ffffff',
+        borderTop: '1px solid #eef0f3',
+        padding: '5rem 1.5rem'
       }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3rem',
-            alignItems: 'center'
-          }}>
-            <div>
-              <span style={{
-                fontSize: '0.82rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.12em',
-                color: 'var(--color-primary-lilac)',
-                display: 'inline-block',
-                marginBottom: '0.75rem'
-              }}>
-                Verified Track Record
-              </span>
-              <h2 style={{
-                fontSize: 'clamp(2rem, 3.2vw, 2.7rem)',
-                fontWeight: 800,
-                color: 'var(--color-white)',
-                lineHeight: 1.25,
-                marginBottom: '1rem'
-              }}>
-                Hands-On Experience With Industry Leaders
-              </h2>
-              <p style={{
-                fontSize: '1rem',
-                color: 'var(--color-text-muted)',
-                lineHeight: 1.6,
-                marginBottom: '1.75rem'
-              }}>
-                My engineering experience spans agency environments, high-growth direct-to-consumer Shopify Plus stores, and custom full-stack web applications.
-              </p>
-
-              <Link to="/aboutus" className="btn btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Full Resume & Professional History <ArrowRight size={16} />
-              </Link>
-            </div>
-
-            {/* Experience Mini-List */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {workExperience.map((exp, idx) => (
-                <div 
-                  key={idx}
-                  style={{
-                    background: 'rgba(25, 12, 57, 0.7)',
-                    borderRadius: '16px',
-                    border: '1px solid rgba(186, 154, 253, 0.25)',
-                    padding: '1.25rem 1.5rem',
-                    transition: 'border-color 0.2s ease'
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.35rem' }}>
-                    <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-white)', margin: 0 }}>
-                      {exp.role} <span style={{ color: 'var(--color-primary-lilac)', fontWeight: 500 }}>@ {exp.company}</span>
-                    </h4>
-                    <span style={{
-                      fontSize: '0.75rem',
-                      fontWeight: 600,
-                      color: exp.current ? '#10b981' : 'var(--color-text-muted)',
-                      background: exp.current ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255, 255, 255, 0.05)',
-                      padding: '0.2rem 0.6rem',
-                      borderRadius: '999px',
-                      border: exp.current ? '1px solid rgba(16, 185, 129, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)'
-                    }}>
-                      {exp.period}
-                    </span>
-                  </div>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.5 }}>
-                    {exp.summary}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================== */}
-      {/* LILAC TICKER BAND                                              */}
-      {/* ============================================================== */}
-      <Ticker items={tickerItems} variant="lilac" />
-
-      {/* ============================================================== */}
-      {/* FINAL CALL TO ACTION (PRIYA-STYLE BIG CTA BANNER)              */}
-      {/* ============================================================== */}
-      <section className="section" style={{
-        background: 'radial-gradient(ellipse at 50% 50%, rgba(186, 154, 253, 0.25) 0%, rgba(25, 12, 57, 0.95) 75%)',
-        textAlign: 'center',
-        padding: '6rem 1.5rem'
-      }}>
-        <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <span style={{
-            fontSize: '0.82rem',
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            letterSpacing: '0.12em',
-            color: 'var(--color-primary-lilac)',
-            display: 'inline-block',
-            marginBottom: '1rem'
-          }}>
-            Ready to Build Something Exceptional?
-          </span>
+        <div className="container" style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+          textAlign: 'center'
+        }}>
           <h2 style={{
-            fontSize: 'clamp(2.4rem, 4.5vw, 3.5rem)',
-            fontWeight: 800,
-            color: 'var(--color-white)',
-            lineHeight: 1.15,
-            marginBottom: '1.5rem',
-            letterSpacing: '-0.02em'
+            fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
+            color: 'var(--color-deep-purple)',
+            lineHeight: 1.2,
+            marginBottom: '1rem',
+            fontWeight: 700
           }}>
-            Let’s Engineer Your Next High-Performance Shopify Store
+            Need a reliable freelance Shopify expert<br />who gets it done right?
           </h2>
+
           <p style={{
-            fontSize: '1.15rem',
+            fontSize: '1.1rem',
             color: 'var(--color-text-muted)',
-            lineHeight: 1.6,
-            marginBottom: '2.5rem'
+            lineHeight: 1.7,
+            marginBottom: '2.5rem',
+            maxWidth: '650px',
+            margin: '0 auto 2.5rem'
           }}>
-            Whether you need a bespoke Shopify Plus checkout customization, a custom Remix application, or an audit to boost your store speed to 85+, let’s start a conversation.
+            Book a quick call — I’ll show you how we can make your storefront scale, on time and without surprises.
           </p>
 
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: '1rem'
-          }}>
-            <Link to="/contactus" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem', padding: '1rem 2rem' }}>
-              Let's Discuss Your Project <ArrowRight size={20} />
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
+            <Link to="/website-portfolio" className="btn btn-dark">
+              Explore My Work <ArrowRight size={16} />
             </Link>
-            <Link to="/planner" className="btn btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem', padding: '1rem 2rem' }}>
-              <Sparkles size={18} color="var(--color-primary-lilac)" />
-              Use Interactive Project Planner
+            <Link to="/contactus" className="btn btn-lilac">
+              Lets Talk <ArrowRight size={16} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Modal for viewing project details */}
+      {/* ============================================================== */}
+      {/* SECTION 11: VERIFIED STATS COUNTERS (PRIYA MATCH)             */}
+      {/* ============================================================== */}
+      <section style={{
+        background: 'var(--color-deep-purple)',
+        color: '#ffffff',
+        padding: '4rem 1.5rem'
+      }}>
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            gap: '2.5rem',
+            textAlign: 'center'
+          }}>
+            <div>
+              <div style={{ fontSize: '3rem', fontWeight: 800, color: '#ba9afd', lineHeight: 1 }}>
+                8+
+              </div>
+              <div style={{ fontSize: '0.9rem', color: '#ffffff', fontWeight: 600, marginTop: '0.5rem' }}>
+                Years of Experience
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: '3rem', fontWeight: 800, color: '#ba9afd', lineHeight: 1 }}>
+                60+
+              </div>
+              <div style={{ fontSize: '0.9rem', color: '#ffffff', fontWeight: 600, marginTop: '0.5rem' }}>
+                Custom Shopify Stores
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: '3rem', fontWeight: 800, color: '#ba9afd', lineHeight: 1 }}>
+                60%
+              </div>
+              <div style={{ fontSize: '0.9rem', color: '#ffffff', fontWeight: 600, marginTop: '0.5rem' }}>
+                Order Processing Time Cut
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: '3rem', fontWeight: 800, color: '#ba9afd', lineHeight: 1 }}>
+                85+
+              </div>
+              <div style={{ fontSize: '0.9rem', color: '#ffffff', fontWeight: 600, marginTop: '0.5rem' }}>
+                Lighthouse Speed Target
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Study Deep-Dive Modal */}
       <ProjectModal 
         project={selectedProject} 
         onClose={() => setSelectedProject(null)} 

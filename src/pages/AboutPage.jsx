@@ -1,194 +1,192 @@
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
-  Sparkles, 
-  Briefcase, 
   GraduationCap, 
   Award, 
   Code2, 
-  Terminal, 
-  Cpu, 
-  CheckCircle2, 
   MapPin, 
-  Mail, 
-  Phone, 
-  Clock,
-  Layers,
+  CheckCircle2,
+  Sparkles,
   Zap,
-  ShieldCheck
+  ShieldCheck,
+  Layers,
+  Cpu
 } from 'lucide-react';
 import Ticker from '../components/Ticker';
 import { 
   personalInfo, 
-  workExperience, 
+  freelanceMilestones, 
   educationData, 
-  certificationsData, 
   verifiedMetrics, 
   tickerItems 
 } from '../data/portfolioData';
 
 export default function AboutPage() {
   const technicalSkills = [
-    { category: "Shopify Ecosystem", skills: ["Shopify Plus", "Remix Apps", "Shopify Functions API", "Admin UI Extensions", "Liquid", "Shopify Webhooks", "Checkout Extensibility"] },
-    { category: "Frontend Engineering", skills: ["JavaScript (ES6+)", "React.js", "Next.js", "Polaris UI", "HTML5 & Vanilla CSS", "Tailwind CSS", "Redux"] },
-    { category: "Backend & APIs", skills: ["Node.js", "Express.js", "GraphQL Admin API", "RESTful APIs", "SQL", "Webhooks Processing"] },
-    { category: "Tools & DevOps", skills: ["Shopify CLI", "Git & GitHub", "Postman", "Lighthouse", "Render", "Vercel"] }
+    { 
+      category: "Shopify Ecosystem", 
+      skills: ["Shopify Plus", "Remix Apps", "Shopify Functions API", "Admin UI Extensions", "Liquid Architecture", "Shopify Webhooks", "Checkout Extensibility"] 
+    },
+    { 
+      category: "Frontend Engineering", 
+      skills: ["JavaScript (ES6+)", "React.js", "Polaris UI", "HTML5 & Modern CSS", "Tailwind CSS", "Next.js", "Redux"] 
+    },
+    { 
+      category: "Backend & Integrations", 
+      skills: ["Node.js", "GraphQL Admin API", "RESTful APIs", "Stripe API", "Klaviyo Webhooks", "Inventory Sync Pipelines"] 
+    },
+    { 
+      category: "Speed & Performance", 
+      skills: ["Lighthouse Optimization (85+)", "Core Web Vitals", "Asset Deferral", "Responsive Srcset", "Shopify CLI", "Git"] 
+    }
   ];
 
   return (
     <div className="about-page-wrapper">
       {/* ============================================================== */}
-      {/* ABOUT HERO BANNER                                             */}
+      {/* SIGNATURE SUBPAGE ABOUT HERO BANNER (PRIYA MATCH)             */}
       {/* ============================================================== */}
       <section style={{
-        padding: '5rem 1.5rem 3.5rem',
-        background: 'radial-gradient(ellipse at 50% 0%, rgba(186, 154, 253, 0.2) 0%, rgba(25, 12, 57, 0) 70%), var(--color-bg)',
-        borderBottom: '1px solid var(--color-border)',
+        backgroundColor: 'var(--color-deep-purple)',
+        padding: '5.5rem 1.5rem 5rem',
+        color: '#ffffff',
         position: 'relative'
       }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
+        <div className="container">
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
+            gap: '3rem',
             alignItems: 'center'
           }}>
-            {/* Left Bio Column */}
+            {/* Left Headline in Lilac */}
             <div>
-              <span style={{
-                fontSize: '0.82rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.12em',
-                color: 'var(--color-primary-lilac)',
-                display: 'inline-block',
-                marginBottom: '0.75rem',
-                background: 'rgba(186, 154, 253, 0.1)',
-                padding: '0.35rem 1rem',
-                borderRadius: '999px',
-                border: '1px solid rgba(186, 154, 253, 0.25)'
-              }}>
-                About Himanshu Soni
-              </span>
-
-              <h1 style={{
-                fontSize: 'clamp(2.4rem, 4.5vw, 3.6rem)',
+              <div style={{
+                fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
                 fontWeight: 800,
-                color: 'var(--color-white)',
+                color: 'var(--color-lilac)',
                 lineHeight: 1.15,
-                marginBottom: '1.25rem',
                 letterSpacing: '-0.02em'
               }}>
-                Shopify Developer & <span className="gradient-text">Plus Architect</span>
-              </h1>
-
-              <p style={{
-                fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
-                color: 'var(--color-text-muted)',
-                lineHeight: 1.7,
-                marginBottom: '1.5rem'
-              }}>
-                With 3+ years of professional development experience, I specialize in architecting custom Shopify applications, Shopify Plus checkout extensions, and high-performance storefronts. Skilled in Shopify APIs, Remix, Liquid, and the modern MERN stack.
-              </p>
-
-              <p style={{
-                fontSize: '0.98rem',
-                color: 'var(--color-text-muted)',
-                lineHeight: 1.7,
-                marginBottom: '2rem'
-              }}>
-                My background combines a Bachelor of Computer Application degree with real-world enterprise implementations: from cutting order processing time by 60% for high-volume merchants to shipping 60+ custom storefronts and boosting Lighthouse mobile scores to 85+.
-              </p>
-
-              {/* Direct Info Chips */}
-              <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '1rem',
-                marginBottom: '2.5rem'
-              }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  fontSize: '0.88rem',
-                  color: 'var(--color-text)',
-                  background: 'rgba(25, 12, 57, 0.6)',
-                  padding: '0.4rem 0.9rem',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(186, 154, 253, 0.2)'
-                }}>
-                  <MapPin size={16} color="var(--color-primary-lilac)" />
-                  Indore / Dewas, MP, India
-                </div>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  fontSize: '0.88rem',
-                  color: 'var(--color-text)',
-                  background: 'rgba(25, 12, 57, 0.6)',
-                  padding: '0.4rem 0.9rem',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(186, 154, 253, 0.2)'
-                }}>
-                  <Briefcase size={16} color="var(--color-primary-lilac)" />
-                  Parkhya Solutions (Current)
-                </div>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  fontSize: '0.88rem',
-                  color: 'var(--color-text)',
-                  background: 'rgba(25, 12, 57, 0.6)',
-                  padding: '0.4rem 0.9rem',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(186, 154, 253, 0.2)'
-                }}>
-                  <Mail size={16} color="var(--color-primary-lilac)" />
-                  himanshusoni7899@gmail.com
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <Link to="/contactus" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                  Contact Me <ArrowRight size={16} />
-                </Link>
-                <Link to="/planner" className="btn btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Sparkles size={16} color="var(--color-primary-lilac)" /> Project Planner
-                </Link>
+                It all started<br />
+                <span style={{ color: '#ffffff' }}>with clean code...</span>
               </div>
             </div>
 
-            {/* Right Side Stats & Profile Overview Box */}
+            {/* Right Intro Narrative and Buttons */}
             <div>
-              <div style={{
-                background: 'rgba(25, 12, 57, 0.8)',
-                backdropFilter: 'blur(16px)',
-                borderRadius: '24px',
-                border: '1px solid rgba(186, 154, 253, 0.3)',
-                padding: '2.5rem',
-                boxShadow: '0 25px 50px rgba(0, 0, 0, 0.5)'
+              <p style={{
+                fontSize: 'clamp(1.05rem, 1.8vw, 1.2rem)',
+                color: '#e5e7eb',
+                lineHeight: 1.75,
+                marginBottom: '2rem'
               }}>
-                <h3 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: 'var(--color-white)',
-                  marginBottom: '1.5rem',
+                I'm <strong style={{ color: '#ffffff' }}>Himanshu Soni</strong> — an independent Freelance Shopify Expert and Shopify Plus specialist helping high-growth brands build high-converting storefronts, custom apps, and frictionless checkouts.
+              </p>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                <Link to="/contactus" className="btn btn-lilac">
+                  Lets Talk <ArrowRight size={16} />
+                </Link>
+                <Link to="/website-portfolio" className="btn btn-outline-white">
+                  Explore My Case Studies <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================== */}
+      {/* FREELANCE BACKGROUND & HIGHLIGHTS                              */}
+      {/* ============================================================== */}
+      <section className="section section-light">
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '4rem',
+            alignItems: 'center',
+            marginBottom: '4.5rem'
+          }}>
+            <div>
+              <span style={{
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '0.12em',
+                color: 'var(--color-plum)',
+                display: 'block',
+                marginBottom: '0.5rem'
+              }}>
+                Independent Consultant
+              </span>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.2vw, 2.6rem)',
+                color: 'var(--color-deep-purple)',
+                fontWeight: 800,
+                lineHeight: 1.25,
+                marginBottom: '1.25rem'
+              }}>
+                Freelance Shopify Expert with 8+ Years of Specialized Experience
+              </h2>
+              <p style={{ fontSize: '1.02rem', lineHeight: 1.75, color: 'var(--color-text-body)', marginBottom: '1.25rem' }}>
+                As an independent freelance specialist, I partner directly with founders, e-commerce directors, and digital agencies to deliver robust Shopify solutions without agency overhead or middle layers.
+              </p>
+              <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--color-text-body)', marginBottom: '2rem' }}>
+                My engineering approach blends technical precision with commercial insight: cutting warehouse order processing time by 60%, deploying over 60+ bespoke stores, eliminating variant overselling via custom sync apps, and elevating mobile Lighthouse speeds to 85+.
+              </p>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '0.6rem'
+                  gap: '0.5rem',
+                  fontSize: '0.88rem',
+                  color: 'var(--color-deep-purple)',
+                  fontWeight: 600,
+                  background: 'rgba(186, 154, 253, 0.15)',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '999px'
                 }}>
-                  <Sparkles size={18} color="var(--color-primary-lilac)" />
-                  Verified Career Highlights
+                  <MapPin size={16} color="var(--color-deep-purple)" />
+                  Indore, India (Global Remote Availability)
+                </div>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontSize: '0.88rem',
+                  color: 'var(--color-deep-purple)',
+                  fontWeight: 600,
+                  background: 'rgba(186, 154, 253, 0.15)',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '999px'
+                }}>
+                  <Zap size={16} color="var(--color-deep-purple)" />
+                  8+ Years Experience
+                </div>
+              </div>
+            </div>
+
+            {/* Verified Highlights Card */}
+            <div>
+              <div style={{
+                background: '#fafafa',
+                borderRadius: '24px',
+                border: '1px solid #e5e7eb',
+                padding: '2.5rem',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.04)'
+              }}>
+                <h3 style={{ fontSize: '1.25rem', color: 'var(--color-deep-purple)', fontWeight: 800, marginBottom: '1.5rem' }}>
+                  Verified Track Record
                 </h3>
 
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(2, 1fr)',
                   gap: '1.25rem',
-                  marginBottom: '2rem'
+                  marginBottom: '1.75rem'
                 }}>
                   {verifiedMetrics.map((m, idx) => (
                     <div 
@@ -196,14 +194,14 @@ export default function AboutPage() {
                       style={{
                         padding: '1.25rem',
                         borderRadius: '16px',
-                        background: 'rgba(78, 24, 112, 0.2)',
-                        border: '1px solid rgba(186, 154, 253, 0.2)'
+                        background: '#ffffff',
+                        border: '1px solid #e2e8f0'
                       }}
                     >
-                      <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--color-primary-lilac)', lineHeight: 1 }}>
+                      <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--color-deep-purple)', lineHeight: 1 }}>
                         {m.value}
                       </div>
-                      <div style={{ fontSize: '0.82rem', fontWeight: 600, color: '#fff', marginTop: '0.35rem' }}>
+                      <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--color-deep-purple)', marginTop: '0.35rem' }}>
                         {m.label}
                       </div>
                       <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '0.2rem' }}>
@@ -213,17 +211,16 @@ export default function AboutPage() {
                   ))}
                 </div>
 
-                {/* Collaboration Philosophy */}
                 <div style={{
                   padding: '1.25rem',
                   borderRadius: '16px',
-                  background: 'rgba(255, 255, 255, 0.03)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)'
+                  background: 'rgba(186, 154, 253, 0.12)',
+                  border: '1px solid rgba(186, 154, 253, 0.25)'
                 }}>
-                  <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--color-primary-lilac)', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
-                    My Working Philosophy
+                  <h4 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+                    My Freelance Philosophy
                   </h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.5 }}>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--color-text-body)', margin: 0, lineHeight: 1.5 }}>
                     "Code should empower merchants, not restrict them. I focus on creating modular Shopify architectures where clients have full theme customizer control, fast checkout flows, and zero fragile hack-arounds."
                   </p>
                 </div>
@@ -233,50 +230,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Dark Ticker */}
-      <Ticker items={tickerItems} variant="dark" />
-
       {/* ============================================================== */}
-      {/* WORK EXPERIENCE TIMELINE                                      */}
+      {/* FREELANCE EXPERIENCE & TECHNICAL MILESTONES (NO EMPLOYERS)     */}
       {/* ============================================================== */}
-      <section className="section" style={{ background: 'var(--color-bg)' }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+      <section className="section" style={{ background: '#fafafa', borderTop: '1px solid #eef0f3' }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
           <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 3.5rem' }}>
-            <span style={{
-              fontSize: '0.82rem',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.12em',
-              color: 'var(--color-primary-lilac)',
-              display: 'inline-block',
-              marginBottom: '0.75rem'
-            }}>
-              Employment History
-            </span>
             <h2 style={{
-              fontSize: 'clamp(2rem, 3.2vw, 2.7rem)',
+              fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
+              color: 'var(--color-deep-purple)',
               fontWeight: 800,
-              color: 'var(--color-white)',
-              lineHeight: 1.2
+              marginBottom: '0.5rem'
             }}>
-              Professional Experience
+              Freelance Milestones &amp; Solutions Delivered
             </h2>
+            <p style={{ fontSize: '1rem', color: 'var(--color-text-muted)' }}>
+              A proven history of solving complex e-commerce engineering challenges directly for merchants.
+            </p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-            {workExperience.map((exp, idx) => (
+            {freelanceMilestones.map((exp, idx) => (
               <div 
                 key={idx}
                 style={{
-                  background: 'rgba(25, 12, 57, 0.7)',
+                  background: '#ffffff',
                   borderRadius: '20px',
-                  border: '1px solid rgba(186, 154, 253, 0.25)',
-                  padding: '2rem 2.25rem',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
-                  position: 'relative'
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  padding: '2.25rem',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.03)'
                 }}
               >
-                {/* Header row */}
                 <div style={{
                   display: 'flex',
                   justifyContent: 'space-between',
@@ -284,55 +268,38 @@ export default function AboutPage() {
                   flexWrap: 'wrap',
                   gap: '1rem',
                   marginBottom: '1rem',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+                  borderBottom: '1px solid #f1f5f9',
                   paddingBottom: '1rem'
                 }}>
                   <div>
-                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-white)', margin: 0 }}>
-                      {exp.role}
+                    <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--color-deep-purple)', margin: 0 }}>
+                      {exp.title}
                     </h3>
-                    <div style={{ fontSize: '1.05rem', color: 'var(--color-primary-lilac)', fontWeight: 600, marginTop: '0.2rem' }}>
-                      {exp.company} — <span style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', fontWeight: 400 }}>{exp.location}</span>
+                    <div style={{ fontSize: '0.95rem', color: 'var(--color-plum)', fontWeight: 600, marginTop: '0.2rem' }}>
+                      {exp.focus}
                     </div>
                   </div>
 
                   <span style={{
                     fontSize: '0.85rem',
                     fontWeight: 700,
-                    color: exp.current ? '#10b981' : 'var(--color-text-muted)',
-                    background: exp.current ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255, 255, 255, 0.05)',
+                    color: '#10b981',
+                    background: 'rgba(16, 185, 129, 0.12)',
                     padding: '0.35rem 0.85rem',
-                    borderRadius: '999px',
-                    border: exp.current ? '1px solid rgba(16, 185, 129, 0.4)' : '1px solid rgba(255, 255, 255, 0.1)'
+                    borderRadius: '999px'
                   }}>
                     {exp.period}
                   </span>
                 </div>
 
-                {/* Summary */}
-                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-body)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
                   {exp.summary}
                 </p>
 
-                {/* Verified Responsibilities */}
-                <ul style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.65rem'
-                }}>
-                  {exp.bullets.map((b, bIdx) => (
-                    <li key={bIdx} style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '0.65rem',
-                      fontSize: '0.9rem',
-                      color: 'var(--color-text)',
-                      lineHeight: 1.5
-                    }}>
-                      <CheckCircle2 size={16} color="var(--color-primary-lilac)" style={{ flexShrink: 0, marginTop: '3px' }} />
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                  {exp.deliverables.map((b, bIdx) => (
+                    <li key={bIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem', fontSize: '0.9rem', color: 'var(--color-text-body)', lineHeight: 1.5 }}>
+                      <CheckCircle2 size={16} color="var(--color-plum)" style={{ flexShrink: 0, marginTop: '3px' }} />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -344,34 +311,22 @@ export default function AboutPage() {
       </section>
 
       {/* ============================================================== */}
-      {/* TECHNICAL SKILLS MATRIX                                       */}
+      {/* TECHNICAL SKILLS MATRIX                                        */}
       {/* ============================================================== */}
-      <section className="section" style={{
-        background: 'linear-gradient(180deg, var(--color-bg) 0%, rgba(78, 24, 112, 0.15) 100%)',
-        borderTop: '1px solid var(--color-border)',
-        borderBottom: '1px solid var(--color-border)'
-      }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 3.5rem' }}>
-            <span style={{
-              fontSize: '0.82rem',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.12em',
-              color: 'var(--color-primary-lilac)',
-              display: 'inline-block',
-              marginBottom: '0.75rem'
-            }}>
-              Core Proficiencies
-            </span>
+      <section className="section section-light" style={{ borderTop: '1px solid #eef0f3' }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
+          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 3rem' }}>
             <h2 style={{
-              fontSize: 'clamp(2rem, 3.2vw, 2.7rem)',
+              fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
+              color: 'var(--color-deep-purple)',
               fontWeight: 800,
-              color: 'var(--color-white)',
-              lineHeight: 1.2
+              marginBottom: '0.5rem'
             }}>
-              Technical Tooling & Stack
+              Technical Toolkit &amp; Core Stack
             </h2>
+            <p style={{ fontSize: '1rem', color: 'var(--color-text-muted)' }}>
+              Deep specialization in the modern Shopify engineering and full-stack development ecosystem.
+            </p>
           </div>
 
           <div style={{
@@ -379,29 +334,20 @@ export default function AboutPage() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
             gap: '1.5rem'
           }}>
-            {technicalSkills.map((cat, idx) => (
+            {technicalSkills.map((cat, cIdx) => (
               <div 
-                key={idx}
+                key={cIdx}
                 style={{
-                  background: 'rgba(25, 12, 57, 0.7)',
+                  background: '#ffffff',
+                  border: '1px solid #e5e7eb',
                   borderRadius: '16px',
-                  border: '1px solid rgba(186, 154, 253, 0.25)',
                   padding: '1.5rem',
-                  display: 'flex',
-                  flexDirection: 'column'
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.02)'
                 }}
               >
-                <h4 style={{
-                  fontSize: '1rem',
-                  fontWeight: 700,
-                  color: 'var(--color-white)',
-                  marginBottom: '1rem',
-                  borderBottom: '1px solid rgba(186, 154, 253, 0.2)',
-                  paddingBottom: '0.5rem'
-                }}>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--color-deep-purple)', marginBottom: '1rem' }}>
                   {cat.category}
-                </h4>
-
+                </h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {cat.skills.map((s, sIdx) => (
                     <span 
@@ -409,11 +355,10 @@ export default function AboutPage() {
                       style={{
                         fontSize: '0.78rem',
                         fontWeight: 600,
-                        color: 'var(--color-primary-lilac)',
-                        background: 'rgba(186, 154, 253, 0.1)',
-                        padding: '0.3rem 0.65rem',
-                        borderRadius: '6px',
-                        border: '1px solid rgba(186, 154, 253, 0.2)'
+                        background: '#f3f4f6',
+                        color: 'var(--color-deep-purple)',
+                        padding: '0.35rem 0.65rem',
+                        borderRadius: '6px'
                       }}
                     >
                       {s}
@@ -427,133 +372,36 @@ export default function AboutPage() {
       </section>
 
       {/* ============================================================== */}
-      {/* EDUCATION & CERTIFICATIONS                                    */}
+      {/* EDUCATION                                                      */}
       {/* ============================================================== */}
-      <section className="section" style={{ background: 'var(--color-bg)' }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '3rem'
-          }}>
-            {/* Education Column */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <GraduationCap size={24} color="var(--color-primary-lilac)" />
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-white)', margin: 0 }}>
-                  Education
-                </h3>
-              </div>
+      <section className="section" style={{ background: '#fafafa', borderTop: '1px solid #eef0f3' }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
+            <GraduationCap size={24} color="var(--color-deep-purple)" />
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-deep-purple)', margin: 0 }}>
+              Academic Foundation
+            </h3>
+          </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                {educationData.map((edu, idx) => (
-                  <div 
-                    key={idx}
-                    style={{
-                      background: 'rgba(25, 12, 57, 0.6)',
-                      borderRadius: '16px',
-                      border: '1px solid rgba(186, 154, 253, 0.2)',
-                      padding: '1.5rem'
-                    }}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.35rem' }}>
-                      <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', margin: 0 }}>
-                        {edu.degree}
-                      </h4>
-                      <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
-                        {edu.period}
-                      </span>
-                    </div>
-                    <div style={{ fontSize: '0.88rem', color: 'var(--color-primary-lilac)', fontWeight: 500 }}>
-                      {edu.institution}
-                    </div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginTop: '0.2rem' }}>
-                      {edu.location}
-                    </div>
-                  </div>
-                ))}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+            {educationData.map((edu, idx) => (
+              <div key={idx} style={{ background: '#ffffff', borderRadius: '16px', border: '1px solid #e5e7eb', padding: '1.75rem', boxShadow: '0 4px 15px rgba(0,0,0,0.02)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.35rem' }}>
+                  <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-deep-purple)', margin: 0 }}>
+                    {edu.degree}
+                  </h4>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>{edu.period}</span>
+                </div>
+                <div style={{ fontSize: '0.9rem', color: 'var(--color-plum)', fontWeight: 600 }}>{edu.institution}</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginTop: '0.2rem' }}>{edu.location}</div>
               </div>
-            </div>
-
-            {/* Certifications Column */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <Award size={24} color="var(--color-primary-lilac)" />
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-white)', margin: 0 }}>
-                  Certifications
-                </h3>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                {certificationsData.map((cert, idx) => (
-                  <div 
-                    key={idx}
-                    style={{
-                      background: 'rgba(25, 12, 57, 0.6)',
-                      borderRadius: '16px',
-                      border: '1px solid rgba(186, 154, 253, 0.2)',
-                      padding: '1.5rem'
-                    }}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.35rem' }}>
-                      <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', margin: 0 }}>
-                        {cert.title}
-                      </h4>
-                      <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
-                        {cert.date}
-                      </span>
-                    </div>
-                    <div style={{ fontSize: '0.88rem', color: 'var(--color-primary-lilac)', fontWeight: 500 }}>
-                      {cert.issuer}
-                    </div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.2rem', fontFamily: 'monospace' }}>
-                      ID: {cert.credentialId}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Lilac Ticker */}
-      <Ticker items={tickerItems} variant="lilac" />
-
-      {/* Bottom CTA */}
-      <section className="section" style={{
-        background: 'radial-gradient(ellipse at 50% 50%, rgba(186, 154, 253, 0.2) 0%, rgba(25, 12, 57, 0.95) 75%)',
-        textAlign: 'center',
-        padding: '5rem 1.5rem'
-      }}>
-        <div className="container" style={{ maxWidth: '780px', margin: '0 auto' }}>
-          <h2 style={{
-            fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
-            fontWeight: 800,
-            color: 'var(--color-white)',
-            marginBottom: '1rem'
-          }}>
-            Interested in Collaborating?
-          </h2>
-          <p style={{
-            fontSize: '1.05rem',
-            color: 'var(--color-text-muted)',
-            lineHeight: 1.6,
-            marginBottom: '2rem'
-          }}>
-            I am available for Shopify Plus migrations, custom Remix app development, and bespoke storefront engineering. Let's discuss how I can support your business goals.
-          </p>
-
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
-            <Link to="/contactus" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              Let's Discuss Your Project <ArrowRight size={18} />
-            </Link>
-            <Link to="/website-portfolio" className="btn btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              Explore Case Studies
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Dark Ticker */}
+      <Ticker items={tickerItems} variant="dark" />
     </div>
   );
 }

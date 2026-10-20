@@ -1,51 +1,53 @@
-/* =========================================================
-   Himanshu Soni — Production Portfolio Design System
-   Inspired by priyasinghi.com visual architecture & aesthetics
-   ========================================================= */
+/* ========================================================================== */
+/* PRIYASINGHI-MATCHED DESIGN SYSTEM FOR HIMANSHU SONI PORTFOLIO             */
+/* ========================================================================== */
 
 :root {
-  /* Core Palette */
-  --color-primary-dark: #190c39;        /* Deep midnight violet */
-  --color-primary-purple: #4e1870;      /* Rich violet heading purple */
-  --color-form-purple: #461366;         /* Deep purple for form fields */
-  --color-accent-lilac: #ba9afd;        /* Signature lilac accent */
-  --color-accent-lilac-light: #f4efff;  /* Soft lilac tint */
-  --color-accent-pink: #ff00ba;         /* Highlight hot pink from reference */
-  --color-accent-blue: #0a8fff;         /* Reference bright blue */
-  --color-text-dark: #111111;           /* Crisp primary text */
-  --color-text-body: #374151;           /* Readable body text */
-  --color-text-muted: #6b7280;          /* Secondary gray */
-  --color-text-light: #9ca3af;          /* Subtle caption gray */
-  --color-bg-body: #fafafa;             /* Warm off-white page background */
-  --color-bg-white: #ffffff;            /* Pure white surfaces */
-  --color-bg-dark: #190c39;             /* Full dark sections */
-  --color-border-subtle: #e5e7eb;       /* Gentle card dividers */
-  --color-border-purple: rgba(186, 154, 253, 0.4);
-
+  /* Core Color Palette from priyasinghi.com */
+  --color-bg: #fafafa;
+  --color-page: #ffffff;
+  --color-hero-bg: #eef0f3;
+  --color-deep-purple: #190c39;
+  --color-plum: #4e1870;
+  --color-lilac: #ba9afd;
+  --color-lilac-light: #e5dbff;
+  --color-lilac-subtle: rgba(186, 154, 253, 0.12);
+  --color-cyan: #0a8fff;
+  --color-magenta: #ff00ba;
+  --color-yellow: #f59e0b;
+  --color-green: #10b981;
+  --color-whatsapp: #25d366;
+  
+  /* Text Colors */
+  --color-text-heading: #190c39;
+  --color-text-body: #434343;
+  --color-text-muted: #6b7280;
+  --color-text-light: #8e8e8e;
+  --color-white: #ffffff;
+  
+  /* Borders & Surfaces */
+  --color-border: #e2e8f0;
+  --color-border-card: rgba(186, 154, 253, 0.25);
+  --color-card: #ffffff;
+  
   /* Typography */
-  --font-headings: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-  /* Elevation & Shadows */
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 24px rgba(25, 12, 57, 0.07);
-  --shadow-lg: 0 16px 40px rgba(25, 12, 57, 0.12);
-  --shadow-glow: 0 0 25px rgba(186, 154, 253, 0.35);
-
-  /* Radii */
-  --radius-xs: 6px;
-  --radius-sm: 10px;
-  --radius-md: 16px;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Layout */
+  --container-max: 1240px;
+  --header-height: 80px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
   --radius-lg: 20px;
   --radius-pill: 9999px;
-
+  
   /* Transitions */
-  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Base Reset */
+/* Base Reset & Box Sizing */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -53,188 +55,264 @@
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-family: var(--font-body);
-  background-color: var(--color-bg-body);
-  color: var(--color-text-dark);
-  line-height: 1.7;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography Hierarchy */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-headings);
-  font-weight: 500;
-  color: var(--color-text-dark);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  line-height: 1.75;
+  font-size: 1rem;
+  overflow-x: hidden;
 }
 
-h1 strong, h2 strong, h3 strong {
+/* Typography Hierarchy matching priyasinghi.com */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-heading);
+  line-height: 1.2;
   font-weight: 700;
-  color: var(--color-primary-dark);
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 p {
-  color: var(--color-text-body);
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.75;
+  color: var(--color-text-body);
+}
+
+strong {
+  font-weight: 700;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: var(--transition-fast);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-button, input, textarea, select {
-  font-family: inherit;
-}
-
-/* Utilities matching reference classes */
+/* Container */
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-.container-wide {
-  width: 100%;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.kicker {
-  display: inline-block;
-  font-family: var(--font-headings);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--color-accent-blue);
-  margin-bottom: 0.75rem;
-}
-
-.kicker.purple {
-  color: var(--color-primary-purple);
-}
-
-.kicker.lilac {
-  color: var(--color-accent-lilac);
-}
-
-.kicker.pink {
-  color: var(--color-accent-pink);
-}
-
-/* Buttons */
+/* Buttons matching priyasinghi.com exact pill styles */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  font-family: var(--font-headings);
-  font-size: 0.95rem;
+  font-family: var(--font-heading);
   font-weight: 600;
+  font-size: 0.95rem;
   padding: 0.85rem 1.85rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   cursor: pointer;
   border: 1px solid transparent;
   transition: all var(--transition-normal);
-  text-align: center;
+  text-decoration: none;
 }
 
-.btn-primary {
-  background-color: var(--color-primary-dark);
-  color: #ffffff;
-  border-color: var(--color-primary-dark);
+.btn-dark {
+  background-color: var(--color-deep-purple);
+  color: var(--color-white) !important;
+  box-shadow: 0 4px 14px rgba(25, 12, 57, 0.2);
 }
 
-.btn-primary:hover {
-  background-color: #2b155f;
+.btn-dark:hover {
+  background-color: #2b175e;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(25, 12, 57, 0.25);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-primary-dark);
-  color: #ffffff;
-  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 12, 57, 0.3);
 }
 
 .btn-lilac {
-  background-color: var(--color-accent-lilac);
-  color: var(--color-primary-dark);
+  background-color: var(--color-lilac);
+  color: var(--color-deep-purple) !important;
   font-weight: 700;
 }
 
 .btn-lilac:hover {
-  background-color: #d1b8ff;
+  background-color: #cbafff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(186, 154, 253, 0.4);
+  box-shadow: 0 6px 20px rgba(186, 154, 253, 0.4);
 }
 
-.btn-pink {
-  background-color: var(--color-accent-pink);
-  color: #ffffff;
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-deep-purple);
+  border: 1.5px solid var(--color-deep-purple);
 }
 
-.btn-pink:hover {
-  background-color: #e000a3;
+.btn-outline:hover {
+  background-color: var(--color-deep-purple);
+  color: var(--color-white) !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 0, 186, 0.3);
 }
 
-.btn-icon {
-  transition: transform var(--transition-fast);
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
 }
 
-.btn:hover .btn-icon {
-  transform: translateX(4px);
+.btn-outline-white:hover {
+  border-color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-/* Sticky Smart Header */
+/* Subpage Dark Hero Banners matching priyasinghi.com */
+.subpage-hero-banner {
+  background-color: var(--color-deep-purple);
+  background-image: radial-gradient(circle at 80% 20%, rgba(186, 154, 253, 0.15) 0%, transparent 60%);
+  padding: 5rem 1.5rem 4.5rem;
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.subpage-hero-banner .hero-category {
+  color: var(--color-cyan);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.subpage-hero-banner .hero-tagline {
+  color: var(--color-magenta);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.subpage-hero-banner .hero-headline {
+  color: var(--color-cyan);
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: 900px;
+  margin-bottom: 0;
+}
+
+.subpage-hero-banner .hero-headline.headline-lilac {
+  color: var(--color-lilac);
+}
+
+/* Priya-style Service Cards (.service-box) */
+.service-box {
+  background: var(--color-white);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  border-color: rgba(186, 154, 253, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 2.25rem;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.service-box:hover {
+  border-color: var(--color-lilac);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(186, 154, 253, 0.15);
+}
+
+.service-box .service-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(186, 154, 253, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-deep-purple);
+  margin-bottom: 1.25rem;
+}
+
+.service-box h3 {
+  font-size: 1.35rem;
+  color: var(--color-deep-purple);
+  margin-bottom: 0.75rem;
+}
+
+.service-box p {
+  color: var(--color-text-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.service-box .explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-deep-purple);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.service-box .explore-link:hover {
+  color: var(--color-plum);
+  gap: 0.7rem;
+}
+
+/* Sticky Header Effect (.scroll-header) */
 .scroll-header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  will-change: transform;
+  background-color: var(--color-white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .scroll-header.stuck {
   position: fixed;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
 }
 
 .scroll-header.scroll-head-down {
@@ -245,192 +323,157 @@ button, input, textarea, select {
   transform: translate3d(0, 0, 0);
 }
 
-/* Nav Link Underline Hover Effect from reference */
-.nav-link {
+/* Nav Menu Items */
+.scroll-header .nav-link {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-deep-purple);
   position: relative;
-  font-family: var(--font-headings);
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #262626;
-  padding: 0.5rem 0.2rem;
-  transition: color var(--transition-fast);
+  padding: 0.5rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
-.nav-link::after {
+.scroll-header .nav-link::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -2px;
   width: 0;
   height: 2px;
-  background-color: var(--color-primary-purple);
-  transition: width var(--transition-normal);
-  pointer-events: none;
+  background-color: var(--color-lilac);
+  left: 0;
+  bottom: 0;
+  transition: width 0.25s ease-in-out;
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
+.scroll-header .nav-link:hover::after,
+.scroll-header .nav-link.active::after {
   width: 100%;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--color-primary-purple);
+/* Two-Line Pure Bold Text Logo matching Priya Singhi */
+.brand-text-logo {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: var(--color-deep-purple);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Continuous Infinite Ticker Marquee */
+/* Floating WhatsApp Button */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  background-color: var(--color-whatsapp);
+  color: #ffffff !important;
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.whatsapp-float-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
+}
+
+/* Infinite Marquee Tickers */
 .ticker-band {
-  width: 100%;
   overflow: hidden;
-  background: var(--color-primary-dark);
+  white-space: nowrap;
+  width: 100%;
+}
+
+.ticker-band.ticker-dark {
+  background-color: var(--color-deep-purple);
   color: #ffffff;
   padding: 1.1rem 0;
-  white-space: nowrap;
 }
 
-.ticker-band.lilac {
-  background: var(--color-accent-lilac);
-  color: var(--color-primary-dark);
+.ticker-band.ticker-lilac {
+  background-color: var(--color-lilac);
+  color: var(--color-deep-purple);
+  padding: 1.1rem 0;
 }
 
 .ticker-track {
   display: flex;
-  align-items: center;
   width: max-content;
-  animation: infiniteTickerScroll 24s linear infinite;
+  animation: scrollTicker 22s linear infinite;
 }
 
-.ticker-track:hover {
+.ticker-band:hover .ticker-track {
   animation-play-state: paused;
 }
 
 .ticker-item {
   display: inline-flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   padding: 0 1.5rem;
-  font-family: var(--font-headings);
+  font-family: var(--font-heading);
   font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-.ticker-star {
-  display: inline-block;
-  opacity: 0.85;
+@keyframes scrollTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-@keyframes infiniteTickerScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Section Spacing Utilities */
+.section {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
 }
 
-/* Service Box Cards from Reference */
-.service-box {
-  background: #ffffff;
-  border: 1px solid var(--color-border-purple);
-  border-radius: var(--radius-lg);
-  padding: 2.75rem 2rem;
-  transition: all var(--transition-normal);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
+.section-light {
+  background-color: #ffffff;
 }
 
-.service-box:hover {
-  border-color: var(--color-accent-lilac);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(186, 154, 253, 0.18);
+.section-grey {
+  background-color: var(--color-bg);
 }
 
-.service-box-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: var(--radius-sm);
-  background: var(--color-accent-lilac-light);
-  color: var(--color-primary-purple);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  transition: all var(--transition-normal);
+.section-dark {
+  background-color: var(--color-deep-purple);
+  color: var(--color-white);
 }
 
-.service-box:hover .service-box-icon {
-  background: var(--color-primary-dark);
-  color: var(--color-accent-lilac);
-}
-
-/* Badges */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  border-radius: var(--radius-pill);
-  background: #f1f5f9;
-  color: #334155;
-}
-
-.badge-purple {
-  background: rgba(186, 154, 253, 0.18);
-  color: var(--color-primary-purple);
-}
-
-.badge-dark {
-  background: var(--color-primary-dark);
-  color: #ffffff;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 9px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c5b8df;
-  border-radius: var(--radius-pill);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-purple);
-}
-
-/* Selection Highlight */
-::selection {
-  background: var(--color-accent-lilac);
-  color: var(--color-primary-dark);
-}
-
-/* Responsive Breakpoints */
-@media (max-width: 1024px) {
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  html {
-    font-size: 15px;
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
-  .container {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+  
+  .subpage-hero-banner {
+    padding: 3.5rem 1.25rem 3rem;
   }
-  .service-box {
-    padding: 2rem 1.5rem;
+  
+  .whatsapp-float-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
   }
 }
