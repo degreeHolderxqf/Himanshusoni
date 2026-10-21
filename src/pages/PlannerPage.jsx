@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { 
-  CheckCircle2, 
-  ArrowRight, 
-  ArrowLeft, 
-  Send, 
-  Copy, 
-  Check 
+import {
+  CheckCircle2,
+  ArrowRight,
+  ArrowLeft,
+  Send,
+  Copy,
+  Check
 } from 'lucide-react';
 import Ticker from '../components/Ticker';
 import { personalInfo, tickerItems } from '../data/portfolioData';
@@ -17,12 +17,12 @@ export default function PlannerPage() {
   const [errors, setErrors] = useState({});
 
   const [formData, setFormData] = useState({
-    projectType: 'Shopify Plus & Checkout Customization',
+    projectType: 'Shopify Plus & Checkout',
     currentUrl: '',
     storeAge: 'Established Brand (> 1 Year)',
-    primaryGoals: ['Increase Conversion Rate', 'Faster Storefront Speed'],
-    requiredFeatures: ['Custom Liquid Sections', 'Checkout UI Extension'],
-    budgetRange: '$3,000 – $7,000 USD',
+    primaryGoals: ['Increase Conversion Rate', 'Faster Storefront Speed (85+ Target)'],
+    requiredFeatures: ['Custom Liquid Sections & Blocks', 'Shopify Functions (Server-Side Rules)'],
+    budgetRange: '₹25,000 – ₹60,000 Rs (~ $300 – $750 USD)',
     timeline: 'Within 2–4 Weeks',
     clientName: '',
     clientEmail: '',
@@ -62,10 +62,30 @@ export default function PlannerPage() {
   ];
 
   const budgetRanges = [
-    '< $1,500 USD (Focused Sprint / Audit)',
-    '$1,500 – $3,500 USD (Theme / App Component)',
-    '$3,500 – $7,500 USD (Full Custom Store / Plus Build)',
-    '$7,500+ USD (Enterprise Architecture)'
+    {
+      label: '₹10,000 – ₹25,000 Rs (~ < $300 USD)',
+      inr: '₹10,000 – ₹25,000 Rs',
+      usd: '< $300 USD',
+      scope: 'Focused Sprint / Audit'
+    },
+    {
+      label: '₹25,000 – ₹60,000 Rs (~ $300 – $750 USD)',
+      inr: '₹25,000 – ₹60,000 Rs',
+      usd: '$300 – $750 USD',
+      scope: 'Theme / App Component'
+    },
+    {
+      label: '₹60,000 – ₹1,50,000 Rs (~ $750 – $1,800 USD)',
+      inr: '₹60,000 – ₹1,50,000 Rs',
+      usd: '$750 – $1,800 USD',
+      scope: 'Full Custom Store / Plus Build'
+    },
+    {
+      label: '₹1,50,000+ Rs (~ $1,800+ USD)',
+      inr: '₹1,50,000+ Rs',
+      usd: '$1,800+ USD',
+      scope: 'Enterprise Architecture'
+    }
   ];
 
   const timelineOptions = [
@@ -187,10 +207,12 @@ Notes: ${formData.notes || 'N/A'}
       <section className="subpage-hero-banner">
         <div className="container">
           <span className="hero-category">PROJECT PLANNER</span>
-          <span className="hero-tagline">Let's make something great together.</span>
-          <h1 className="hero-headline">
-            Thank you for your interest in working with us. Getting started is easy, just fill in the details below and we’ll get back to you within one working day. How exciting!
+          <h1 className="hero-headline" style={{ marginBottom: '0.75rem' }}>
+            Plan Your Shopify Development Project &amp; Estimate Scope
           </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', color: '#e5e7eb', lineHeight: 1.6, maxWidth: '850px', margin: 0 }}>
+            Configure your technical requirements, goals, features, and timeline in this 4-step wizard. I'll review your scope and provide actionable recommendations within one business day.
+          </p>
         </div>
       </section>
 
@@ -199,7 +221,7 @@ Notes: ${formData.notes || 'N/A'}
       {/* ============================================================== */}
       <section className="section" style={{ background: '#fafafa', minHeight: '60vh' }}>
         <div className="container" style={{ maxWidth: '880px' }}>
-          
+
           {!submitted ? (
             <div style={{
               background: '#ffffff',
@@ -302,7 +324,7 @@ Notes: ${formData.notes || 'N/A'}
                     <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.5rem' }}>
                       Current Website URL (Optional if starting new)
                     </label>
-                    <input 
+                    <input
                       type="url"
                       placeholder="https://yourstore.com"
                       value={formData.currentUrl}
@@ -434,29 +456,50 @@ Notes: ${formData.notes || 'N/A'}
                     <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.75rem' }}>
                       Estimated Budget Range
                     </label>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.85rem' }}>
                       {budgetRanges.map((b) => {
-                        const active = formData.budgetRange === b;
+                        const active = formData.budgetRange === b.label;
                         return (
                           <div
-                            key={b}
-                            onClick={() => setFormData({ ...formData, budgetRange: b })}
+                            key={b.label}
+                            onClick={() => setFormData({ ...formData, budgetRange: b.label })}
                             style={{
-                              padding: '1rem',
+                              padding: '1rem 1.15rem',
                               borderRadius: '12px',
                               background: active ? 'rgba(186, 154, 253, 0.12)' : '#ffffff',
                               border: `1.5px solid ${active ? 'var(--color-deep-purple)' : '#e2e8f0'}`,
                               cursor: 'pointer',
                               display: 'flex',
-                              alignItems: 'center',
+                              alignItems: 'flex-start',
                               justifyContent: 'space-between',
-                              fontSize: '0.9rem',
-                              fontWeight: 600,
-                              color: 'var(--color-deep-purple)'
+                              transition: 'all 0.2s ease'
                             }}
                           >
-                            <span>{b}</span>
-                            {active && <CheckCircle2 size={16} color="var(--color-deep-purple)" />}
+                            <div>
+                              <div style={{
+                                fontSize: '1rem',
+                                fontWeight: 700,
+                                color: 'var(--color-deep-purple)',
+                                marginBottom: '0.35rem'
+                              }}>
+                                {b.inr}
+                              </div>
+                              <div style={{
+                                fontSize: '0.78rem',
+                                color: 'var(--color-text-muted)',
+                                fontWeight: 500,
+                                lineHeight: 1.4
+                              }}>
+                                {b.usd} <span style={{ color: 'var(--color-plum)', fontWeight: 700 }}>•</span> {b.scope}
+                              </div>
+                            </div>
+                            {active && (
+                              <CheckCircle2
+                                size={18}
+                                color="var(--color-deep-purple)"
+                                style={{ flexShrink: 0, marginTop: '2px', marginLeft: '0.5rem' }}
+                              />
+                            )}
                           </div>
                         );
                       })}
@@ -512,7 +555,7 @@ Notes: ${formData.notes || 'N/A'}
                       <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                         Your Full Name *
                       </label>
-                      <input 
+                      <input
                         type="text"
                         placeholder="e.g. Alex Morgan"
                         value={formData.clientName}
@@ -534,7 +577,7 @@ Notes: ${formData.notes || 'N/A'}
                       <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                         Your Email Address *
                       </label>
-                      <input 
+                      <input
                         type="email"
                         placeholder="alex@brand.com"
                         value={formData.clientEmail}
@@ -556,7 +599,7 @@ Notes: ${formData.notes || 'N/A'}
                       <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                         Phone / WhatsApp (Optional)
                       </label>
-                      <input 
+                      <input
                         type="text"
                         placeholder="+1 555-0192"
                         value={formData.clientPhone}
@@ -577,7 +620,7 @@ Notes: ${formData.notes || 'N/A'}
                       <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                         Company / Store Name
                       </label>
-                      <input 
+                      <input
                         type="text"
                         placeholder="Acme Apparel"
                         value={formData.companyName}
@@ -599,7 +642,7 @@ Notes: ${formData.notes || 'N/A'}
                     <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                       Additional Scope Notes or Requirements
                     </label>
-                    <textarea 
+                    <textarea
                       rows={3}
                       placeholder="Share details on existing apps, ERP integrations, or deadlines..."
                       value={formData.notes}
@@ -715,7 +758,7 @@ Notes: ${formData.notes || 'N/A'}
               </p>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
-                <a 
+                <a
                   href={generateMailto()}
                   className="btn btn-dark"
                   style={{ padding: '0.85rem 1.85rem' }}
@@ -776,8 +819,8 @@ Notes: ${formData.notes || 'N/A'}
         </div>
       </section>
 
-      {/* Dark Ticker */}
-      <Ticker items={tickerItems} variant="dark" />
+      {/* Dark Ticker
+      <Ticker items={tickerItems} variant="dark" /> */}
     </div>
   );
 }

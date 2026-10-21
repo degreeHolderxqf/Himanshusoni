@@ -20,14 +20,14 @@ export default function PortfolioPage() {
 
   const filteredProjects = useMemo(() => {
     return projectsData.filter((proj) => {
-      const matchesCategory = 
-        activeCategory === 'All' || 
+      const matchesCategory =
+        activeCategory === 'All' ||
         proj.categorySlug === activeCategory;
 
       const q = searchQuery.toLowerCase().trim();
-      const matchesSearch = 
-        !q || 
-        proj.title.toLowerCase().includes(q) || 
+      const matchesSearch =
+        !q ||
+        proj.title.toLowerCase().includes(q) ||
         proj.summary.toLowerCase().includes(q) ||
         proj.category.toLowerCase().includes(q) ||
         proj.technologies.some(t => t.toLowerCase().includes(q));
@@ -44,10 +44,12 @@ export default function PortfolioPage() {
       <section className="subpage-hero-banner">
         <div className="container">
           <span className="hero-category">WEBSITE PORTFOLIO</span>
-          <span className="hero-tagline">Latest and greatest work</span>
-          <h1 className="hero-headline">
-            Producing notable, high-converting e-commerce work requires more than just styling — it demands robust Liquid architecture, responsive speed, and checkout reliability.
+          <h1 className="hero-headline" style={{ marginBottom: '0.75rem' }}>
+            Shopify Development Portfolio &amp; Case Studies
           </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', color: '#e5e7eb', lineHeight: 1.6, maxWidth: '850px', margin: 0 }}>
+            Custom Shopify 2.0 themes, Shopify Plus checkout functions, embedded Remix apps, multi-variant inventory synchronization, and sub-1.2s speed optimization shipped for scaling brands.
+          </p>
         </div>
       </section>
 
@@ -59,7 +61,7 @@ export default function PortfolioPage() {
         background: '#ffffff',
         borderBottom: '1px solid #e5e7eb',
         position: 'sticky',
-        top: '80px',
+        top: '0px',
         zIndex: 20
       }}>
         <div className="container" style={{
@@ -90,11 +92,11 @@ export default function PortfolioPage() {
                     fontWeight: 600,
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
-                    border: active 
-                      ? '1px solid var(--color-deep-purple)' 
+                    border: active
+                      ? '1px solid var(--color-deep-purple)'
                       : '1px solid #e2e8f0',
-                    background: active 
-                      ? 'var(--color-lilac)' 
+                    background: active
+                      ? 'var(--color-lilac)'
                       : '#ffffff',
                     color: 'var(--color-deep-purple)',
                     boxShadow: active ? '0 4px 12px rgba(186, 154, 253, 0.35)' : 'none'
@@ -112,8 +114,8 @@ export default function PortfolioPage() {
             minWidth: '240px',
             flex: '0 1 280px'
           }}>
-            <Search 
-              size={18} 
+            <Search
+              size={18}
               style={{
                 position: 'absolute',
                 left: '12px',
@@ -122,7 +124,7 @@ export default function PortfolioPage() {
                 color: 'var(--color-text-muted)'
               }}
             />
-            <input 
+            <input
               type="text"
               placeholder="Search by tech or keyword..."
               value={searchQuery}
@@ -161,7 +163,7 @@ export default function PortfolioPage() {
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
                 Try selecting a different category or clearing your search query.
               </p>
-              <button 
+              <button
                 type="button"
                 onClick={() => { setActiveCategory('All'); setSearchQuery(''); }}
                 className="btn btn-dark"
@@ -176,7 +178,7 @@ export default function PortfolioPage() {
               gap: '2rem'
             }}>
               {filteredProjects.map((project) => (
-                <ProjectCard 
+                <ProjectCard
                   key={project.id}
                   project={project}
                   onSelect={(p) => setSelectedProject(p)}
@@ -222,9 +224,9 @@ export default function PortfolioPage() {
       </section>
 
       {/* Case Study Modal */}
-      <ProjectModal 
-        project={selectedProject} 
-        onClose={() => setSelectedProject(null)} 
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
     </div>
   );

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import Ticker from './Ticker';
 import { personalInfo } from '../data/portfolioData';
@@ -38,10 +38,10 @@ export default function Footer() {
               <span style={{ color: '#ba9afd' }}>SONI</span>
             </div>
             <p style={{ color: '#b3b3b3', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Independent Freelance Shopify Expert with 8+ years of experience building high-converting Shopify Plus storefronts, custom Remix applications, and Core Web Vitals speed optimization.
+              Independent Freelance Shopify Developer with 8+ years of professional experience building high-converting Shopify Plus storefronts, custom Remix applications, and Core Web Vitals speed optimization.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <a 
+              <a
                 href={`mailto:${personalInfo.email}`}
                 style={{
                   display: 'flex',
@@ -57,7 +57,7 @@ export default function Footer() {
                 <Mail size={16} color="#ba9afd" />
                 <span>{personalInfo.email}</span>
               </a>
-              <a 
+              <a
                 href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, '')}`}
                 style={{
                   display: 'flex',
@@ -117,12 +117,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/approach" style={{ color: '#dddddd', fontSize: '0.92rem' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }} onMouseLeave={(e) => { e.currentTarget.style.color = '#dddddd'; }}>
-                  6-Phase Approach
+                  Approach
                 </Link>
               </li>
               <li>
                 <Link to="/aboutus" style={{ color: '#dddddd', fontSize: '0.92rem' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#ba9afd'; }} onMouseLeave={(e) => { e.currentTarget.style.color = '#dddddd'; }}>
-                  About Himanshu
+                  About
                 </Link>
               </li>
               <li>
@@ -178,9 +178,9 @@ export default function Footer() {
             <p style={{ color: '#b3b3b3', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
               Planning a new Shopify build or need an expert audit for an existing store? Complete the 5-step project planner.
             </p>
-            <Link 
-              to="/planner" 
-              className="btn btn-lilac" 
+            <Link
+              to="/planner"
+              className="btn btn-lilac"
               style={{ width: '100%', padding: '0.75rem 1rem', fontSize: '0.9rem' }}
             >
               Start Project Planner <ArrowRight size={16} />

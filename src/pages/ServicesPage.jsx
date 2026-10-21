@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Layers, 
-  Code2, 
-  Gauge, 
-  Cpu, 
-  Link2, 
-  Zap, 
+import {
+  ArrowRight,
+  Layers,
+  Code2,
+  Gauge,
+  Cpu,
+  Link2,
+  Zap,
   CheckCircle2,
   Search,
   Calculator
@@ -22,11 +22,13 @@ export default function ServicesPage() {
       {/* ============================================================== */}
       <section className="subpage-hero-banner">
         <div className="container">
-          <span className="hero-category">SERVICES</span>
-          <span className="hero-tagline">Shopify Development &amp; Technical Capabilities</span>
-          <h1 className="hero-headline">
-            From bespoke Shopify 2.0 themes to complex Remix apps and custom checkout functions, here is how I help merchants solve intricate technical challenges.
+          <span className="hero-category">SERVICES &amp; CAPABILITIES</span>
+          <h1 className="hero-headline" style={{ marginBottom: '0.75rem' }}>
+            Freelance Shopify Development Services &amp; Technical Capabilities
           </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', color: '#e5e7eb', lineHeight: 1.6, maxWidth: '850px', margin: 0 }}>
+            From bespoke Shopify 2.0 themes and Shopify Plus checkout extensibility to custom Remix applications, inventory synchronization, and Core Web Vitals speed optimization.
+          </p>
         </div>
       </section>
 
@@ -41,7 +43,7 @@ export default function ServicesPage() {
             gap: '2rem'
           }}>
             {servicesData.map((svc) => (
-              <div 
+              <div
                 key={svc.id}
                 className="service-box"
               >
@@ -96,7 +98,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div style={{ paddingTop: '1.25rem', borderTop: '1px solid #f1f5f9' }}>
-                  <Link 
+                  <Link
                     to="/planner"
                     className="btn btn-dark"
                     style={{ width: '100%', padding: '0.7rem', fontSize: '0.88rem' }}
@@ -110,8 +112,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Dark Ticker */}
-      <Ticker items={tickerItems} variant="dark" />
+      {/* Dark Ticker
+      <Ticker items={tickerItems} variant="dark" /> */}
     </div>
   );
 }

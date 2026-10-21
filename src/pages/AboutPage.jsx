@@ -1,43 +1,36 @@
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  GraduationCap, 
-  Award, 
-  Code2, 
-  MapPin, 
+import {
+  ArrowRight,
+  GraduationCap,
+  MapPin,
   CheckCircle2,
-  Sparkles,
-  Zap,
-  ShieldCheck,
-  Layers,
-  Cpu
+  Zap
 } from 'lucide-react';
 import Ticker from '../components/Ticker';
-import { 
-  personalInfo, 
-  freelanceMilestones, 
-  educationData, 
-  verifiedMetrics, 
-  tickerItems 
+import {
+  freelanceMilestones,
+  educationData,
+  verifiedMetrics,
+  tickerItems
 } from '../data/portfolioData';
 
 export default function AboutPage() {
   const technicalSkills = [
-    { 
-      category: "Shopify Ecosystem", 
-      skills: ["Shopify Plus", "Remix Apps", "Shopify Functions API", "Admin UI Extensions", "Liquid Architecture", "Shopify Webhooks", "Checkout Extensibility"] 
+    {
+      category: "Shopify Ecosystem",
+      skills: ["Shopify Plus", "Remix Apps", "Shopify Functions API", "Admin UI Extensions", "Liquid Architecture", "Shopify Webhooks", "Checkout Extensibility"]
     },
-    { 
-      category: "Frontend Engineering", 
-      skills: ["JavaScript (ES6+)", "React.js", "Polaris UI", "HTML5 & Modern CSS", "Tailwind CSS", "Next.js", "Redux"] 
+    {
+      category: "Frontend Engineering",
+      skills: ["JavaScript (ES6+)", "React.js", "Polaris UI", "HTML5 & Modern CSS", "Tailwind CSS", "Next.js", "Redux"]
     },
-    { 
-      category: "Backend & Integrations", 
-      skills: ["Node.js", "GraphQL Admin API", "RESTful APIs", "Stripe API", "Klaviyo Webhooks", "Inventory Sync Pipelines"] 
+    {
+      category: "Backend & Integrations",
+      skills: ["Node.js", "GraphQL Admin API", "RESTful APIs", "Stripe API", "Klaviyo Webhooks", "Inventory Sync Pipelines"]
     },
-    { 
-      category: "Speed & Performance", 
-      skills: ["Lighthouse Optimization (85+)", "Core Web Vitals", "Asset Deferral", "Responsive Srcset", "Shopify CLI", "Git"] 
+    {
+      category: "Speed & Performance",
+      skills: ["Lighthouse Optimization (85+)", "Core Web Vitals", "Asset Deferral", "Responsive Srcset", "Shopify CLI", "Git"]
     }
   ];
 
@@ -59,18 +52,19 @@ export default function AboutPage() {
             gap: '3rem',
             alignItems: 'center'
           }}>
-            {/* Left Headline in Lilac */}
+            {/* Left Headline in Lilac - Proper Semantic H1 */}
             <div>
-              <div style={{
+              <h1 style={{
                 fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
                 fontWeight: 800,
                 color: 'var(--color-lilac)',
                 lineHeight: 1.15,
-                letterSpacing: '-0.02em'
+                letterSpacing: '-0.02em',
+                margin: 0
               }}>
-                It all started<br />
-                <span style={{ color: '#ffffff' }}>with clean code...</span>
-              </div>
+                About Himanshu Soni<br />
+                <span style={{ color: '#ffffff' }}>Freelance Shopify Developer</span>
+              </h1>
             </div>
 
             {/* Right Intro Narrative and Buttons */}
@@ -81,7 +75,7 @@ export default function AboutPage() {
                 lineHeight: 1.75,
                 marginBottom: '2rem'
               }}>
-                I'm <strong style={{ color: '#ffffff' }}>Himanshu Soni</strong> — an independent Freelance Shopify Expert and Shopify Plus specialist helping high-growth brands build high-converting storefronts, custom apps, and frictionless checkouts.
+                I'm <strong style={{ color: '#ffffff' }}>Himanshu Soni</strong> — an independent Freelance Shopify Developer and Shopify Plus specialist helping high-growth brands build high-converting storefronts, custom apps, and frictionless checkouts.
               </p>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -128,7 +122,7 @@ export default function AboutPage() {
                 lineHeight: 1.25,
                 marginBottom: '1.25rem'
               }}>
-                Freelance Shopify Expert with 8+ Years of Specialized Experience
+                Freelance Shopify Developer with 8+ Years of Specialized Experience
               </h2>
               <p style={{ fontSize: '1.02rem', lineHeight: 1.75, color: 'var(--color-text-body)', marginBottom: '1.25rem' }}>
                 As an independent freelance specialist, I partner directly with founders, e-commerce directors, and digital agencies to deliver robust Shopify solutions without agency overhead or middle layers.
@@ -189,7 +183,7 @@ export default function AboutPage() {
                   marginBottom: '1.75rem'
                 }}>
                   {verifiedMetrics.map((m, idx) => (
-                    <div 
+                    <div
                       key={idx}
                       style={{
                         padding: '1.25rem',
@@ -251,7 +245,7 @@ export default function AboutPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             {freelanceMilestones.map((exp, idx) => (
-              <div 
+              <div
                 key={idx}
                 style={{
                   background: '#ffffff',
@@ -335,7 +329,7 @@ export default function AboutPage() {
             gap: '1.5rem'
           }}>
             {technicalSkills.map((cat, cIdx) => (
-              <div 
+              <div
                 key={cIdx}
                 style={{
                   background: '#ffffff',
@@ -350,7 +344,7 @@ export default function AboutPage() {
                 </h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {cat.skills.map((s, sIdx) => (
-                    <span 
+                    <span
                       key={sIdx}
                       style={{
                         fontSize: '0.78rem',
@@ -400,8 +394,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Dark Ticker */}
-      <Ticker items={tickerItems} variant="dark" />
+      {/* Dark Ticker
+      <Ticker items={tickerItems} variant="dark" /> */}
     </div>
   );
 }

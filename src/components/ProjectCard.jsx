@@ -1,4 +1,4 @@
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function ProjectCard({ project, onSelect }) {
   return (
@@ -33,7 +33,11 @@ export default function ProjectCard({ project, onSelect }) {
         <div style={{ position: 'relative', overflow: 'hidden', height: '230px', background: '#f3f4f6' }}>
           <img 
             src={project.thumbnail} 
-            alt={project.title}
+            alt={`Shopify project case study: ${project.title}`}
+            loading="lazy"
+            decoding="async"
+            width="400"
+            height="230"
             style={{
               width: '100%',
               height: '100%',

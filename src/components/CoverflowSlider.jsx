@@ -323,7 +323,9 @@ export default function CoverflowSlider({ projects, onSelectProject }) {
                 {/* Background Storefront Mockup Image */}
                 <img
                   src={project.thumbnail}
-                  alt={project.brandName || project.title}
+                  alt={`Shopify store case study — ${project.brandName || project.title}`}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
                     height: '100%',

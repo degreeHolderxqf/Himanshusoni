@@ -4,7 +4,7 @@
 
 export const personalInfo = {
   name: "Himanshu Soni",
-  role: "Freelance Shopify Expert",
+  role: "Freelance Shopify Developer",
   subRole: "Shopify Plus & Custom E-commerce Development",
   tagline: "Building high-performance Shopify storefronts, custom apps, and checkout systems that scale e-commerce revenue.",
   experienceYears: "8+",
@@ -14,7 +14,7 @@ export const personalInfo = {
   github: "https://github.com",
   linkedin: "https://linkedin.com/in",
   availability: "Available for Custom Theme, Shopify Plus, and Custom App Projects",
-  bio: `Independent Freelance Shopify Expert with 8+ years of specialized experience architecting bespoke Shopify 2.0 themes, Shopify Plus checkout extensions, custom Remix applications, and high-converting e-commerce experiences. Skilled in Shopify APIs, Liquid, Remix, GraphQL, and modern web performance. Proven track record of cutting warehouse order processing time by 60%, boosting Lighthouse speed scores to 85+, eliminating inventory overselling across multi-variant catalogs, and deploying over 60+ bespoke e-commerce storefronts.`
+  bio: `Independent Freelance Shopify Developer with 8+ years of specialized experience architecting bespoke Shopify 2.0 themes, Shopify Plus checkout extensions, custom Remix applications, and high-converting e-commerce experiences. Skilled in Shopify APIs, Liquid, Remix, GraphQL, and modern web performance. Proven track record of cutting warehouse order processing time by 60%, boosting Lighthouse speed scores to 85+, eliminating inventory overselling across multi-variant catalogs, and deploying over 60+ bespoke e-commerce storefronts.`
 };
 
 export const verifiedMetrics = [

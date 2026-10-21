@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import SEO from './components/SEO';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -14,9 +15,10 @@ import ServicesPage from './pages/ServicesPage';
 
 import WhatsAppButton from './components/WhatsAppButton';
 
-export default function App() {
+export function AppContent() {
   return (
-    <Router>
+    <>
+      <SEO />
       <ScrollToTop />
       <div className="app-container" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Navbar />
@@ -60,6 +62,14 @@ export default function App() {
         <Footer />
         <WhatsAppButton />
       </div>
-    </Router>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }

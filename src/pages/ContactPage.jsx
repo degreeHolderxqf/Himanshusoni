@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Send, 
-  CheckCircle2, 
-  ArrowRight, 
-  Copy, 
-  Check 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle2,
+  Copy,
+  Check
 } from 'lucide-react';
 import Ticker from '../components/Ticker';
 import { personalInfo, tickerItems } from '../data/portfolioData';
@@ -92,11 +91,13 @@ Message: ${formData.message}
       {/* ============================================================== */}
       <section className="subpage-hero-banner">
         <div className="container">
-          <span className="hero-category">CONTACT</span>
-          <span className="hero-tagline">Looking forward to work with you!</span>
-          <h1 className="hero-headline">
-            Want to work together on a project, have questions about custom Shopify Plus solutions, or just want to discuss your store speed? Go ahead and send an email or use the contact form below.
+          <span className="hero-category">CONTACT &amp; INQUIRIES</span>
+          <h1 className="hero-headline" style={{ marginBottom: '0.75rem' }}>
+            Hire a Freelance Shopify Developer | Contact Himanshu Soni
           </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', color: '#e5e7eb', lineHeight: 1.6, maxWidth: '850px', margin: 0 }}>
+            Ready to discuss your Shopify Plus build, custom theme, Remix app, or speed optimization? Reach out directly below to review scope, timelines, and deliverables.
+          </p>
         </div>
       </section>
 
@@ -122,7 +123,7 @@ Message: ${formData.message}
 
               {/* Direct Info Cards */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2rem' }}>
-                <a 
+                <a
                   href={`mailto:${personalInfo.email}`}
                   style={{
                     display: 'flex',
@@ -162,7 +163,7 @@ Message: ${formData.message}
                   </div>
                 </a>
 
-                <a 
+                <a
                   href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, '')}`}
                   style={{
                     display: 'flex',
@@ -260,7 +261,7 @@ Message: ${formData.message}
                         <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Your Name *
                         </label>
-                        <input 
+                        <input
                           type="text"
                           placeholder="e.g. Jordan Smith"
                           value={formData.name}
@@ -282,7 +283,7 @@ Message: ${formData.message}
                         <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Email Address *
                         </label>
-                        <input 
+                        <input
                           type="email"
                           placeholder="jordan@brand.com"
                           value={formData.email}
@@ -306,7 +307,7 @@ Message: ${formData.message}
                         <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Phone / WhatsApp (Optional)
                         </label>
-                        <input 
+                        <input
                           type="text"
                           placeholder="+1 555-0123"
                           value={formData.phone}
@@ -327,7 +328,7 @@ Message: ${formData.message}
                         <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                           Store / Website URL
                         </label>
-                        <input 
+                        <input
                           type="url"
                           placeholder="https://yourstore.com"
                           value={formData.websiteUrl}
@@ -400,7 +401,7 @@ Message: ${formData.message}
                       <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-deep-purple)', marginBottom: '0.4rem' }}>
                         Project Scope &amp; Goals *
                       </label>
-                      <textarea 
+                      <textarea
                         rows={4}
                         placeholder="Tell me about your storefront goals, specific challenges, or technical requirements..."
                         value={formData.message}
@@ -457,7 +458,7 @@ Message: ${formData.message}
                     </p>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                      <a 
+                      <a
                         href={generateMailto()}
                         className="btn btn-dark"
                         style={{ width: '100%', padding: '0.85rem' }}
@@ -497,8 +498,8 @@ Message: ${formData.message}
         </div>
       </section>
 
-      {/* Dark Ticker */}
-      <Ticker items={tickerItems} variant="dark" />
+      {/* Dark Ticker
+      <Ticker items={tickerItems} variant="dark" /> */}
     </div>
   );
 }

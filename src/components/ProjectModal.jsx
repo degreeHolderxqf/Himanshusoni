@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { X, CheckCircle2, TrendingUp, Layers, ExternalLink } from 'lucide-react';
+import { X, CheckCircle2 } from 'lucide-react';
 
 export default function ProjectModal({ project, onClose }) {
   useEffect(() => {
@@ -80,7 +80,9 @@ export default function ProjectModal({ project, onClose }) {
         <div style={{ height: '320px', position: 'relative', overflow: 'hidden', background: '#f3f4f6' }}>
           <img 
             src={project.thumbnail} 
-            alt={project.title}
+            alt={`Shopify project preview: ${project.title}`}
+            loading="lazy"
+            decoding="async"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
           <div style={{

@@ -3,26 +3,14 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Check,
-  Sparkles,
   Layers,
   Code2,
-  Gauge,
-  Cpu,
-  Link2,
-  Zap,
-  ShieldCheck,
-  Clock,
-  TrendingUp,
-  CheckCircle2,
-  ExternalLink
+  Cpu
 } from 'lucide-react';
 import Ticker from '../components/Ticker';
 import CoverflowSlider from '../components/CoverflowSlider';
 import ProjectModal from '../components/ProjectModal';
 import {
-  personalInfo,
-  verifiedMetrics,
-  servicesData,
   projectsData,
   tickerItems
 } from '../data/portfolioData';
@@ -59,82 +47,42 @@ export default function HomePage() {
         }}
       >
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
-            alignItems: 'center'
-          }}>
-            {/* Left Column: Heading, Subhead, Pill Buttons */}
-            <div>
-              <h1 style={{
-                fontSize: 'clamp(2.5rem, 4.8vw, 4.2rem)',
-                fontWeight: 800,
-                color: 'var(--color-deep-purple)',
-                lineHeight: 1.15,
-                letterSpacing: '-0.02em',
-                marginBottom: '1.5rem'
-              }}>
-                Your Shopify <strong style={{ color: 'var(--color-plum)' }}>Superpower</strong> to Spark Growth
-              </h1>
+          <div style={{ maxWidth: '820px' }}>
+            <h1 style={{
+              fontSize: 'clamp(2rem, 3.8vw, 3.2rem)',
+              fontWeight: 800,
+              color: 'var(--color-deep-purple)',
+              lineHeight: 1.2,
+              letterSpacing: '-0.02em',
+              marginBottom: '1.25rem'
+            }}>
+              Freelance Shopify Developer &amp; <strong style={{ color: 'var(--color-plum)' }}>Shopify Plus</strong> Specialist
+            </h1>
 
-              <p style={{
-                fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
-                lineHeight: 1.75,
-                color: 'var(--color-text-body)',
-                marginBottom: '2.5rem',
-                maxWidth: '560px'
-              }}>
-                I'm <strong style={{ color: 'var(--color-deep-purple)' }}>Himanshu</strong> — an independent <strong>Freelance Shopify Expert</strong> with <strong>8+ years of experience</strong> blending Liquid architecture, custom apps &amp; speed optimization to <strong>supercharge</strong> e-commerce brands. From chaos to clarity, I help you grow with purpose.
-              </p>
+            <p style={{
+              fontSize: 'clamp(0.98rem, 1.4vw, 1.12rem)',
+              lineHeight: 1.75,
+              color: 'var(--color-text-body)',
+              marginBottom: '2.25rem',
+              maxWidth: '700px'
+            }}>
+              I'm <strong style={{ color: 'var(--color-deep-purple)' }}>Himanshu Soni</strong> — an independent <strong>Freelance Shopify Developer</strong> with <strong>8+ years of professional experience</strong> building high-converting Liquid themes, custom Remix apps, checkout extensibility, and speed optimization for scaling e-commerce brands worldwide.
+            </p>
 
-              {/* Exact Pill Action Buttons */}
-              <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '1rem',
-                alignItems: 'center'
-              }}>
-                <Link to="/website-portfolio" className="btn btn-dark">
-                  Explore My Work <ArrowRight size={16} />
-                </Link>
+            {/* Exact Pill Action Buttons */}
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '1rem',
+              alignItems: 'center'
+            }}>
+              <Link to="/website-portfolio" className="btn btn-dark" aria-label="Explore my Shopify portfolio and case studies">
+                Explore My Work <ArrowRight size={16} />
+              </Link>
 
-                <Link to="/contactus" className="btn btn-lilac">
-                  Lets Talk <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: Hero Profile Image */}
-            <div style={{ position: 'relative', textAlign: 'center' }}>
-              <div style={{
-                position: 'relative',
-                display: 'inline-block',
-                maxWidth: '460px',
-                width: '100%'
-              }}>
-                {/* Hero Profile Graphic Container */}
-                <div style={{
-                  borderRadius: '28px',
-                  overflow: 'hidden',
-                  boxShadow: '0 25px 60px rgba(25, 12, 57, 0.12)',
-                  border: '1px solid rgba(186, 154, 253, 0.3)',
-                  background: '#ffffff',
-                  padding: '0.85rem'
-                }}>
-                  <img
-                    src="/assets/MY-Profile.jpeg"
-                    alt="Himanshu Soni — Freelance Shopify Expert"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      borderRadius: '20px',
-                      display: 'block',
-                      objectFit: 'cover'
-                    }}
-                  />
-                </div>
-              </div>
+              <Link to="/contactus" className="btn btn-lilac" aria-label="Contact freelance Shopify developer Himanshu Soni">
+                Lets Talk <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </div>
@@ -193,12 +141,26 @@ export default function HomePage() {
                 borderRadius: '24px',
                 overflow: 'hidden',
                 boxShadow: '0 20px 45px rgba(25, 12, 57, 0.08)',
-                border: '1px solid rgba(0, 0, 0, 0.06)'
+                border: '1px solid rgba(186, 154, 253, 0.25)',
+                background: '#ffffff',
+                maxWidth: '460px',
+                margin: '0 auto'
               }}>
                 <img
-                  src="/assets/projects/admin-extension.jpg"
-                  alt="Shopify Development by Himanshu Soni"
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  src="/assets/MY-Profile.jpeg"
+                  alt="Himanshu Soni — Freelance Shopify Developer and Shopify Plus Specialist"
+                  loading="lazy"
+                  decoding="async"
+                  width="460"
+                  height="614"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    maxHeight: '520px',
+                    display: 'block',
+                    objectFit: 'cover',
+                    objectPosition: 'center top'
+                  }}
                 />
               </div>
             </div>
@@ -379,7 +341,7 @@ export default function HomePage() {
                 lineHeight: 1.7,
                 margin: 0
               }}>
-                With 8+ years of experience as an independent Freelance Shopify Expert, I specialize in helping direct-to-consumer brands and agencies build high-converting storefronts, custom apps, and frictionless checkouts.
+                With 8+ years of experience as an independent Freelance Shopify Developer, I specialize in helping direct-to-consumer brands and agencies build high-converting storefronts, custom apps, and frictionless checkouts.
               </p>
             </div>
           </div>

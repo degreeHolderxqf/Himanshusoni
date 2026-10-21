@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Ticker from '../components/Ticker';
 import { approachStages, tickerItems } from '../data/portfolioData';
 
@@ -11,13 +11,13 @@ export default function ApproachPage() {
       {/* ============================================================== */}
       <section className="subpage-hero-banner">
         <div className="container">
-          <span className="hero-category">APPROACH</span>
-          <span className="hero-tagline">
-            Architecture-driven engineering &bull; Forensic store audits &bull; Zero-downtime execution
-          </span>
-          <h1 className="hero-headline">
-            E-commerce storefronts require more than surface styling. A clear, disciplined engineering process makes for efficient use of time, protects live revenue, and guarantees that the end store converts.
+          <span className="hero-category">APPROACH &amp; METHODOLOGY</span>
+          <h1 className="hero-headline" style={{ marginBottom: '0.75rem' }}>
+            My Shopify Development Process &amp; Engineering Workflow
           </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', color: '#e5e7eb', lineHeight: 1.6, maxWidth: '850px', margin: 0 }}>
+            Architecture-driven engineering, forensic store audits, and zero-downtime execution. A clear 6-phase development workflow that protects live revenue and guarantees high-converting storefronts.
+          </p>
         </div>
       </section>
 
@@ -42,7 +42,7 @@ export default function ApproachPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             {approachStages.map((phase) => (
-              <div 
+              <div
                 key={phase.step}
                 style={{
                   background: '#ffffff',
@@ -207,8 +207,8 @@ export default function ApproachPage() {
         </div>
       </section>
 
-      {/* Dark Ticker */}
-      <Ticker items={tickerItems} variant="dark" />
+      {/* Dark Ticker
+      <Ticker items={tickerItems} variant="dark" /> */}
     </div>
   );
 }
