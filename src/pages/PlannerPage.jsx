@@ -719,7 +719,7 @@ Notes: ${formData.notes || 'N/A'}
                     className="btn btn-dark"
                     style={{ padding: '0.75rem 1.85rem', fontSize: '1rem' }}
                   >
-                    Review &amp; Complete Plan <CheckCircle2 size={18} />
+                    Complete <CheckCircle2 size={18} />
                   </button>
                 )}
               </div>
@@ -763,7 +763,7 @@ Notes: ${formData.notes || 'N/A'}
                   className="btn btn-dark"
                   style={{ padding: '0.85rem 1.85rem' }}
                 >
-                  <Send size={18} /> Send Plan to Himanshu Soni
+                  <Send size={18} /> Send to Himanshu Soni
                 </a>
 
                 <button
