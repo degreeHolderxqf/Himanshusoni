@@ -61,7 +61,7 @@ export default function ProjectModal({ project, onClose }) {
             height: '40px',
             borderRadius: '50%',
             background: 'rgba(25, 12, 57, 0.08)',
-            border: 'none',
+            border: '1px solid',
             color: 'var(--color-deep-purple)',
             cursor: 'pointer',
             display: 'flex',
