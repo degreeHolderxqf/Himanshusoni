@@ -118,7 +118,7 @@ This plan clearly separates **Codebase Development Tasks** from **Manual Client 
 ### Month 1: Technical SEO Baseline & Indexation (Days 1–30)
 - **Codebase Tasks (Completed):**
   - Static Pre-Rendering (SSG) pipeline compiling full HTML across all routes.
-  - Corrected experience claim to 8+ years across all templates and metadata.
+  - Corrected experience claim to 5+ years across all templates and metadata.
   - Added `public/robots.txt`, `public/sitemap.xml`, and `vercel.json` routing.
   - Implemented complete Schema.org JSON-LD structured data.
 - **Manual Client Actions (Pending):**

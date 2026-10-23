@@ -57,13 +57,13 @@ Merchants and agencies looking to hire a Shopify freelancer fall into four prima
 - **Optimized Page Title:**  
   `Freelance Shopify Developer & Shopify Plus Specialist | Himanshu Soni`
 - **Optimized Meta Description:**  
-  `Independent freelance Shopify developer with 8+ years experience building bespoke Shopify 2.0 themes, Shopify Plus checkout functions, custom Remix apps, inventory sync, and sub-1.2s speed optimization.`
+  `Independent freelance Shopify developer with 5+ years experience building bespoke Shopify 2.0 themes, Shopify Plus checkout functions, custom Remix apps, inventory sync, and sub-1.2s speed optimization.`
 - **Recommended H1:**  
   `Freelance Shopify Developer & Shopify Plus Specialist`
 - **Required Supporting Content:**
   - Value proposition distinguishing direct freelance collaboration from agency bloat.
   - Core specializations (Liquid themes, Plus checkout, inventory sync apps, speed optimization).
-  - High-impact verified statistics (8+ years experience, 60+ stores shipped, 60% order processing time cut, 95% inventory discrepancy cut).
+  - High-impact verified statistics (5+ years experience, 60+ stores shipped, 60% order processing time cut, 95% inventory discrepancy cut).
   - Interactive Coverflow case study showcase linking to real work.
   - "Why Work With Me" trust blocks highlighting reliable timelines, direct communication, and zero ghosting.
 - **Related Internal Links:**
@@ -195,11 +195,11 @@ Merchants and agencies looking to hire a Shopify freelancer fall into four prima
 - **Optimized Page Title:**  
   `About Himanshu Soni | Freelance Shopify Developer & Plus Specialist`
 - **Optimized Meta Description:**  
-  `Meet Himanshu Soni, independent freelance Shopify developer with 8+ years experience, BCA degree, and 60+ deployed stores. Specializing in Liquid, Remix, APIs, and speed tuning.`
+  `Meet Himanshu Soni, independent freelance Shopify developer with 5+ years experience, BCA degree, and 60+ deployed stores. Specializing in Liquid, Remix, APIs, and speed tuning.`
 - **Recommended H1:**  
   `About Himanshu Soni — Freelance Shopify Developer`
 - **Required Supporting Content:**
-  - Truthful 8+ years professional experience positioning.
+  - Truthful 5+ years professional experience positioning.
   - Verified BCA degree (2020–2023, Government TRS College, Rewa, MP, India).
   - Technical Toolkit matrix: *Shopify Ecosystem*, *Frontend Engineering*, *Backend & Integrations*, *Speed & Performance*.
   - Freelance Milestones (Ongoing Independent Practice, Custom Storefront Engineering, Full-Stack Foundation) without corporate employer disclosures.

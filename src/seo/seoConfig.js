@@ -114,8 +114,8 @@ export function getStructuredDataForRoute(pathname) {
     telephone: '+919302615727',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Indore',
-      addressRegion: 'Madhya Pradesh',
+      addressLocality: 'Bangalore',
+      addressRegion: 'Karnataka',
       addressCountry: 'India'
     },
     knowsAbout: [

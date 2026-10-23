@@ -144,7 +144,7 @@ export default function AboutPage() {
                   borderRadius: '999px'
                 }}>
                   <MapPin size={16} color="var(--color-deep-purple)" />
-                  Indore, India (Global Remote Availability)
+                  Bangalore, India (Global Remote Availability)
                 </div>
                 <div style={{
                   display: 'flex',

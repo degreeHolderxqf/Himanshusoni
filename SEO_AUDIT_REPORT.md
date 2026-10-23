@@ -18,10 +18,10 @@ While the website features a distinctive visual design, smooth micro-interaction
 2. **Sub-Route 404 Failures on Live Deployment:** Every sub-route (`/website-portfolio`, `/services`, `/approach`, `/aboutus`, `/planner`, `/contactus`) returned HTTP `404 Not Found` when accessed directly or refreshed on Vercel due to missing SPA rewrites and missing static route outputs.
 3. **Missing Indexing Directives:** Neither `robots.txt` nor `sitemap.xml` existed on the live deployment, returning `404 Not Found`.
 4. **Metadata & Canonical Omissions:** Subpages lacked unique `<title>`, `<meta name="description">`, `<link rel="canonical">`, Open Graph, and Twitter Card tags.
-5. **Positioning & Search Alignment:** The developer's 8+ years of specialized freelance experience and custom development capabilities were not effectively structured for Google search intent or SERP click-through.
+5. **Positioning & Search Alignment:** The developer's 5+ years of specialized freelance experience and custom development capabilities were not effectively structured for Google search intent or SERP click-through.
 6. **Zero Structured Data (JSON-LD):** Search engine bots received no Schema.org markup describing the developer's entity, services, case studies, or breadcrumbs.
 
-All blocking issues have been **directly diagnosed, resolved, and verified** via an automated Static Pre-Rendering (SSG) pipeline, complete Schema.org integration, consistent 8+ years experience positioning, optimized semantic headings, and production routing configuration.
+All blocking issues have been **directly diagnosed, resolved, and verified** via an automated Static Pre-Rendering (SSG) pipeline, complete Schema.org integration, consistent 5+ years experience positioning, optimized semantic headings, and production routing configuration.
 
 ---
 
@@ -33,7 +33,7 @@ All blocking issues have been **directly diagnosed, resolved, and verified** via
 | **AUD-02** | **Initial HTML Response Content Vacuum (Empty `<div id="root">`)** | All routes (`/`, `/website-portfolio`, `/services`, `/approach`, etc.) | **CRITICAL (Blocker)** | Live document curl returned an empty `<div id="root"></div>` containing only script bundles. | Crawlers that don't execute JavaScript (or defer JS rendering) indexed blank pages. Critical loss of keyword rankings and snippet text. | **FIXED:** Implemented SSR pre-rendering via `react-dom/server` producing full semantic HTML inside `<div id="root">`. |
 | **AUD-03** | **Missing `robots.txt`** | `/robots.txt` | **HIGH** | HTTP GET `/robots.txt` returned HTTP 404 status code. | Search engines had no crawl guidance and could not discover the XML sitemap location. | **FIXED:** Created `public/robots.txt` allowing all production pages and referencing `sitemap.xml`. |
 | **AUD-04** | **Missing `sitemap.xml`** | `/sitemap.xml` | **HIGH** | HTTP GET `/sitemap.xml` returned HTTP 404 status code. | Search engines could not efficiently discover and index canonical routes. | **FIXED:** Created standard `public/sitemap.xml` with canonical production URLs, priority, and change frequencies. |
-| **AUD-05** | **Experience & Positioning Alignment (8+ Years)** | `/`, `/aboutus`, `portfolioData.js`, `index.html`, `Footer.jsx` | **HIGH (Trust & Brand Authority)** | Experience claims varied between templates without consistent metadata, schema markup, or search-aligned copy. | Inconsistent brand authority across SERP snippets and social previews. | **FIXED:** Standardized to 8+ years of specialized professional experience across all templates, schemas, and metadata. |
+| **AUD-05** | **Experience & Positioning Alignment (5+ Years)** | `/`, `/aboutus`, `portfolioData.js`, `index.html`, `Footer.jsx` | **HIGH (Trust & Brand Authority)** | Experience claims varied between templates without consistent metadata, schema markup, or search-aligned copy. | Inconsistent brand authority across SERP snippets and social previews. | **FIXED:** Standardized to 5+ years of specialized professional experience across all templates, schemas, and metadata. |
 | **AUD-06** | **Missing Schema.org JSON-LD Structured Data** | All routes | **HIGH** | 0 structured data tags existed in document `<head>`. | Ineligibility for rich snippets (Service items, Person entity, Breadcrumbs, sitelinks search). | **FIXED:** Created `src/seo/seoConfig.js` injecting `Person`, `WebSite`, `Service` ItemList, `CollectionPage`, `HowTo`, and `BreadcrumbList`. |
 | **AUD-07** | **Identical / Ineffective Page Titles & Descriptions** | All sub-routes | **HIGH** | Every page inherited generic homepage `<title>` and description when navigated directly. | SERP snippets did not match page intent; poor Click-Through Rate (CTR) and internal cannibalization. | **FIXED:** Route-specific titles, descriptions, and keywords injected both at build-time (SSG) and runtime (`SEO.jsx`). |
 | **AUD-08** | **Missing Canonical URLs** | All routes | **MEDIUM** | No `<link rel="canonical">` was present in source HTML. | Risk of duplicate content penalties across Vercel preview URLs and root domain variations. | **FIXED:** Configured canonical links targeting `https://himanshusoni-lilac.vercel.app/<route>` across all pages. |
@@ -48,14 +48,14 @@ All blocking issues have been **directly diagnosed, resolved, and verified** via
 
 ### 3.1 Route: `/` (Home)
 - **Status Pre-Audit:** Returned HTTP 200, but `<div id="root">` was completely empty.
-- **Title Pre-Audit:** Generic title with "8+ years experience" discrepancy.
+- **Title Pre-Audit:** Generic title with "5+ years experience" discrepancy.
 - **H1 Pre-Audit:** *"Your Shopify Superpower to Spark Growth"* — creative but zero organic search-intent alignment.
-- **Copy Pre-Audit:** Repeated "8+ years" in 5 sections.
+- **Copy Pre-Audit:** Repeated "5+ years" in 5 sections.
 - **Status Post-Audit:**
   - Full pre-rendered static HTML with rich semantic markup.
   - **H1:** *Freelance Shopify Developer & Shopify Plus Specialist*
   - **Title:** *Freelance Shopify Developer & Shopify Plus Specialist | Himanshu Soni*
-  - **Description:** *Independent freelance Shopify developer with 8+ years experience building bespoke Shopify 2.0 themes, Shopify Plus checkout functions, custom Remix apps, inventory sync, and sub-1.2s speed optimization.*
+  - **Description:** *Independent freelance Shopify developer with 5+ years experience building bespoke Shopify 2.0 themes, Shopify Plus checkout functions, custom Remix apps, inventory sync, and sub-1.2s speed optimization.*
   - **Schema:** `Person` schema + `WebSite` schema linked via `@id`.
   - **Image:** LCP hero image optimized with `fetchPriority="high"` and explicit dimensions (`460x460`).
 
@@ -99,9 +99,9 @@ All blocking issues have been **directly diagnosed, resolved, and verified** via
   - Dedicated pre-rendered HTML file at `dist/aboutus/index.html` (HTTP 200).
   - **H1:** *About Himanshu Soni — Freelance Shopify Developer*
   - **Title:** *About Himanshu Soni | Freelance Shopify Developer & Plus Specialist*
-  - **Description:** *Meet Himanshu Soni, independent freelance Shopify developer with 8+ years experience, BCA degree, and 60+ deployed stores. Specializing in Liquid, Remix, APIs, and speed tuning.*
+  - **Description:** *Meet Himanshu Soni, independent freelance Shopify developer with 5+ years experience, BCA degree, and 60+ deployed stores. Specializing in Liquid, Remix, APIs, and speed tuning.*
   - **Schema:** `AboutPage` linked to the verified `Person` entity.
-  - **Positioning Alignment:** Standardized to 8+ years professional experience and BCA academic credentials.
+  - **Positioning Alignment:** Standardized to 5+ years professional experience and BCA academic credentials.
 
 ### 3.6 Route: `/planner`
 - **Status Pre-Audit:** Returned HTTP 404 when opened directly on Vercel.

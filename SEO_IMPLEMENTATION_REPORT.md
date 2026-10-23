@@ -56,9 +56,9 @@ Prior to this implementation, the project was a pure client-side single-page app
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
 │ src/App.jsx                           │ Modified   │ Exports AppContent for SSR and mounts <SEO /> component│
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
-│ src/data/portfolioData.js             │ Modified   │ Corrected experience to 8+ years; updated role claims  │
+│ src/data/portfolioData.js             │ Modified   │ Corrected experience to 5+ years; updated role claims  │
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
-│ src/pages/HomePage.jsx                │ Modified   │ SEO H1, 8+ years experience, image LCP attributes      │
+│ src/pages/HomePage.jsx                │ Modified   │ SEO H1, 5+ years experience, image LCP attributes      │
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
 │ src/pages/PortfolioPage.jsx           │ Modified   │ Search-intent H1, descriptive portfolio intro copy     │
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
@@ -66,13 +66,13 @@ Prior to this implementation, the project was a pure client-side single-page app
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
 │ src/pages/ApproachPage.jsx            │ Modified   │ Search-intent H1, clear 6-phase engineering workflow   │
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
-│ src/pages/AboutPage.jsx               │ Modified   │ Converted div to semantic H1; corrected 8+ years claim │
+│ src/pages/AboutPage.jsx               │ Modified   │ Converted div to semantic H1; corrected 5+ years claim │
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
 │ src/pages/PlannerPage.jsx             │ Modified   │ Search-intent H1, streamlined scoping copy             │
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
 │ src/pages/ContactPage.jsx             │ Modified   │ Search-intent H1, cleaned unused imports               │
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
-│ src/components/Footer.jsx             │ Modified   │ Corrected 8+ years claim; cleaned unused icons         │
+│ src/components/Footer.jsx             │ Modified   │ Corrected 5+ years claim; cleaned unused icons         │
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
 │ src/components/ProjectCard.jsx        │ Modified   │ Added loading="lazy", decoding="async", explicit sizes │
 ├───────────────────────────────────────┼────────────┼────────────────────────────────────────────────────────┤
@@ -126,7 +126,7 @@ Implemented rich semantic graphs:
    - `name`: `Himanshu Soni`
    - `jobTitle`: `Freelance Shopify Developer`
    - `alumniOf`: `Government Thakur Ranmat Singh College, Rewa, MP, India`
-   - `address`: `Indore, Madhya Pradesh, India`
+   - `address`: `Bangalore, Karnataka, India`
    - `knowsAbout`: Shopify, Shopify Plus, Liquid, Remix, Shopify Functions API, Checkout Extensibility, Core Web Vitals.
 2. **`WebSite` Schema (Home):**
    - Linked to Person as author/publisher.

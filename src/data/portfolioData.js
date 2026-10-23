@@ -10,7 +10,7 @@ export const personalInfo = {
   experienceYears: "5+",
   phone: "+91 93026 15727",
   email: "himanshusoni7899@gmail.com",
-  location: "Indore, Madhya Pradesh, India (Available Worldwide)",
+  location: "Bangalore, Karnataka, India (Available Worldwide)",
   github: "https://github.com",
   linkedin: "https://linkedin.com/in",
   availability: "Available for Custom Theme, Shopify Plus, and Custom App Projects",
