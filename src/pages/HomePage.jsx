@@ -147,7 +147,7 @@ export default function HomePage() {
                 margin: '0 auto'
               }}>
                 <img
-                  src="/assets/MY-Profile.jpeg"
+                  src="/assets/info-banner.png"
                   alt="Himanshu Soni — Freelance Shopify Developer and Shopify Plus Specialist"
                   loading="lazy"
                   decoding="async"
