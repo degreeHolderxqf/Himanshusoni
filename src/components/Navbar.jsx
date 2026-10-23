@@ -40,12 +40,13 @@ export default function Navbar() {
     setServicesDropdown(false);
   }, [location.pathname]);
 
-  const headerClass = `scroll-header ${scrollState.stuck ? 'stuck' : ''} ${scrollState.scrollDown ? 'scroll-head-down' : scrollState.stuck ? 'scroll-head-up' : ''
-    }`;
+  const headerClass = `scroll-header ${scrollState.stuck ? 'stuck' : ''} ${
+    scrollState.scrollDown ? 'scroll-head-down' : scrollState.stuck ? 'scroll-head-up' : ''
+  }`;
 
   return (
-    <header
-      className={headerClass}
+    <header 
+      className={headerClass} 
       style={{
         height: '80px',
         display: 'flex',
@@ -70,7 +71,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav Items */}
-        <nav
+        <nav 
           style={{
             display: 'none',
             alignItems: 'center',
@@ -79,13 +80,13 @@ export default function Navbar() {
           className="desktop-nav-menu"
         >
           {/* Portfolio with dropdown */}
-          <div
+          <div 
             style={{ position: 'relative' }}
             onMouseEnter={() => setPortfolioDropdown(true)}
             onMouseLeave={() => setPortfolioDropdown(false)}
           >
-            <Link
-              to="/website-portfolio"
+            <Link 
+              to="/website-portfolio" 
               className={`nav-link ${location.pathname.startsWith('/website-portfolio') ? 'active' : ''}`}
             >
               PORTFOLIO <ChevronDown size={14} />
@@ -104,7 +105,7 @@ export default function Navbar() {
                 border: '1px solid rgba(0,0,0,0.06)',
                 zIndex: 100
               }}>
-                <Link
+                <Link 
                   to="/website-portfolio"
                   style={{
                     display: 'block',
@@ -118,7 +119,7 @@ export default function Navbar() {
                 >
                   Website Portfolio
                 </Link>
-                <Link
+                <Link 
                   to="/website-portfolio"
                   style={{
                     display: 'block',
@@ -137,13 +138,13 @@ export default function Navbar() {
           </div>
 
           {/* Services with dropdown */}
-          <div
+          <div 
             style={{ position: 'relative' }}
             onMouseEnter={() => setServicesDropdown(true)}
             onMouseLeave={() => setServicesDropdown(false)}
           >
-            <Link
-              to="/services"
+            <Link 
+              to="/services" 
               className={`nav-link ${location.pathname.startsWith('/services') ? 'active' : ''}`}
             >
               SERVICES <ChevronDown size={14} />
@@ -162,7 +163,7 @@ export default function Navbar() {
                 border: '1px solid rgba(0,0,0,0.06)',
                 zIndex: 100
               }}>
-                <Link
+                <Link 
                   to="/services"
                   style={{
                     display: 'block',
@@ -176,7 +177,7 @@ export default function Navbar() {
                 >
                   Shopify Plus & Checkout
                 </Link>
-                <Link
+                <Link 
                   to="/services"
                   style={{
                     display: 'block',
@@ -190,7 +191,7 @@ export default function Navbar() {
                 >
                   Custom Liquid Themes
                 </Link>
-                <Link
+                <Link 
                   to="/services"
                   style={{
                     display: 'block',
@@ -204,7 +205,7 @@ export default function Navbar() {
                 >
                   Custom Remix Apps
                 </Link>
-                <Link
+                <Link 
                   to="/services"
                   style={{
                     display: 'block',
@@ -221,13 +222,28 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          <Link
-            to="/planner"
+ 
+
+          <Link 
+            to="/aboutus" 
+            className={`nav-link ${location.pathname.startsWith('/aboutus') ? 'active' : ''}`}
+          >
+            ABOUT
+          </Link>
+
+          <Link 
+            to="/planner" 
             className={`nav-link ${location.pathname.startsWith('/planner') ? 'active' : ''}`}
           >
             PLANNER
           </Link>
 
+          <Link 
+            to="/contactus" 
+            className={`nav-link ${location.pathname.startsWith('/contactus') ? 'active' : ''}`}
+          >
+            CONTACT
+          </Link>
         </nav>
 
         {/* Mobile Hamburger Toggle */}
@@ -268,44 +284,44 @@ export default function Navbar() {
           boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
           overflowY: 'auto'
         }}>
-          <Link
-            to="/"
+          <Link 
+            to="/" 
             style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}
           >
             HOME
           </Link>
-          <Link
-            to="/website-portfolio"
+          <Link 
+            to="/website-portfolio" 
             style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}
           >
             PORTFOLIO
           </Link>
-          <Link
-            to="/services"
+          <Link 
+            to="/services" 
             style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}
           >
             SERVICES
           </Link>
-          <Link
-            to="/approach"
+          <Link 
+            to="/approach" 
             style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}
           >
             APPROACH
           </Link>
-          <Link
-            to="/aboutus"
+          <Link 
+            to="/aboutus" 
             style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}
           >
             ABOUT
           </Link>
-          <Link
-            to="/planner"
+          <Link 
+            to="/planner" 
             style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}
           >
             PROJECT PLANNER
           </Link>
-          <Link
-            to="/contactus"
+          <Link 
+            to="/contactus" 
             style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-deep-purple)' }}
           >
             CONTACT
