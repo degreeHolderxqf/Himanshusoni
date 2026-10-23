@@ -3,7 +3,7 @@ export default function Ticker({ items, variant = "dark", speed = "24s" }) {
     "Shopify Plus Engineering",
     "Custom Remix Apps",
     "Shopify Functions API",
-    "60+ Stores Shipped",
+    "250+ Stores Delivered",
     "Real-Time Inventory Sync",
     "Checkout Extensibility",
     "85+ Lighthouse Performance",

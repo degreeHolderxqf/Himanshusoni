@@ -1,5 +1,5 @@
 // Portfolio Data for Himanshu Soni — Freelance Shopify Expert
-// Positioned strictly as an independent Freelance Shopify Expert with 8+ years experience
+// Positioned strictly as an independent Freelance Shopify Expert with 5+ years experience
 // All previous employer names, companies, and employment timelines removed per client branding
 
 export const personalInfo = {
@@ -7,19 +7,19 @@ export const personalInfo = {
   role: "Freelance Shopify Developer",
   subRole: "Shopify Plus & Custom E-commerce Development",
   tagline: "Building high-performance Shopify storefronts, custom apps, and checkout systems that scale e-commerce revenue.",
-  experienceYears: "8+",
+  experienceYears: "5+",
   phone: "+91 93026 15727",
   email: "himanshusoni7899@gmail.com",
   location: "Indore, Madhya Pradesh, India (Available Worldwide)",
   github: "https://github.com",
   linkedin: "https://linkedin.com/in",
   availability: "Available for Custom Theme, Shopify Plus, and Custom App Projects",
-  bio: `Independent Freelance Shopify Developer with 8+ years of specialized experience architecting bespoke Shopify 2.0 themes, Shopify Plus checkout extensions, custom Remix applications, and high-converting e-commerce experiences. Skilled in Shopify APIs, Liquid, Remix, GraphQL, and modern web performance. Proven track record of cutting warehouse order processing time by 60%, boosting Lighthouse speed scores to 85+, eliminating inventory overselling across multi-variant catalogs, and deploying over 60+ bespoke e-commerce storefronts.`
+  bio: `Independent Freelance Shopify Developer with 5+ years of specialized experience architecting bespoke Shopify 2.0 themes, Shopify Plus checkout extensions, custom Remix applications, and high-converting e-commerce experiences. Skilled in Shopify APIs, Liquid, Remix, GraphQL, and modern web performance. Proven track record of cutting warehouse order processing time by 60%, boosting Lighthouse speed scores to 85+, eliminating inventory overselling across multi-variant catalogs, and delivering over 250 bespoke e-commerce storefronts.`
 };
 
 export const verifiedMetrics = [
-  { value: "8+", label: "Years Shopify Experience", detail: "Bespoke themes, Plus checkout & custom apps" },
-  { value: "60+", label: "Shopify Stores Shipped", detail: "End-to-end custom development & migrations" },
+  { value: "5+", label: "Years Shopify Experience", detail: "Bespoke themes, Plus checkout & custom apps" },
+  { value: "250+", label: "Shopify Stores Delivered", detail: "End-to-end custom development & migrations" },
   { value: "60%", label: "Order Processing Time Cut", detail: "Via custom Admin UI extensions & automation" },
   { value: "95%", label: "Inventory Discrepancy Cut", detail: "Via custom multi-variant sync applications" }
 ];
@@ -454,7 +454,7 @@ export const freelanceMilestones = [
     focus: "Bespoke Themes, Platform Migrations & Custom Calculators",
     summary: "Architecting bespoke Shopify storefronts, seamless migrations from legacy platforms like WordPress/WooCommerce, and interactive pricing calculators.",
     deliverables: [
-      "Successfully delivered 60+ bespoke Shopify stores with dynamic filtering and mobile-first UX.",
+      "Successfully delivered 250+ bespoke Shopify stores with dynamic filtering and mobile-first UX.",
       "Developed interactive room area and pricing calculators for flooring and custom product merchants.",
       "Executed zero-downtime store migrations with 100% 301 SEO redirect preservation.",
       "Automated multi-gateway checkout setups including Stripe, PayPal, Klaviyo, and webhooks."
@@ -573,13 +573,13 @@ export const approachStages = [
 
 export const tickerItems = [
   "Freelance Shopify Expert",
-  "8+ Years Experience",
+  "5+ Years Experience",
   "Shopify Plus Specialist",
   "Remix App Development",
   "Custom Liquid Themes",
   "Shopify Functions API",
   "Inventory Sync Automation",
   "Pricing Calculators",
-  "60+ Stores Shipped",
+  "250+ Stores Delivered",
   "85+ Lighthouse Performance"
 ];

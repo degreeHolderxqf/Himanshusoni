@@ -66,7 +66,7 @@ export default function HomePage() {
               marginBottom: '2.25rem',
               maxWidth: '700px'
             }}>
-              I'm <strong style={{ color: 'var(--color-deep-purple)' }}>Himanshu Soni</strong> — an independent <strong>Freelance Shopify Developer</strong> with <strong>8+ years of professional experience</strong> building high-converting Liquid themes, custom Remix apps, checkout extensibility, and speed optimization for scaling e-commerce brands worldwide.
+              I'm <strong style={{ color: 'var(--color-deep-purple)' }}>Himanshu Soni</strong> — an independent <strong>Freelance Shopify Developer</strong> with <strong>5+ years of professional experience</strong> building high-converting Liquid themes, custom Remix apps, checkout extensibility, and speed optimization for scaling e-commerce brands worldwide.
             </p>
 
             {/* Exact Pill Action Buttons */}
@@ -197,7 +197,7 @@ export default function HomePage() {
               }}>
                 {[
                   "Direct communication with me — zero agency middlemen",
-                  "8+ years of specialized Shopify Plus & custom e-commerce expertise",
+                  "5+ years of specialized Shopify Plus & custom e-commerce expertise",
                   "Full focus on every store architecture & conversion funnel",
                   "Transparent, flat-fee project pricing with clear milestones",
                   "Solutions tailored strictly to your commercial business goals",
@@ -341,7 +341,7 @@ export default function HomePage() {
                 lineHeight: 1.7,
                 margin: 0
               }}>
-                With 8+ years of experience as an independent Freelance Shopify Developer, I specialize in helping direct-to-consumer brands and agencies build high-converting storefronts, custom apps, and frictionless checkouts.
+                With 5+ years of experience as an independent Freelance Shopify Developer, I specialize in helping direct-to-consumer brands and agencies build high-converting storefronts, custom apps, and frictionless checkouts.
               </p>
             </div>
           </div>
@@ -476,7 +476,7 @@ export default function HomePage() {
                 desc: "I don’t just modify themes — I understand your commerce goals. Every section, app webhook, or Shopify Function starts with strategy and ends with measurable impact."
               },
               {
-                title: "8+ Years of Specialized Expertise",
+                title: "5+ Years of Specialized Expertise",
                 desc: "Focused specifically on freelance Shopify development, Shopify Plus, custom apps, and speed optimization. I understand merchant operations and customer purchase funnels."
               },
               {
@@ -577,7 +577,7 @@ export default function HomePage() {
           }}>
             <div>
               <div style={{ fontSize: '3rem', fontWeight: 800, color: '#ba9afd', lineHeight: 1 }}>
-                8+
+                5+
               </div>
               <div style={{ fontSize: '0.9rem', color: '#ffffff', fontWeight: 600, marginTop: '0.5rem' }}>
                 Years of Experience
@@ -586,7 +586,7 @@ export default function HomePage() {
 
             <div>
               <div style={{ fontSize: '3rem', fontWeight: 800, color: '#ba9afd', lineHeight: 1 }}>
-                60+
+                250+
               </div>
               <div style={{ fontSize: '0.9rem', color: '#ffffff', fontWeight: 600, marginTop: '0.5rem' }}>
                 Custom Shopify Stores

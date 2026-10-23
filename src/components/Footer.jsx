@@ -10,7 +10,7 @@ export default function Footer() {
     "Remix Full-Stack Apps",
     "Shopify Functions API",
     "Checkout Customization",
-    "60+ Stores Shipped",
+    "250+ Stores Delivered",
     "60% Order Processing Time Cut",
     "85+ Lighthouse Performance",
     "Webhook Architecture",
@@ -38,7 +38,7 @@ export default function Footer() {
               <span style={{ color: '#ba9afd' }}>SONI</span>
             </div>
             <p style={{ color: '#b3b3b3', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Independent Freelance Shopify Developer with 8+ years of professional experience building high-converting Shopify Plus storefronts, custom Remix applications, and Core Web Vitals speed optimization.
+              Independent Freelance Shopify Developer with 5+ years of professional experience building high-converting Shopify Plus storefronts, custom Remix applications, and Core Web Vitals speed optimization.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               <a

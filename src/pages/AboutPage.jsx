@@ -122,13 +122,13 @@ export default function AboutPage() {
                 lineHeight: 1.25,
                 marginBottom: '1.25rem'
               }}>
-                Freelance Shopify Developer with 8+ Years of Specialized Experience
+                Freelance Shopify Developer with 5+ Years of Specialized Experience
               </h2>
               <p style={{ fontSize: '1.02rem', lineHeight: 1.75, color: 'var(--color-text-body)', marginBottom: '1.25rem' }}>
                 As an independent freelance specialist, I partner directly with founders, e-commerce directors, and digital agencies to deliver robust Shopify solutions without agency overhead or middle layers.
               </p>
               <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--color-text-body)', marginBottom: '2rem' }}>
-                My engineering approach blends technical precision with commercial insight: cutting warehouse order processing time by 60%, deploying over 60+ bespoke stores, eliminating variant overselling via custom sync apps, and elevating mobile Lighthouse speeds to 85+.
+                My engineering approach blends technical precision with commercial insight: cutting warehouse order processing time by 60%, delivering over 250 bespoke stores, eliminating variant overselling via custom sync apps, and elevating mobile Lighthouse speeds to 85+.
               </p>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -158,7 +158,7 @@ export default function AboutPage() {
                   borderRadius: '999px'
                 }}>
                   <Zap size={16} color="var(--color-deep-purple)" />
-                  8+ Years Experience
+                  5+ Years Experience
                 </div>
               </div>
             </div>

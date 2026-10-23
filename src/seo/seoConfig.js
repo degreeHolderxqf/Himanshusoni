@@ -8,7 +8,7 @@ export const SITE_URL =
 export const routesMeta = {
   '/': {
     title: 'Freelance Shopify Developer & Shopify Plus Specialist | Himanshu Soni',
-    description: 'Freelance Shopify Developer with 8+ years experience. Bespoke Shopify 2.0 themes, Shopify Plus checkout extensibility, custom Remix apps & speed optimization.',
+    description: 'Freelance Shopify Developer with 5+ years experience. 250+ Shopify stores delivered. Bespoke Shopify 2.0 themes, Shopify Plus checkout extensibility, custom Remix apps & speed optimization.',
     canonical: `${SITE_URL}/`,
     keywords: 'freelance shopify developer, shopify freelancer, hire shopify developer, shopify plus developer, custom shopify developer, shopify theme developer, custom shopify app development',
     ogType: 'website',
@@ -56,7 +56,7 @@ export const routesMeta = {
   },
   '/aboutus': {
     title: 'About Himanshu Soni | Freelance Shopify Developer & Plus Specialist',
-    description: 'Meet Himanshu Soni, freelance Shopify developer with 8+ years experience and 60+ deployed stores. Specializing in Liquid themes, Remix apps, and speed optimization.',
+    description: 'Meet Himanshu Soni, freelance Shopify developer with 5+ years experience and 250+ delivered stores. Specializing in Liquid themes, Remix apps, and speed optimization.',
     canonical: `${SITE_URL}/aboutus`,
     keywords: 'about himanshu soni, freelance shopify developer background, shopify expert india, hire independent shopify consultant',
     ogType: 'profile',
