@@ -81,7 +81,7 @@ export default function Footer() {
                 fontSize: '0.88rem'
               }}>
                 <MapPin size={16} color="#ba9afd" />
-                <span>Indore / Dewas, MP, India</span>
+                <span>Bangalore , India</span>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@ export default function Footer() {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <a
-              href="https://github.com"
+              href="https://github.com/degreeHolderxqf"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
@@ -226,7 +226,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/himanshu-soni-xqf"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"

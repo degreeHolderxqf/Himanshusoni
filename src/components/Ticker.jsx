@@ -1,4 +1,4 @@
-export default function Ticker({ items, variant = "dark", speed = "24s" }) {
+export default function Ticker({ items, variant = "dark", speed = "44s" }) {
   const defaultItems = [
     "Shopify Plus Engineering",
     "Custom Remix Apps",
