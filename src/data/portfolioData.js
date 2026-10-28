@@ -8,11 +8,11 @@ export const personalInfo = {
   subRole: "Shopify Plus & Custom E-commerce Development",
   tagline: "Building high-performance Shopify storefronts, custom apps, and checkout systems that scale e-commerce revenue.",
   experienceYears: "5+",
-  phone: "+91 93026 15727",
+  phone: "+91 8989418128",
   email: "himanshusoni7899@gmail.com",
   location: "Bangalore, Karnataka, India (Available Worldwide)",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com/in",
+  github: "https://github.com/degreeHolderxqf",
+  linkedin: "https://linkedin.com/in/himanshu-soni-xqf",
   availability: "Available for Custom Theme, Shopify Plus, and Custom App Projects",
   bio: `Independent Freelance Shopify Developer with 5+ years of specialized experience architecting bespoke Shopify 2.0 themes, Shopify Plus checkout extensions, custom Remix applications, and high-converting e-commerce experiences. Skilled in Shopify APIs, Liquid, Remix, GraphQL, and modern web performance. Proven track record of cutting warehouse order processing time by 60%, boosting Lighthouse speed scores to 85+, eliminating inventory overselling across multi-variant catalogs, and delivering over 250 bespoke e-commerce storefronts.`
 };

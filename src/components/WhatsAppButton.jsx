@@ -4,7 +4,7 @@ import { personalInfo } from '../data/portfolioData';
 export default function WhatsAppButton() {
   const cleanPhone = personalInfo.phone.replace(/[^0-9]/g, '');
   const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
-    "Hi Himanshu, I'm reaching out from your portfolio regarding a Shopify project."
+    "Hi , I'm reaching out from your portfolio regarding a Shopify project."
   )}`;
 
   return (

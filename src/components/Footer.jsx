@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <footer style={{ background: '#190c39', color: '#ffffff', position: 'relative' }}>
       {/* Top Lilac Marquee Ticker */}
-      <Ticker variant="lilac" items={footerTickerItems} speed="24s" />
+      <Ticker variant="lilac" items={footerTickerItems} speed="50s" />
 
       {/* Main Footer Content */}
       <div className="container" style={{ paddingTop: '4.5rem', paddingBottom: '3.5rem' }}>

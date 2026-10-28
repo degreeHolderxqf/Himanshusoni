@@ -414,7 +414,7 @@ export default function HomePage() {
       {/* ============================================================== */}
       {/* SECTION 7: DARK MARQUEE TICKER                                 */}
       {/* ============================================================== */}
-      <Ticker items={tickerItems} variant="dark" speed="22s" />
+      <Ticker items={tickerItems} variant="dark" speed="60s" />
 
       {/* ============================================================== */}
       {/* SECTION 8: FULL-WIDTH MASSIVE QUOTE BANNER (PRIYA MATCH)       */}
