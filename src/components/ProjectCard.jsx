@@ -153,18 +153,40 @@ export default function ProjectCard({ project, onSelect }) {
         }}>
           View Case Study
         </span>
-        <div style={{
-          width: '32px',
-          height: '32px',
-          borderRadius: '50%',
-          background: 'var(--color-lilac)',
-          color: 'var(--color-deep-purple)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transition: 'transform 0.2s ease'
-        }}>
-          <ArrowUpRight size={16} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <a
+            href="https://himanshusoni-lilac.vercel.app/website-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            aria-label={`Visit website for ${project.title}`}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.35rem',
+              color: 'var(--color-deep-purple)',
+              fontSize: '0.82rem',
+              fontWeight: 700,
+              textDecoration: 'none',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            Visit Website
+            <ArrowUpRight size={15} />
+          </a>
+          <div style={{
+            width: '32px',
+            height: '32px',
+            borderRadius: '50%',
+            background: 'var(--color-lilac)',
+            color: 'var(--color-deep-purple)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'transform 0.2s ease'
+          }}>
+            <ArrowUpRight size={16} />
+          </div>
         </div>
       </div>
     </div>
