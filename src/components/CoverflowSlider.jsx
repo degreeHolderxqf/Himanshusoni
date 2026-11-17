@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, Eye } from 'lucide-react';
+import { getCaseStudyById, getCaseStudyPath } from '../data/caseStudiesData';
 
 export default function CoverflowSlider({ projects, onSelectProject }) {
   // Use first 6 featured brand case studies if more are passed
@@ -232,6 +233,7 @@ export default function CoverflowSlider({ projects, onSelectProject }) {
           onTouchEnd={handleTouchEnd}
         >
           {displayProjects.map((project, idx) => {
+            const caseStudy = getCaseStudyById(project.id);
             const total = displayProjects.length;
             let diff = (idx - currentIndex + total) % total;
             if (diff > total / 2) diff -= total;
@@ -382,17 +384,14 @@ export default function CoverflowSlider({ projects, onSelectProject }) {
                       textShadow: '0 2px 12px rgba(0,0,0,0.7)'
                     }}
                   >
-                    {project.brandName || project.category}
+                    {caseStudy?.name || project.brandName || project.category}
                   </h3>
 
-                  {/* Project Linked Button */}
+                  {/* Full story, quick preview, and verified live site */}
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        if (onSelectProject) onSelectProject(project);
-                      }}
+                    <Link
+                      to={caseStudy ? getCaseStudyPath(caseStudy) : '/website-portfolio'}
+                      onClick={(e) => e.stopPropagation()}
                       className="btn btn-lilac"
                       style={{
                         padding: '0.45rem 1.25rem',
@@ -405,13 +404,37 @@ export default function CoverflowSlider({ projects, onSelectProject }) {
                         gap: '0.4rem'
                       }}
                     >
-                      <span>View Case Study</span>
+                      <span>Read Case Study</span>
                       <ArrowRight size={14} />
+                    </Link>
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (onSelectProject) onSelectProject(project);
+                      }}
+                      aria-label={`Quick preview for ${caseStudy?.name || project.brandName || project.title}`}
+                      title="Quick preview"
+                      style={{
+                        width: '36px',
+                        height: '36px',
+                        border: '1px solid rgba(255, 255, 255, 0.35)',
+                        borderRadius: '50%',
+                        background: 'rgba(255, 255, 255, 0.12)',
+                        color: '#ffffff',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <Eye size={15} />
                     </button>
 
-                    {project.website && (
+                    {caseStudy?.liveUrlVerified && caseStudy.liveUrl && (
                       <a
-                        href={project.website}
+                        href={caseStudy.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}

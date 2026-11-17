@@ -5,6 +5,7 @@ import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
 import Ticker from '../components/Ticker';
 import { projectsData, tickerItems } from '../data/portfolioData';
+import '../components/ProjectPresentation.css';
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -172,11 +173,7 @@ export default function PortfolioPage() {
               </button>
             </div>
           ) : (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-              gap: '2rem'
-            }}>
+            <div className="portfolio-project-grid">
               {filteredProjects.map((project) => (
                 <ProjectCard
                   key={project.id}

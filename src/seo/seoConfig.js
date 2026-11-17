@@ -1,10 +1,30 @@
 // SEO Configuration and Structured Data (JSON-LD) Definitions
 // Single source of truth for metadata, canonical URLs, and Schema.org markup.
+import { caseStudiesData } from '../data/caseStudiesData.js';
 
 export const SITE_URL = 
   (typeof process !== 'undefined' && process.env?.VITE_SITE_URL) ||
   'https://himanshusoni-lilac.vercel.app';
 const SOCIAL_PREVIEW_IMAGE = `${SITE_URL}/assets/info-banner.png`;
+
+const caseStudyRoutesMeta = Object.fromEntries(caseStudiesData.map((project) => {
+  const route = `/website-portfolio/${project.slug}`;
+  return [route, {
+    title: project.seoTitle,
+    description: project.seoDescription,
+    canonical: `${SITE_URL}${route}`,
+    keywords: `${project.name} Shopify case study, ${project.category}, Shopify development portfolio`,
+    ogType: 'article',
+    ogImage: `${SITE_URL}${project.heroImage}`,
+    imageAlt: project.heroAlt,
+    h1: project.title,
+    breadcrumb: [
+      { name: 'Home', url: `${SITE_URL}/` },
+      { name: 'Portfolio', url: `${SITE_URL}/website-portfolio` },
+      { name: project.name, url: `${SITE_URL}${route}` }
+    ]
+  }];
+}));
 
 export const routesMeta = {
   '/': {
@@ -93,13 +113,15 @@ export const routesMeta = {
       { name: 'Home', url: `${SITE_URL}/` },
       { name: 'Contact', url: `${SITE_URL}/contactus` }
     ]
-  }
+  },
+  ...caseStudyRoutesMeta
 };
 
 // Generates Schema.org JSON-LD structured data for a given path
 export function getStructuredDataForRoute(pathname) {
   const cleanPath = pathname.replace(/\/$/, '') || '/';
   const schemas = [];
+  const caseStudy = caseStudiesData.find((project) => `/website-portfolio/${project.slug}` === cleanPath);
 
   // Base Person schema representing Himanshu Soni
   const personSchema = {
@@ -226,7 +248,7 @@ export function getStructuredDataForRoute(pathname) {
       '@type': 'CollectionPage',
       name: 'Shopify Development Portfolio & Case Studies',
       url: `${SITE_URL}/website-portfolio`,
-      description: 'Verified case studies of custom Shopify 2.0 themes, Shopify Plus checkout functions, Remix apps, and speed optimization shipped by Himanshu Soni.',
+      description: 'Selected Shopify projects and case studies covering storefront design, custom functionality, inventory tools, and platform migrations.',
       creator: { '@id': `${SITE_URL}/#person` }
     });
   } else if (cleanPath === '/approach') {
@@ -259,6 +281,25 @@ export function getStructuredDataForRoute(pathname) {
       name: 'Contact Freelance Shopify Developer Himanshu Soni',
       url: `${SITE_URL}/contactus`,
       mainEntity: { '@id': `${SITE_URL}/#person` }
+    });
+  }
+
+  if (caseStudy) {
+    const canonical = `${SITE_URL}/website-portfolio/${caseStudy.slug}`;
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      '@id': `${canonical}#case-study`,
+      name: caseStudy.title,
+      headline: caseStudy.title,
+      description: caseStudy.seoDescription,
+      url: canonical,
+      image: `${SITE_URL}${caseStudy.heroImage}`,
+      creator: { '@id': `${SITE_URL}/#person` },
+      keywords: caseStudy.technologies.join(', '),
+      ...(caseStudy.liveUrlVerified && caseStudy.liveUrl
+        ? { about: { '@type': 'Organization', name: caseStudy.name, url: caseStudy.liveUrl } }
+        : { about: { '@type': 'Organization', name: caseStudy.name } })
     });
   }
 

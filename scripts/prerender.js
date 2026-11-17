@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { build } from 'vite';
 import { routesMeta, getStructuredDataForRoute, SITE_URL } from '../src/seo/seoConfig.js';
+import { caseStudiesData } from '../src/data/caseStudiesData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -49,7 +50,8 @@ async function prerender() {
     '/approach',
     '/aboutus',
     '/planner',
-    '/contactus'
+    '/contactus',
+    ...caseStudiesData.map((project) => `/website-portfolio/${project.slug}`)
   ];
 
   console.log(`🔍 Pre-rendering ${routes.length} routes into static HTML files...`);
@@ -89,6 +91,12 @@ async function prerender() {
       /<meta\s+name="description"\s+content=".*?"\s*\/?>/i,
       `<meta name="description" content="${meta.description}" />`
     );
+    if (meta.keywords) {
+      html = html.replace(
+        /<meta\s+name="keywords"\s+content=".*?"\s*\/?>/i,
+        `<meta name="keywords" content="${meta.keywords}" />`
+      );
+    }
 
     // Replace Canonical Link
     const canonicalUrl = meta.canonical || `${SITE_URL}${route === '/' ? '/' : route}`;
@@ -110,12 +118,20 @@ async function prerender() {
       /<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i,
       `<meta property="og:url" content="${canonicalUrl}" />`
     );
+    html = html.replace(
+      /<meta\s+property="og:type"\s+content=".*?"\s*\/?>/i,
+      `<meta property="og:type" content="${meta.ogType || 'website'}" />`
+    );
     if (meta.ogImage) {
       html = html.replace(
         /<meta\s+property="og:image"\s+content=".*?"\s*\/?>/i,
         `<meta property="og:image" content="${meta.ogImage}" />`
       );
     }
+    html = html.replace(
+      /<meta\s+property="og:image:alt"\s+content=".*?"\s*\/?>/i,
+      `<meta property="og:image:alt" content="${meta.imageAlt || 'Himanshu Soni — Freelance Shopify Developer'}" />`
+    );
 
     // Replace Twitter Tags
     html = html.replace(
@@ -132,6 +148,10 @@ async function prerender() {
         `<meta name="twitter:image" content="${meta.ogImage}" />`
       );
     }
+    html = html.replace(
+      /<meta\s+name="twitter:image:alt"\s+content=".*?"\s*\/?>/i,
+      `<meta name="twitter:image:alt" content="${meta.imageAlt || 'Himanshu Soni — Freelance Shopify Developer'}" />`
+    );
 
     // Inject JSON-LD Structured Data right before </head>
     const jsonLdScript = `\n    <script id="json-ld-structured-data" type="application/ld+json">\n${schemaJson}\n    </script>\n  </head>`;

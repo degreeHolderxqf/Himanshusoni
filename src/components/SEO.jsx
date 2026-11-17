@@ -52,11 +52,15 @@ export default function SEO() {
     }
     canonicalTag.setAttribute('href', canonicalUrl);
     setMetaTag('property', 'og:url', canonicalUrl);
+    setMetaTag('property', 'og:type', meta?.ogType || 'website');
 
     // Update OG Image
     const ogImg = meta?.ogImage || `${SITE_URL}/assets/info-banner.png`;
     setMetaTag('property', 'og:image', ogImg);
+    setMetaTag('property', 'og:image:alt', meta?.imageAlt || 'Himanshu Soni — Freelance Shopify Developer');
     setMetaTag('name', 'twitter:image', ogImg);
+    setMetaTag('name', 'twitter:image:alt', meta?.imageAlt || 'Himanshu Soni — Freelance Shopify Developer');
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
 
     // Update JSON-LD structured data script
     const schemas = getStructuredDataForRoute(cleanPath);

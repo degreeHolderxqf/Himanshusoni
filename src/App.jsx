@@ -12,6 +12,7 @@ import AboutPage from './pages/AboutPage';
 import PlannerPage from './pages/PlannerPage';
 import ContactPage from './pages/ContactPage';
 import ServicesPage from './pages/ServicesPage';
+import ProjectCaseStudyPage from './pages/ProjectCaseStudyPage';
 
 import WhatsAppButton from './components/WhatsAppButton';
 
@@ -31,6 +32,8 @@ export function AppContent() {
             {/* Page E: Website Portfolio */}
             <Route path="/website-portfolio" element={<PortfolioPage />} />
             <Route path="/website-portfolio/" element={<PortfolioPage />} />
+            <Route path="/website-portfolio/:slug" element={<ProjectCaseStudyPage />} />
+            <Route path="/website-portfolio/:slug/" element={<ProjectCaseStudyPage />} />
 
             {/* Page D: Approach */}
             <Route path="/approach" element={<ApproachPage />} />
