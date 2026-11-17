@@ -54,7 +54,7 @@ export default function SEO() {
     setMetaTag('property', 'og:url', canonicalUrl);
 
     // Update OG Image
-    const ogImg = meta?.ogImage || `${SITE_URL}/assets/MY-Profile.jpeg`;
+    const ogImg = meta?.ogImage || `${SITE_URL}/assets/info-banner.png`;
     setMetaTag('property', 'og:image', ogImg);
     setMetaTag('name', 'twitter:image', ogImg);
 

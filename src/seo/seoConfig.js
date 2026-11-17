@@ -4,6 +4,7 @@
 export const SITE_URL = 
   (typeof process !== 'undefined' && process.env?.VITE_SITE_URL) ||
   'https://himanshusoni-lilac.vercel.app';
+const SOCIAL_PREVIEW_IMAGE = `${SITE_URL}/assets/info-banner.png`;
 
 export const routesMeta = {
   '/': {
@@ -12,7 +13,7 @@ export const routesMeta = {
     canonical: `${SITE_URL}/`,
     keywords: 'freelance shopify developer, shopify freelancer, hire shopify developer, shopify plus developer, custom shopify developer, shopify theme developer, custom shopify app development',
     ogType: 'website',
-    ogImage: `${SITE_URL}/assets/MY-Profile.jpeg`,
+    ogImage: SOCIAL_PREVIEW_IMAGE,
     h1: 'Freelance Shopify Developer & Shopify Plus Specialist'
   },
   '/website-portfolio': {
@@ -60,7 +61,7 @@ export const routesMeta = {
     canonical: `${SITE_URL}/aboutus`,
     keywords: 'about himanshu soni, freelance shopify developer background, shopify expert india, hire independent shopify consultant',
     ogType: 'profile',
-    ogImage: `${SITE_URL}/assets/MY-Profile.jpeg`,
+    ogImage: SOCIAL_PREVIEW_IMAGE,
     h1: 'About Himanshu Soni — Freelance Shopify Developer',
     breadcrumb: [
       { name: 'Home', url: `${SITE_URL}/` },
@@ -73,7 +74,7 @@ export const routesMeta = {
     canonical: `${SITE_URL}/planner`,
     keywords: 'shopify project planner, shopify development cost calculator, estimate shopify project, hire shopify developer scope',
     ogType: 'website',
-    ogImage: `${SITE_URL}/assets/MY-Profile.jpeg`,
+    ogImage: SOCIAL_PREVIEW_IMAGE,
     h1: 'Plan Your Shopify Development Project & Estimate Scope',
     breadcrumb: [
       { name: 'Home', url: `${SITE_URL}/` },
@@ -86,7 +87,7 @@ export const routesMeta = {
     canonical: `${SITE_URL}/contactus`,
     keywords: 'contact freelance shopify developer, hire shopify developer, shopify plus consultant inquiry, book shopify developer call',
     ogType: 'website',
-    ogImage: `${SITE_URL}/assets/MY-Profile.jpeg`,
+    ogImage: SOCIAL_PREVIEW_IMAGE,
     h1: 'Hire a Freelance Shopify Developer | Contact Himanshu Soni',
     breadcrumb: [
       { name: 'Home', url: `${SITE_URL}/` },
